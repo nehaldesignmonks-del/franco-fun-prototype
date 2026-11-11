@@ -1,0 +1,97 @@
+/* 03 · Is your child… — Figma 2134:11528 (1440 × 1030). Pinned in JS; this file is the final (question 1) state. */
+.s-iyc { background: #fff; }
+/* Pin: JS sets the track height (1030 + 5 × 380) and --iyc-top (centres the content), then the section sticks.
+   Static mode never adds .is-pinning, so the layout stays the plain 1030px Figma frame. */
+.s-iyc-track { position: relative; }
+.s-iyc-track.is-pinning .s-iyc { position: sticky; top: var(--iyc-top, 0px); }
+
+/* Per-question tint ("bg shifts per question" in Figma). Soft-edged so it never makes a hard seam with neighbours. */
+.s-iyc__bg {
+  position: absolute; inset: 0;
+  background-color: #fff;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 180px, #000 calc(100% - 180px), transparent 100%);
+          mask-image: linear-gradient(180deg, transparent 0, #000 180px, #000 calc(100% - 180px), transparent 100%);
+  pointer-events: none;
+}
+
+.s-iyc__title { position: absolute; left: 0; right: 0; top: 140px; text-align: center; }
+
+.s-iyc__media {
+  position: absolute; left: 438px; top: 260px; width: 564px; height: 384px;
+}
+.s-iyc__img {
+  width: 100%; height: 100%;
+  border-radius: 32px;
+  transform-origin: 50% 100%;
+}
+
+/* Questions share one grid cell; only the active one shows */
+.s-iyc__qs {
+  position: absolute; left: 0; right: 0; top: 676px; height: 128px;
+  display: grid; place-items: center;
+}
+.s-iyc__q {
+  grid-area: 1 / 1;
+  font-family: var(--font-head); font-weight: 500; font-size: 64px; line-height: 1; letter-spacing: -0.04em;
+  color: var(--c-ink); text-align: center; white-space: nowrap;
+}
+.s-iyc__q:not(.is-active) { visibility: hidden; }
+.s-iyc__w { display: inline-block; } /* words (SplitText) */
+
+/* Progress (8 × 108): active pill 28 tall, dots 8 */
+.s-iyc__progress {
+  position: absolute; left: 1360px; top: 440px; width: 8px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.s-iyc__progress li {
+  width: 8px; height: 8px; border-radius: 4px;
+  background: rgba(3, 59, 98, .18);
+  transition: height .6s var(--ease-bounce), background-color .35s ease;
+}
+.s-iyc__progress li.is-active { height: 28px; background: var(--c-blue); }
+
+/* Scroll down */
+.s-iyc__next-pop { position: absolute; left: 696px; top: 842px; width: 48px; height: 48px; }
+.s-iyc__next {
+  display: block; width: 48px; height: 48px; border-radius: 50%;
+  cursor: pointer;
+  transition: transform .5s var(--ease-bounce);
+}
+.s-iyc__next svg { width: 100%; height: 100%; }
+.s-iyc__next:hover { transform: translateY(3px); } /* arrow nudge only; no scale on buttons */
+.s-iyc__next:active { transform: translateY(5px); transition-duration: .15s; }
+
+/* ---------- Under 1024: one centred column that fits a ~700px phone viewport while pinned ----------
+   title · image · question (~30px) · progress (horizontal) · scroll button. The section is one
+   viewport tall (svh) so the sticky pin shows everything; JS uses less scroll per question here. */
+@media (max-width: 1023px) {
+  .s-iyc .ff-frame {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    min-height: 100svh;
+    padding: calc(68px + env(safe-area-inset-top, 0px)) var(--gutter) 28px;
+  }
+  .s-iyc__bg {
+    -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 64px, #000 calc(100% - 64px), transparent 100%);
+            mask-image: linear-gradient(180deg, transparent 0, #000 64px, #000 calc(100% - 64px), transparent 100%);
+  }
+  .s-iyc__title { position: static; text-wrap: balance; }
+  .s-iyc__media {
+    position: static; width: 100%; max-width: 440px; height: auto; aspect-ratio: 564 / 384; margin-top: 22px;
+  }
+  .s-iyc__img { border-radius: 24px; }
+  .s-iyc__qs { position: static; width: 100%; height: auto; margin-top: 22px; }
+  .s-iyc__q { font-size: 30px; line-height: 1.08; white-space: normal; text-wrap: balance; max-width: 15em; }
+  .s-iyc__q br { display: none; }
+  .s-iyc__progress { position: static; flex-direction: row; width: auto; height: 8px; margin-top: 18px; }
+  .s-iyc__progress li { transition: width .6s var(--ease-bounce), background-color .35s ease; }
+  .s-iyc__progress li.is-active { width: 28px; height: 8px; }
+  .s-iyc__next-pop { position: static; margin-top: 18px; }
+
+  @media (min-width: 640px) {
+    .s-iyc__title { font-size: 44px; }
+    .s-iyc__media { max-width: 520px; margin-top: 32px; }
+    .s-iyc__qs { margin-top: 30px; }
+    .s-iyc__q { font-size: 44px; }
+    .s-iyc__q br { display: inline; }
+  }
+}

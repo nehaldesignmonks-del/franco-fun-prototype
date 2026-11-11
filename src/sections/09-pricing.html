@@ -1,0 +1,181 @@
+<section class="ff-sec s-pricing" id="pricing">
+  <div class="ff-frame s-pricing__frame">
+
+    <!-- Playful 3D accents reused from the hero + programs (side margins / around the header only) -->
+    <div class="s-pricing__deco" aria-hidden="true">
+      <img class="s-pricing__sun" src="assets/01-hero/sun.svg" alt="" data-pop data-float="10" data-depth="0.7">
+      <img class="s-pricing__c" src="assets/01-hero/clay-c-cedilla.svg" alt="" data-pop data-pop-delay="0.15" data-float="12" data-depth="-0.6">
+      <img class="s-pricing__rocket" src="assets/05-programs/icon-rocket.png" alt="" data-pop data-pop-delay="0.1" data-float="9" data-depth="0.45">
+      <img class="s-pricing__cloud" src="assets/05-programs/clay-cloud.svg" alt="" data-pop data-float="8" data-depth="-0.35">
+    </div>
+
+    <header class="s-pricing__head">
+      <h2 class="t-h2 s-pricing__title" data-reveal>Choose the plan that<br>fits your family</h2>
+      <div class="s-pricing__toggle" role="tablist" aria-label="Plan type" data-fade data-fade-delay="0.15">
+        <span class="s-pricing__thumb" aria-hidden="true"></span>
+        <button class="s-pricing__tab" type="button" role="tab" id="pricing-tab-individual" aria-selected="true" aria-controls="pricing-panel-individual" data-cursor="hover">Individual classes</button>
+        <button class="s-pricing__tab" type="button" role="tab" id="pricing-tab-club" aria-selected="false" aria-controls="pricing-panel-club" tabindex="-1" data-cursor="hover">Franco-fun! Club</button>
+      </div>
+    </header>
+
+    <div class="s-pricing__panels">
+
+      <!-- ===== Individual classes (default) — Figma 2134:11821 ===== -->
+      <div class="s-pricing__panel s-pricing__panel--individual is-active" id="pricing-panel-individual" role="tabpanel" aria-labelledby="pricing-tab-individual">
+        <div class="s-pricing__plans">
+
+          <article class="s-pricing__plan" data-pop="soft">
+            <p class="s-pricing__label">ESSENTIAL</p>
+            <h3 class="s-pricing__plan-title">5 individual classes</h3>
+            <p class="s-pricing__price"><span class="s-pricing__amount">$21</span><span class="s-pricing__per">/ class</span></p>
+            <p class="s-pricing__total">$105 total</p>
+            <p class="s-pricing__desc">Great for consistent support and building strong foundations.</p>
+            <a class="btn s-pricing__ghost s-pricing__buy" href="checkout.html?plan=essential"><span>Purchase 5 classes</span></a>
+            <hr class="s-pricing__rule">
+            <div class="s-pricing__incl">
+              <p class="s-pricing__incl-title">What’s included</p>
+              <ul class="s-pricing__list">
+                <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Personalized support</span></li>
+                <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Support in reading, writing, speaking &amp; math</span></li>
+                <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Homework help</span></li>
+                <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Access to learning resources</span></li>
+                <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Progress tracking</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="s-pricing__plan s-pricing__plan--tint" data-pop="soft">
+            <p class="s-pricing__label">PROGRESSION</p>
+            <h3 class="s-pricing__plan-title">10 individual classes</h3>
+            <p class="s-pricing__price"><span class="s-pricing__amount">$19.50</span><span class="s-pricing__per">/ class</span></p>
+            <p class="s-pricing__total">$195 total</p>
+            <p class="s-pricing__desc">Best for steady progress and growing confidence.</p>
+            <a class="btn btn--block s-pricing__buy" href="checkout.html?plan=progression"><span>Purchase 10 classes</span></a>
+            <button class="s-pricing__nudge" type="button" data-cursor="hover" aria-controls="pricing-panel-club">
+              <span>Taking 3+ classes a week? The Club is free for you</span>
+              <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7H11M8 3.5L11.5 7L8 10.5"/></svg>
+            </button>
+            <hr class="s-pricing__rule">
+            <div class="s-pricing__incl">
+              <p class="s-pricing__incl-title">Everything in Essential, plus:</p>
+              <ul class="s-pricing__list">
+                <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Reinforced learning and practice</span></li>
+                <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Deeper skill development</span></li>
+                <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Regular progress reports</span></li>
+                <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Priority scheduling</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="s-pricing__plan" data-pop="soft">
+            <p class="s-pricing__label">INTENSIVE</p>
+            <h3 class="s-pricing__plan-title">20 individual classes</h3>
+            <p class="s-pricing__price"><span class="s-pricing__amount">$18.50</span><span class="s-pricing__per">/ class</span></p>
+            <p class="s-pricing__total">$370 total</p>
+            <p class="s-pricing__desc">Ideal for accelerated progress and targeted support.</p>
+            <a class="btn s-pricing__ghost s-pricing__buy" href="checkout.html?plan=intensive"><span>Purchase 20 classes</span></a>
+            <button class="s-pricing__nudge" type="button" data-cursor="hover" aria-controls="pricing-panel-club">
+              <span>Taking 3+ classes a week? The Club is free for you</span>
+              <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7H11M8 3.5L11.5 7L8 10.5"/></svg>
+            </button>
+            <hr class="s-pricing__rule">
+            <div class="s-pricing__incl">
+              <p class="s-pricing__incl-title">Everything in Progression, plus:</p>
+              <ul class="s-pricing__list">
+                <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Intensive learning &amp; intervention plan</span></li>
+                <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Advanced skill development</span></li>
+                <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Frequent communication with parents</span></li>
+                <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Access to exclusive resources</span></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <p class="s-pricing__note" data-fade><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Lecture Scientifique™ included with every plan</span></p>
+
+        <div class="s-pricing__help" id="get-started" data-pop="soft">
+          <div class="s-pricing__help-text">
+            <p class="s-pricing__help-title">Getting started is easy</p>
+            <p class="s-pricing__help-sub">Book a free 15-min demo or register now and save $10.</p>
+          </div>
+          <div class="s-pricing__help-cta">
+            <a class="btn" href="#"><span>Free demo lesson</span></a>
+            <a class="btn s-pricing__ghost" href="checkout.html?plan=progression"><span>Register now</span></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Franco-fun! Club — Figma 2172:5348 ===== -->
+      <div class="s-pricing__panel s-pricing__panel--club" id="pricing-panel-club" role="tabpanel" aria-labelledby="pricing-tab-club" hidden>
+        <div class="s-pricing__club">
+          <div class="s-pricing__about">
+            <p class="s-pricing__label">ADD-ON</p>
+            <h3 class="s-pricing__club-title">Franco-fun! Club Membership</h3>
+            <p class="s-pricing__club-lead">More French. More confidence. All in one membership.</p>
+            <p class="s-pricing__club-desc">Give your child ongoing opportunities to speak, learn and build confidence in French—every week, all year long.</p>
+            <hr class="s-pricing__rule">
+            <p class="s-pricing__incl-title">What’s included</p>
+            <ul class="s-pricing__list s-pricing__list--grid">
+              <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Live group classes for students <span class="s-pricing__nw">K–5</span></span></li>
+              <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Unlimited Homework Lab <span class="s-pricing__nw">(Sun–Thu)</span></span></li>
+              <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Qualified French teachers</span></li>
+              <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Private learning community</span></li>
+              <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Flexible scheduling</span></li>
+              <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Cancel anytime</span></li>
+            </ul>
+          </div>
+
+          <div class="s-pricing__tiers">
+            <p class="s-pricing__tiers-title">Choose the membership that fits your family</p>
+            <div class="s-pricing__tier">
+              <div class="s-pricing__tier-info">
+                <p class="s-pricing__tier-name">Current families · Taking 3+ weekly classes</p>
+                <p class="s-pricing__tier-desc">Our thanks for being part of the Franco-fun! family.</p>
+              </div>
+              <p class="s-pricing__tier-price"><span class="s-pricing__tier-amount s-pricing__tier-amount--free">FREE!</span></p>
+              <a class="btn s-pricing__ghost s-pricing__ghost--tier" href="membership.html?tier=current-families-taking-3-weekly-classes"><span>Get started</span></a>
+            </div>
+            <div class="s-pricing__tier">
+              <div class="s-pricing__tier-info">
+                <p class="s-pricing__tier-name">Current families · Taking 1–2 weekly classes</p>
+                <p class="s-pricing__tier-desc">Enjoy all the benefits at a special price.</p>
+              </div>
+              <p class="s-pricing__tier-price"><span class="s-pricing__tier-amount">$24.99</span><span class="s-pricing__tier-per">/month</span></p>
+              <a class="btn s-pricing__ghost s-pricing__ghost--tier" href="membership.html?tier=current-families-taking-1-2-weekly-classes"><span>Get started</span></a>
+            </div>
+            <div class="s-pricing__tier">
+              <div class="s-pricing__tier-info">
+                <p class="s-pricing__tier-name">New families · Monthly</p>
+                <p class="s-pricing__tier-desc">Flexible and cancel anytime.</p>
+              </div>
+              <p class="s-pricing__tier-price"><span class="s-pricing__tier-amount">$69.99</span><span class="s-pricing__tier-per">/month</span></p>
+              <a class="btn s-pricing__tier-btn" href="membership.html?tier=new-families-monthly"><span>Register now</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="s-pricing__schedule">
+          <div class="s-pricing__sched-head">
+            <h3 class="s-pricing__sched-title">Weekly schedule</h3>
+            <p class="s-pricing__sched-sub">All your classes and events in one place!</p>
+          </div>
+          <table class="s-pricing__table">
+            <colgroup><col style="width:560px"><col style="width:300px"><col></colgroup>
+            <thead>
+              <tr><th scope="col">CLASS</th><th scope="col">DAY(S)</th><th scope="col">TIME (ET)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><div class="s-pricing__cls"><span class="s-pricing__class">Preschool &amp; Kindergarten</span><span class="s-pricing__pill">Ages 3–5</span></div></td><td data-label="DAY(S)">Tues, Wed</td><td data-label="TIME (ET)">5:00 PM</td></tr>
+              <tr><td><div class="s-pricing__cls"><span class="s-pricing__class">Grade 1</span><span class="s-pricing__pill">Ages 6–7</span></div></td><td data-label="DAY(S)">Wed, Fri</td><td data-label="TIME (ET)">5:30 PM</td></tr>
+              <tr><td><div class="s-pricing__cls"><span class="s-pricing__class">Grade 2</span><span class="s-pricing__pill">Ages 7–8</span></div></td><td data-label="DAY(S)">Mon, Thurs</td><td data-label="TIME (ET)">5:00 PM</td></tr>
+              <tr><td><div class="s-pricing__cls"><span class="s-pricing__class">Grade 3</span><span class="s-pricing__pill">Ages 8–9</span></div></td><td data-label="DAY(S)">Sat</td><td data-label="TIME (ET)">10:00 AM</td></tr>
+              <tr><td><div class="s-pricing__cls"><span class="s-pricing__class">Grade 4–5</span><span class="s-pricing__pill">Ages 9–11</span></div></td><td data-label="DAY(S)">Mon, Tues</td><td data-label="TIME (ET)">5:30 PM</td></tr>
+              <tr><td><div class="s-pricing__cls"><span class="s-pricing__class">Homework Lab</span><span class="s-pricing__pill s-pricing__pill--lime">JK–12</span></div></td><td data-label="DAY(S)">Sun – Thu</td><td data-label="TIME (ET)">6:00 PM — K–6<br>6:30 PM — 7–12</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

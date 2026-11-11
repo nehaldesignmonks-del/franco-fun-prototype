@@ -1,0 +1,137 @@
+/* 10 · FAQ — Figma 2134:13317 (1440×1025). Panel 2134:12022: #EEF8FF, 48px top radius.
+   The footer (11) overlaps our bottom 145px and draws the pale scallops below y=1025 (Figma group 2134:13236).
+   Only the clay characters (strip y 770–1064) hang below this section, so it clips horizontally only and
+   paints above the footer (footer is z-index 3). */
+.s-faq {
+  height: 1025px;
+  overflow: clip visible; /* x clipped (wide strips), y visible (characters' feet overlap the footer) */
+  z-index: 4;
+  background: transparent;
+}
+
+.s-faq__bg {
+  position: absolute; inset: 0;
+  background: #EEF8FF;
+  border-radius: 48px 48px 0 0;
+  pointer-events: none;
+}
+
+/* ---------- Intro (left column) ---------- */
+.s-faq__intro {
+  position: absolute; left: 120px; top: 140px; width: 400px;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.s-faq__title { white-space: nowrap; }
+.s-faq__sub {
+  font-family: var(--font-body); font-weight: 400; font-size: 18px; line-height: 1.5; letter-spacing: 0;
+  color: var(--c-sub);
+}
+
+/* ---------- Accordion ---------- */
+.s-faq__list { position: absolute; left: 600px; top: 140px; width: 720px; }
+.s-faq__item {
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(3, 59, 98, 0.1);
+}
+.s-faq__item:first-child { border-top: 1px solid rgba(3, 59, 98, 0.1); }
+.s-faq__q { margin: 0; font: inherit; }
+.s-faq__btn {
+  position: relative;
+  display: flex; align-items: center; gap: 24px;
+  width: 100%;
+  padding: 28px 0 0;
+  text-align: left;
+  cursor: pointer;
+}
+/* Closed rows: extend the hit area over the bottom padding too */
+.s-faq__item:not(.is-open) .s-faq__btn::after {
+  content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 28px;
+}
+.s-faq__q-text {
+  flex: 1 1 0; min-width: 0;
+  font-family: var(--font-body); font-weight: 500; font-size: 20px; line-height: 1.3; letter-spacing: -0.01em;
+  color: var(--c-ink-2);
+}
+
+/* Icon: closed = plus on a panel-coloured disc; open = minus on a dark disc. The whole icon spins half a turn
+   and the vertical bar folds flat, both with the bouncy ease. */
+.s-faq__icon {
+  flex: none; width: 36px; height: 36px; overflow: visible;
+  transition: transform .75s var(--ease-bounce), scale .5s var(--ease-bounce);
+}
+.s-faq__icon circle { fill: #EEF8FF; transition: fill .3s ease; }
+.s-faq__icon path {
+  fill: none; stroke: var(--c-ink-2); stroke-width: 2.2; stroke-linecap: round;
+  transform-box: view-box; transform-origin: 18px 18px;
+  transition: stroke .3s ease, transform .75s var(--ease-bounce);
+}
+.s-faq__item.is-open .s-faq__icon { transform: rotate(180deg); }
+.s-faq__item.is-open .s-faq__icon circle { fill: #282828; }
+.s-faq__item.is-open .s-faq__icon path { stroke: #fff; }
+.s-faq__item.is-open .s-faq__icon-v { transform: rotate(90deg); }
+.s-faq__btn:hover .s-faq__icon { scale: 1.12; }
+.s-faq__item:not(.is-open) .s-faq__btn:hover .s-faq__icon circle { fill: #fff; }
+
+.s-faq__panel { overflow: hidden; }
+.s-faq__item:not(.is-open) .s-faq__panel { height: 0; visibility: hidden; }
+.s-faq__answer { padding: 12px 60px 0 0; }
+.s-faq__answer:empty { padding: 0; }
+.s-faq__answer p {
+  font-family: var(--font-body); font-weight: 400; font-size: 16px; line-height: 1.5; letter-spacing: 0;
+  color: #626262;
+}
+
+html.motion-off .s-faq__icon,
+html.motion-off .s-faq__icon path,
+html.motion-off .s-faq__icon circle { transition: none; }
+
+/* ---------- Clay characters strip (196×294 each, overlapping by 22) ---------- */
+.s-faq__chars { position: absolute; left: -335px; top: 770px; height: 294px; }
+.s-faq__chars-track { display: flex; align-items: center; will-change: transform; }
+.s-faq__char { display: block; flex: none; width: 196px; height: 294px; margin-right: -22px; }
+.s-faq__char-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: translate .55s var(--ease-bounce);
+}
+.s-faq__char:hover .s-faq__char-img { translate: 0 -14px; }
+
+/* ======================= Under 1024: phones + tablets =======================
+   Title block, then the accordion full width, then the character strip. The footer overlaps our bottom 60px
+   here (drawn above us), so the last 60px + a margin are background only. */
+@media (max-width: 1023px) {
+  .s-faq { height: auto; overflow: clip; z-index: 0; }
+  .s-faq__bg { border-radius: 32px 32px 0 0; }
+  .s-faq .ff-frame {
+    display: flex; flex-direction: column;
+    padding: 64px var(--gutter) 88px; /* 88 = 60 footer overlap + 28 */
+  }
+  .s-faq__intro { position: relative; left: auto; top: auto; width: auto; max-width: 560px; gap: 12px; }
+  .s-faq__title { white-space: normal; }
+  .s-faq__sub { font-size: 16px; }
+
+  .s-faq__list { position: relative; left: auto; top: auto; width: auto; margin-top: 32px; }
+  .s-faq__item { padding-bottom: 20px; }
+  .s-faq__btn { gap: 16px; padding-top: 20px; min-height: 56px; }
+  .s-faq__item:not(.is-open) .s-faq__btn::after { height: 20px; }
+  .s-faq__q-text { font-size: 17px; line-height: 1.35; }
+  .s-faq__icon { width: 34px; height: 34px; }
+  .s-faq__btn:hover .s-faq__icon { scale: none; }
+  .s-faq__answer { padding: 10px 0 0; }
+  .s-faq__answer p { font-size: 15px; line-height: 1.6; }
+
+  /* Character strip at ~56% scale, bleeding off both edges (clipped by the section) */
+  .s-faq__chars {
+    position: relative; left: auto; top: auto;
+    height: 165px; margin: 40px calc(-1 * var(--gutter)) 0;
+  }
+  .s-faq__chars-track { margin-left: -46px; }
+  .s-faq__char { width: 110px; height: 165px; margin-right: -12px; }
+  .s-faq__char:hover .s-faq__char-img { translate: none; }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .s-faq .ff-frame { padding-top: 80px; }
+  .s-faq__list { margin-top: 40px; }
+  .s-faq__chars { height: 210px; }
+  .s-faq__char { width: 140px; height: 210px; margin-right: -16px; }
+}

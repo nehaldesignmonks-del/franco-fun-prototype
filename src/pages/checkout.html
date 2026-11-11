@@ -1,0 +1,186 @@
+<div class="pg pg--checkout">
+  <!-- Top bar (Figma 2175:5622) -->
+  <header class="pg-bar">
+    <div class="pg-bar__in">
+      <a class="pg-bar__logo" href="index.html" aria-label="Apprendre Franco-fun! home"><img src="assets/pages/logo.svg" alt="Apprendre Franco-fun!" width="161" height="32"></a>
+      <span class="pg-bar__meta">
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" data-pop><path d="M11 7H5C3.9 7 3 7.9 3 9v3c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2Z" stroke="#5F6672" stroke-width="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2" stroke="#5F6672" stroke-width="1.5"/></svg>
+        Secure checkout
+      </span>
+    </div>
+  </header>
+
+  <!-- Phones/tablets only: compact total bar (existing copy + numbers); taps through to the order summary -->
+  <a class="co-mbar" href="#co-summary" data-co="bar" aria-label="Order summary">
+    <span class="co-mbar__l">
+      <span class="co-mbar__due">Due today</span>
+      <span class="pg-pill co-sum__chip" data-co="barChip">PROGRESSION</span>
+    </span>
+    <span class="co-mbar__v" data-co="barTotal">$185</span>
+  </a>
+
+  <section class="ff-sec pg-main co" id="checkout">
+    <div class="ff-frame co__frame">
+      <div class="co__body">
+        <!-- Left: form -->
+        <div class="co__form">
+          <h1 class="co__title" data-reveal>Checkout</h1>
+
+          <div class="pg-card co-card" data-pop="soft">
+            <h2 class="pg-card__title">Your child</h2>
+            <div class="pg-row">
+              <div class="pg-field">
+                <label class="pg-label" for="co-child">First name</label>
+                <input class="pg-input" id="co-child" type="text" placeholder="e.g. Léa" autocomplete="off">
+              </div>
+              <div class="pg-field">
+                <label class="pg-label" for="co-grade">Grade</label>
+                <select class="pg-input" id="co-grade">
+                  <option>JK</option>
+                  <option>SK</option>
+                  <option>Grade 1</option>
+                  <option selected>Grade 2</option>
+                  <option>Grade 3</option>
+                  <option>Grade 4</option>
+                  <option>Grade 5</option>
+                  <option>Grade 6</option>
+                  <option>Grade 7</option>
+                  <option>Grade 8</option>
+                  <option>Grade 9</option>
+                  <option>Grade 10</option>
+                  <option>Grade 11</option>
+                  <option>Grade 12</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="pg-card co-card" data-pop="soft">
+            <h2 class="pg-card__title">Parent contact</h2>
+            <div class="pg-row">
+              <div class="pg-field">
+                <label class="pg-label" for="co-parent">Full name</label>
+                <input class="pg-input" id="co-parent" type="text" placeholder="e.g. Sara Lambert" autocomplete="off">
+              </div>
+              <div class="pg-field">
+                <label class="pg-label" for="co-email">Email</label>
+                <input class="pg-input" id="co-email" type="email" placeholder="e.g. sara@email.com" autocomplete="off">
+              </div>
+            </div>
+          </div>
+
+          <!-- Add-on · Franco-fun! Club (Figma 2175:5740) -->
+          <div class="pg-card co-addon" data-pop="soft">
+            <label class="co-addon__head" for="co-club">
+              <input class="pg-sr" type="checkbox" id="co-club" checked>
+              <span class="co-box" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none"><path class="co-box__tick" d="M3.556 8.355 6.4 11.111l6.045-6.133" stroke="#fff" stroke-width="1.956" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span class="co-addon__txt">
+                <span class="co-addon__top">
+                  <span class="co-addon__name">Add the Franco-fun! Club</span>
+                  <span class="pg-pill co-addon__pill" data-pop>ADD-ON</span>
+                </span>
+                <span class="co-addon__sub">More French. More confidence. All in one membership.</span>
+              </span>
+            </label>
+
+            <div class="co-addon__body">
+              <p class="co-addon__q" id="co-q">How many weekly classes will your child take?</p>
+              <div class="co-opts" role="radiogroup" aria-labelledby="co-q">
+                <label class="co-opt" data-cursor="hover">
+                  <input class="pg-sr" type="radio" name="co-tier" value="1-2">
+                  <span class="co-opt__dot" aria-hidden="true"></span>
+                  <span class="co-opt__txt">
+                    <span class="co-opt__t">1–2 classes a week</span>
+                    <span class="co-opt__s">$24.99/month</span>
+                  </span>
+                </label>
+                <label class="co-opt" data-cursor="hover">
+                  <input class="pg-sr" type="radio" name="co-tier" value="3+" checked>
+                  <span class="co-opt__dot" aria-hidden="true"></span>
+                  <span class="co-opt__txt">
+                    <span class="co-opt__t">3+ classes a week</span>
+                    <span class="co-opt__s co-opt__s--free">Free</span>
+                  </span>
+                </label>
+              </div>
+              <ul class="pg-ticks co-ticks">
+                <li class="pg-tick"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.556 8.355 6.4 11.111l6.045-6.133" stroke="#4E6B12" stroke-width="1.956" stroke-linecap="round" stroke-linejoin="round"/></svg>Live group classes K–5</li>
+                <li class="pg-tick"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.556 8.355 6.4 11.111l6.045-6.133" stroke="#4E6B12" stroke-width="1.956" stroke-linecap="round" stroke-linejoin="round"/></svg>Unlimited Homework Lab</li>
+                <li class="pg-tick"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.556 8.355 6.4 11.111l6.045-6.133" stroke="#4E6B12" stroke-width="1.956" stroke-linecap="round" stroke-linejoin="round"/></svg>Cancel anytime</li>
+              </ul>
+              <a class="pg-link" href="index.html#pricing">See the weekly schedule →</a>
+            </div>
+          </div>
+
+          <div class="pg-card co-card" data-pop="soft">
+            <h2 class="pg-card__title">Payment</h2>
+            <div class="pg-field pg-field--full">
+              <label class="pg-label" for="co-card">Card number</label>
+              <input class="pg-input" id="co-card" type="text" inputmode="numeric" placeholder="e.g. 1234 5678 9012 3456" autocomplete="off">
+            </div>
+            <div class="pg-row pg-row--pair">
+              <div class="pg-field">
+                <label class="pg-label" for="co-exp">Expiry</label>
+                <input class="pg-input" id="co-exp" type="text" inputmode="numeric" placeholder="e.g. 08 / 28" autocomplete="off">
+              </div>
+              <div class="pg-field">
+                <label class="pg-label" for="co-cvc">CVC</label>
+                <input class="pg-input" id="co-cvc" type="text" inputmode="numeric" placeholder="e.g. 123" autocomplete="off">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: order summary (Figma 2175:5793) -->
+        <aside class="pg-card co-sum" id="co-summary" data-pop="soft" aria-label="Order summary">
+          <h2 class="pg-card__title">Order summary</h2>
+          <span class="pg-pill co-sum__chip" data-co="chip" data-pop>PROGRESSION</span>
+
+          <div class="co-line">
+            <div class="co-line__l">
+              <p class="co-line__t" data-co="classes">10 individual classes</p>
+              <p class="co-line__s" data-co="per">$19.50 per class</p>
+            </div>
+            <p class="co-line__v" data-co="pack">$195</p>
+          </div>
+
+          <div class="co-collapse" data-co="clubLine">
+            <div class="co-line">
+              <div class="co-line__l">
+                <p class="co-line__t">Franco-fun! Club</p>
+                <p class="co-line__s"><span class="co-swap" data-co="clubSub">3+ classes a week</span> · monthly</p>
+              </div>
+              <p class="co-line__v co-line__v--free"><span class="co-swap" data-co="clubPrice">Free</span></p>
+            </div>
+          </div>
+
+          <div class="co-line">
+            <p class="co-line__t">Register now discount</p>
+            <p class="co-line__v co-line__v--free">−$10</p>
+          </div>
+
+          <p class="co-incl">
+            <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9.4 7.2 12.5 14 5.6" stroke="#1767F1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Lecture Scientifique™ included
+          </p>
+
+          <hr class="co-rule">
+
+          <div class="co-due">
+            <p class="co-due__l">Due today</p>
+            <p class="co-due__v"><span class="co-due__num" data-co="total">$185</span></p>
+          </div>
+
+          <div class="co-collapse" data-co="note">
+            <p class="co-note">Then the Club renews monthly at your family’s price. Cancel anytime.</p>
+          </div>
+
+          <a class="btn btn--block co-pay" href="club-unlocked.html?from=checkout" data-co="payLink"><span data-co="pay">Pay $185</span></a>
+          <a class="pg-link" href="index.html#pricing">Prefer to try first? Book a free 15-min demo</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>

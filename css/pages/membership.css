@@ -1,0 +1,55 @@
+@import url("_flow.css");
+
+/* Membership — Figma "Pricing state · Pick a membership (log in / new family)" (2176:5348, 1440×827) */
+.mb__frame { min-height: 754px; } /* 827 − 73px top bar */
+.mb__body {
+  display: flex; flex-direction: column; align-items: center; gap: 32px;
+  padding: 57px 120px 40px; /* body starts at y=130 in Figma */
+}
+.mb__head { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; white-space: nowrap; }
+.mb__title {
+  font-family: var(--font-head); font-weight: 500; font-size: 48px; line-height: normal; letter-spacing: -1.92px;
+  color: var(--c-ink);
+}
+.mb__sub { font-size: 18px; line-height: normal; color: var(--c-body); }
+
+.mb__opts { display: flex; align-items: flex-start; gap: 24px; width: 100%; }
+
+/* Option cards. The selected one gets the 2px lime border (Figma: "Already a family" by default; ?tier= / focus move it). */
+.mb-opt {
+  flex: 1 0 0; min-width: 1px;
+  gap: 18px; padding: 32px; border-radius: 28px;
+  transition: border-color .3s ease, box-shadow .3s ease;
+}
+.mb-opt.is-selected { border: 2px solid var(--c-lime); }
+.mb-opt__title {
+  font-family: var(--font-head); font-weight: 500; font-size: 24px; line-height: normal; letter-spacing: -0.24px;
+  color: var(--c-ink); white-space: nowrap;
+}
+.mb-opt__price {
+  font-family: var(--font-head); font-weight: 500; font-size: 32px; line-height: normal; letter-spacing: -0.64px;
+  color: var(--c-ink); white-space: nowrap;
+}
+.mb-opt__price--green { color: var(--pg-green); }
+.mb-opt__desc { width: 100%; font-size: 15px; line-height: 1.5; color: var(--c-body); }
+
+.mb__incl { gap: 20px; flex-wrap: nowrap; }
+
+/* On-load entrance for the included row (js/pages/membership.js); hidden only while motion is on. */
+html.js-motion .mb__incl .pg-tick { visibility: hidden; }
+
+/* ===================== Responsive (under 1024) — desktop above is untouched ===================== */
+@media (max-width: 1023px) {
+  .mb__frame { min-height: 0; }
+  .mb__body { gap: 24px; max-width: 720px; margin: 0 auto; padding: 36px var(--gutter, 20px) 56px; }
+  .mb__head { white-space: normal; gap: 10px; }
+  .mb__title { font-size: 34px; letter-spacing: -1.2px; text-wrap: balance; }
+  .mb__sub { font-size: 16px; text-wrap: balance; }
+
+  .mb__opts { flex-direction: column; align-items: stretch; gap: 16px; }
+  .mb-opt { flex: none; width: 100%; gap: 16px; padding: 24px 20px; border-radius: 22px; }
+  .mb-opt__title { font-size: 22px; white-space: normal; }
+  .mb-opt__price { font-size: 28px; white-space: normal; }
+
+  .mb__incl { flex-wrap: wrap; justify-content: center; gap: 10px 18px; }
+}

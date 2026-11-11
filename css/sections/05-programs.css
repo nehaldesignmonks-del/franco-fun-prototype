@@ -1,0 +1,410 @@
+/* 05 · Programs K–12 (Figma 2134:11607 — 1440 × 2524) */
+.s-programs {
+  background: linear-gradient(180deg, #38B6FF 0%, #5CC8FF 100%);
+  letter-spacing: 0;
+  z-index: 1;               /* slides over the pinned Success System */
+  overflow: clip visible;   /* clip sideways only: the cloud edge overhangs our top */
+}
+
+/* ---------- Cloud edge: Figma group (-85, 953) in 04 = 112px above our top ---------- */
+.s-programs__bank {
+  position: absolute;
+  left: -1695px;            /* pattern repeats ±1610px beyond the 1440 frame for wide screens */
+  top: -112px;
+  width: 4830px;
+  height: 112px;
+  overflow: clip;           /* only what pokes above our top edge shows; lower parts sink behind it */
+  pointer-events: none;
+}
+.s-programs__bank-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4830px;
+  height: 295px;
+}
+
+/* ---------- Clay clouds + sparkles ---------- */
+.s-programs__cloud { position: absolute; pointer-events: none; }
+/* Decorations nest: outer = float/parallax (CSS translate/rotate), inner .s-programs__pop = GSAP pop (transform).
+   GSAP writes inline translate/rotate: none on anything it transforms, so the two must never share an element. */
+.s-programs__pop { position: absolute; inset: 0; }
+/* clay-cloud.svg = component 260 x 150 plus its shadow bleed (viewBox -20 -14 → 296 x 222 in component units) */
+.s-programs__cloud img {
+  position: absolute;
+  top: -9.333%;
+  left: -7.692%;
+  width: 113.846%;
+  height: 148%;
+}
+/* Each decoration sits inside the block it belongs to (header / bento / LS), so its coordinates are relative to
+   that block: Figma frame position minus the block's position (header 417.5,140 · bento 120,388 · LS 220,1343). */
+.s-programs__cloud--1 { left: -495.5px; top: -35px;     width: 211px;     height: 121.73px; } /* frame -78, 105 */
+.s-programs__cloud--3 { left: 1230px;   top: -11.46px;  width: 150.665px; height: 86.922px; } /* frame 1350, 376.54 */
+.s-programs__cloud--5 { left: -200px;   top: 658px;     width: 150.665px; height: 86.922px; } /* frame -80, 1046 */
+.s-programs__cloud--6 { left: -97.2px;  top: 111px;     width: 114.4px;   height: 66px; }     /* frame 122.8, 1454 */
+.s-programs__cloud--2 { left: 1066px;   top: 277px;     width: 211px;     height: 121.73px; } /* frame 1286, 1620 */
+.s-programs__cloud--4 { left: -267px;   top: 577px;     width: 150.665px; height: 86.922px; } /* frame -47, 1920 */
+
+.s-programs__sparkle { position: absolute; pointer-events: none; }
+.s-programs__sparkle svg { width: 100%; height: 100%; }
+.s-programs__sparkle--1 { left: 750.5px;  top: -1px;  width: 22px; height: 22px; } /* frame 1168, 139 */
+.s-programs__sparkle--2 { left: -165.5px; top: 182px; width: 16px; height: 16px; } /* frame 252, 322 */
+
+/* ---------- Header ---------- */
+.s-programs__head {
+  position: absolute;
+  left: 417.5px;
+  top: 140px;
+  width: 605px;
+  text-align: center;
+}
+.s-programs__title { color: #fff; }
+.s-programs__br { display: block; } /* the title's line break (a <br> would survive SplitText on mobile) */
+.s-programs__sub {
+  margin-top: 18px;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, .9);
+  white-space: nowrap;
+}
+
+/* ---------- Bento ---------- */
+.s-programs__bento {
+  position: absolute;
+  left: 120px;
+  top: 388px;
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.s-programs__row { display: flex; gap: 16px; }
+.s-programs__cell { flex: 1 0 0; min-width: 0; }   /* carries the soft pop-in (GSAP) */
+.s-programs__cell--writing { flex: 0 0 389px; }
+.s-programs__card {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 40px;
+  box-shadow: 0 16px 40px -8px rgba(0, 74, 173, .1);
+  overflow: clip;
+  transition: translate .5s var(--ease-bounce), box-shadow .5s ease;
+}
+.s-programs__card:hover {
+  translate: 0 -6px;
+  box-shadow: 0 24px 44px -8px rgba(0, 74, 173, .16);
+}
+
+.s-programs__icon-box { position: relative; width: 130px; height: 130px; flex-shrink: 0; }
+.s-programs__icon { position: absolute; left: 0; top: 0; }   /* idle float */
+.s-programs__icon-pop { display: block; }                    /* bouncy pop-in; the img inside follows the cursor */
+
+.s-programs__card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+.s-programs__card-text--328 { width: 328px; flex-shrink: 0; }
+.s-programs__card-title {
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1.05;
+  letter-spacing: -.96px;
+  color: #161616;
+}
+.s-programs__card-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #626262;
+}
+
+/* Oral Communication (wide card) */
+.s-programs__oral-bg {
+  position: absolute;
+  left: 393.67px;
+  top: -89px;
+  width: 654px;
+  height: 632px;
+  border-radius: 50%;
+  background: #EEF8FF;
+  pointer-events: none;
+}
+/* Mme Joëlle: 343 × 514 in Figma, clipped by the card; the PNG runs 92px past the card edge so she can float */
+.s-programs__joelle {
+  position: absolute;
+  left: 416.67px;
+  top: 32px;
+  width: 343px;
+  height: 460px;
+  pointer-events: none;
+}
+.s-programs__joelle-in,
+.s-programs__joelle-img { width: 100%; height: 100%; }
+.s-programs__oral-text {
+  position: relative;
+  width: 288px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.s-programs__oral-title {
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 1;
+  letter-spacing: -1.76px;
+  color: #161616;
+}
+.s-programs__oral-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #626262;
+}
+.s-programs__btns { position: relative; display: flex; gap: 10px; }
+
+/* ---------- Lecture Scientifique™ showcase ---------- */
+.s-programs__ls {
+  position: absolute;
+  left: 220px;
+  top: 1343px;
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+}
+.s-programs__ls-head {
+  width: 580px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.s-programs__badge {
+  display: inline-flex;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #fff;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: normal;
+  color: #1767F1;
+  white-space: nowrap;
+}
+.s-programs__ls-title { margin-top: 20px; width: 100%; color: #fff; }
+.s-programs__ls-sub {
+  margin-top: 12px;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, .92);
+  white-space: nowrap;
+}
+.s-programs__ls-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+.s-programs__tablet-float {
+  translate: 0 var(--tab-y, 0px); /* very subtle idle float (js); the tablet inside does the soft pop-in */
+  rotate: var(--tab-r, 0deg);
+}
+.s-programs__tablet {
+  position: relative;
+  width: 820px;
+  height: 520px;
+  border-radius: 48px;
+  background: #121214;
+  box-shadow: 0 40px 80px -10px rgba(0, 74, 173, .3);
+  overflow: clip;
+}
+.s-programs__screen {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 780px;
+  height: 480px;
+  border-radius: 30px;
+  background: #EEF8FF;
+  overflow: clip;
+}
+.s-programs__photo { width: 780px; height: 480px; object-fit: cover; }
+.s-programs__play {
+  position: absolute;
+  left: 358px;
+  top: 208px;
+  width: 64px;
+  height: 64px;
+}
+.s-programs__play svg { width: 100%; height: 100%; }
+
+.s-programs__pills {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.s-programs__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px 10px 12px;
+  border-radius: 999px;
+  background: #fff;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: normal;
+  color: #121214;
+  white-space: nowrap;
+}
+.s-programs__pill svg { flex-shrink: 0; }
+
+/* ---------- Soleil + clay letter ---------- */
+/* 170 × 170 frame at (1035, 1507); the SVG adds the drop-shadow bleed (14.1px sides, 1px top). Relative to LS. */
+.s-programs__soleil {
+  position: absolute;
+  left: 800.885px;
+  top: 163.005px;
+  width: 199px;
+  height: 197px;
+}
+.s-programs__soleil svg { width: 100%; height: 100%; overflow: visible; }
+
+/* Render bounds of the tilted clay é (includes its soft shadow): frame 218.74, 1740 → relative to LS */
+.s-programs__e {
+  position: absolute;
+  left: -1.26px;
+  top: 397px;
+  width: 93px;
+  height: 118px;
+}
+.s-programs__e img { width: 100%; height: 100%; }
+
+/* ---------- Wave edge into white (full-bleed) ---------- */
+.s-programs__wave {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: max(100%, 1440px);
+  height: 160px;
+  transform: translateX(-50%);
+}
+
+/* Motion hooks driven by js/sections/05-programs.js (hidden only while JS motion is on) */
+html.js-motion .s-programs__pill,
+html.js-motion .s-programs__e img,
+html.js-motion .s-programs__joelle-in { visibility: hidden; }
+
+/* Card hover: the 3D icon / Mme Joëlle follows the cursor (js); keep its transform smooth */
+.s-programs__icon img,
+.s-programs__joelle-img { will-change: transform; }
+
+/* ======================= Phones + tablets (under 1024) ======================= */
+@media (max-width: 1023px) {
+  .s-programs > .ff-frame { padding: 80px 0 112px; } /* bottom room for the wave edge */
+
+  /* Cloud edge at half scale, still overhanging the Success System above */
+  .s-programs__bank { left: 0; top: -56px; width: 100%; height: 56px; }
+  .s-programs__bank-layer { left: -847.5px; width: 2415px; height: 147.5px; overflow: visible; } /* the strip above clips it */
+
+  /* Header */
+  .s-programs__head { position: relative; left: auto; top: auto; width: auto; max-width: 640px; margin: 0 auto; padding: 0 var(--gutter); }
+  .s-programs__title { text-wrap: balance; }
+  .s-programs__sub { margin-top: 12px; font-size: 16px; white-space: normal; text-wrap: balance; }
+  .s-programs__br, .s-programs__sub br, .s-programs__ls-sub br { display: none; } /* a space precedes each break */
+
+  /* Decorations: smaller, tucked into the edges; clouds sit behind the content */
+  .s-programs__cloud { z-index: -1; }
+  .s-programs__cloud--4, .s-programs__cloud--5 { display: none; }
+  .s-programs__head .s-programs__cloud--1 { left: -34px; top: -54px; width: 92px; height: 53px; }
+  .s-programs__head .s-programs__sparkle--1 { left: auto; right: 26px; top: -34px; }
+  .s-programs__head .s-programs__sparkle--2 { left: 24px; top: auto; bottom: -30px; }
+  .s-programs__bento .s-programs__cloud--3 { left: auto; right: -30px; top: -34px; width: 86px; height: 49.6px; }
+  .s-programs__ls-head .s-programs__cloud--6 { left: -32px; top: -6px; width: 78px; height: 45px; }
+  .s-programs__ls-body .s-programs__cloud--2 { left: auto; right: -46px; top: calc(63.41cqw + 22px); width: 96px; height: 55.4px; }
+  .s-programs__ls-body .s-programs__soleil { left: auto; right: -12px; top: -46px; width: 92px; height: 91px; }
+  .s-programs__ls-body .s-programs__e { left: -4px; top: calc(63.41cqw + 16px); width: 44px; height: 56px; }
+
+  /* Bento → one column (two from 640) */
+  .s-programs__bento {
+    position: relative; left: auto; top: auto; width: auto; max-width: 720px;
+    margin: 40px auto 0; padding: 0 var(--gutter);
+    display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px;
+  }
+  .s-programs__row { display: contents; }
+  .s-programs__cell, .s-programs__cell--writing { flex: none; min-width: 0; }
+  .s-programs__card { height: auto; min-height: 236px; padding: 24px; gap: 28px; border-radius: 28px; }
+  .s-programs__icon-box { width: 104px; height: 96px; }
+  .s-programs__icon { scale: .74; transform-origin: 0 0; }
+  .s-programs__card-text, .s-programs__card-text--328 { width: auto; flex-shrink: 1; }
+  .s-programs__card-title { font-size: 26px; letter-spacing: -.78px; }
+  .s-programs__card-body { font-size: 16px; }
+
+  /* Oral Communication: full width, text + buttons, then Mme Joëlle (scaled) rising from the card's bottom edge */
+  .s-programs__card--oral { min-height: 0; padding: 28px 24px 0; justify-content: flex-start; gap: 20px; }
+  .s-programs__oral-text { width: auto; order: 1; }
+  .s-programs__oral-title { font-size: 34px; letter-spacing: -1.36px; }
+  .s-programs__oral-body { font-size: 16px; }
+  .s-programs__btns { order: 2; flex-wrap: wrap; width: 100%; }
+  .s-programs__btns .btn { flex: 1 1 140px; }
+  .s-programs__btns .btn > span { width: 100%; }
+  .s-programs__joelle { position: relative; left: auto; top: auto; order: 3; width: 240px; height: 322px; margin: 0 auto -64px; flex-shrink: 0; }
+  .s-programs__oral-bg { left: 50%; top: auto; bottom: -236px; width: 480px; height: 464px; margin-left: -240px; }
+
+  /* Lecture Scientifique™ */
+  .s-programs__ls {
+    position: relative; left: auto; top: auto; width: auto; max-width: 860px;
+    margin: 96px auto 0; padding: 0 var(--gutter); gap: 36px;
+  }
+  .s-programs__ls-head { position: relative; width: auto; max-width: 580px; }
+  .s-programs__ls-title { margin-top: 16px; text-wrap: balance; }
+  .s-programs__ls-sub { font-size: 16px; white-space: normal; text-wrap: balance; }
+  .s-programs__ls-body { position: relative; container-type: inline-size; gap: 24px; }
+  .s-programs__tablet-float { width: 100%; }
+  .s-programs__tablet { width: 100%; height: auto; aspect-ratio: 820 / 520; border-radius: 26px; box-shadow: 0 24px 48px -10px rgba(0, 74, 173, .3); }
+  .s-programs__screen { inset: 9px; width: auto; height: auto; border-radius: 18px; }
+  .s-programs__photo { width: 100%; height: 100%; }
+  .s-programs__play { left: calc(50% - 24px); top: calc(50% - 24px); width: 48px; height: 48px; }
+  .s-programs__pills { gap: 8px; }
+  .s-programs__pill { gap: 8px; padding: 9px 14px 9px 10px; font-size: 15px; }
+  .s-programs__pill svg { width: 20px; height: 20px; }
+
+  /* Wave edge spans the width */
+  .s-programs__wave { width: 100%; height: 64px; }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .s-programs__bento { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .s-programs__cell:has(> .s-programs__card--oral) { grid-column: 1 / -1; }
+  /* Oral card goes side by side again: copy left, Mme Joëlle right */
+  .s-programs__card--oral { min-height: 330px; padding: 32px; justify-content: space-between; }
+  .s-programs__oral-text { width: 300px; }
+  .s-programs__btns { width: auto; flex-wrap: nowrap; }
+  .s-programs__btns .btn { flex: 0 0 auto; }
+  .s-programs__joelle { position: absolute; left: auto; right: 28px; top: auto; bottom: -64px; margin: 0; }
+  .s-programs__oral-bg { left: auto; right: -110px; bottom: -160px; margin-left: 0; width: 520px; height: 500px; }
+}
+/* Touch: no sticky hover lift after a tap */
+@media (max-width: 1023px) and (hover: none) {
+  .s-programs__card:hover { translate: none; }
+}

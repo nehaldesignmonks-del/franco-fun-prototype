@@ -1,0 +1,38 @@
+<!-- 03 · Is your child… (Figma 2134:11528) — the page's ONE pinned section.
+     Six questions swap on scroll (snap per question); progress pill advances; image squashes; bg shifts per question.
+     Motion in js/sections/03-is-your-child.js. Static mode shows question 1. -->
+<div class="s-iyc-track"><!-- JS gives this track the pin length; the section sticks inside it -->
+<section class="ff-sec s-iyc" id="is-your-child" data-cursor-label="Start scrolling"
+         data-bgs="#FFFFFF,#EEF8FF,#F8FFDB,#FFF0F0,#FBF2FD,#FFF4EE">
+  <div class="s-iyc__bg" aria-hidden="true"></div>
+  <div class="ff-frame" style="height:1030px">
+    <h2 class="t-h2 s-iyc__title" data-reveal>Is your child…</h2>
+
+    <div class="s-iyc__media" data-pop="soft" data-float="8">
+      <img class="s-iyc__img" src="assets/03-is-your-child/reading-circle.jpg" width="564" height="384" alt="Soleil’s French Reading Circle">
+    </div>
+
+    <div class="s-iyc__qs" data-fade aria-live="polite">
+      <p class="s-iyc__q is-active">Struggling with <br>reading in French?</p>
+      <p class="s-iyc__q" aria-hidden="true">Avoiding French <br>homework?</p>
+      <p class="s-iyc__q" aria-hidden="true">Losing confidence?</p>
+      <p class="s-iyc__q" aria-hidden="true">Finding French <br>difficult?</p>
+      <p class="s-iyc__q" aria-hidden="true">Falling behind in <br>French Immersion?</p>
+      <p class="s-iyc__q" aria-hidden="true">Needing more challenge <br>and enrichment?</p>
+    </div>
+
+    <ol class="s-iyc__progress" data-fade aria-hidden="true">
+      <li class="is-active"></li><li></li><li></li><li></li><li></li><li></li>
+    </ol>
+
+    <span class="s-iyc__next-pop" data-pop>
+      <button class="s-iyc__next" type="button" aria-label="Scroll down" data-cursor="hover">
+        <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
+          <circle cx="24" cy="24" r="24" fill="#121214"/>
+          <path d="M24 15V32M31 25L24 32L17 25" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </span>
+  </div>
+</section>
+</div>

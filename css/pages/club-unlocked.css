@@ -1,0 +1,134 @@
+@import url("_flow.css");
+
+/* Club unlocked — Figma "Pricing state · Club unlocked" (2176:5497, 1440×866) */
+.cu__frame { min-height: 793px; } /* 866 − 73px top bar */
+.cu__body {
+  display: flex; flex-direction: column; align-items: center; gap: 28px;
+  padding: 67px 0 120px; /* body starts at y=140 in Figma */
+}
+
+/* Success badge: 72px lime disc, 2px lime ring, green check */
+.cu-badge { position: relative; width: 72px; height: 72px; flex: none; }
+.cu-badge__disc {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--c-lime-bg); border: 2px solid var(--c-lime); border-radius: 999px;
+}
+.cu-badge__disc svg { width: 32px; height: 32px; overflow: visible; }
+.cu-badge__ring {
+  position: absolute; inset: 0; border-radius: 999px;
+  border: 2px solid var(--c-lime);
+  opacity: 0; pointer-events: none;
+}
+html.js-motion .cu-badge__disc { visibility: hidden; }
+
+.cu__head { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; white-space: nowrap; }
+.cu__title {
+  font-family: var(--font-head); font-weight: 500; font-size: 48px; line-height: normal; letter-spacing: -1.92px;
+  color: var(--c-ink);
+}
+.cu__sub { font-size: 18px; line-height: normal; color: var(--c-body); }
+
+/* Weekly schedule card */
+.cu-week {
+  width: 820px;
+  display: flex; flex-direction: column; align-items: flex-start;
+  padding: 28px 32px 12px;
+  background: #fff; border: 1px solid var(--c-line); border-radius: 28px;
+}
+.cu-week__head { display: flex; align-items: center; justify-content: space-between; width: 100%; padding-bottom: 16px; white-space: nowrap; }
+.cu-week__title {
+  font-family: var(--font-head); font-weight: 500; font-size: 22px; line-height: normal; letter-spacing: -0.22px;
+  color: var(--c-ink);
+}
+.cu-row {
+  display: flex; align-items: center; width: 100%;
+  padding: 16px 0;
+  border-top: 1px solid var(--c-line);
+  font-size: 16px; line-height: normal; color: var(--c-ink);
+}
+.cu-row__name { display: flex; align-items: center; gap: 10px; width: 380px; flex: none; }
+.cu-row__t { font-weight: 500; white-space: nowrap; }
+.cu-row__day { width: 190px; flex: none; }
+.cu-row__time { width: 170px; flex: none; }
+.cu-pill {
+  display: inline-flex; padding: 3px 8px; border-radius: 999px;
+  background: var(--pg-grey-soft);
+  font-weight: 500; font-size: 12px; line-height: normal; color: var(--c-body); white-space: nowrap;
+}
+.cu-pill--lime { background: var(--c-lime-bg); }
+
+/* What's next (class-pack buyers) */
+.cu-next {
+  width: 820px;
+  display: flex; align-items: center; gap: 14px;
+  padding: 20px 24px;
+  background: var(--pg-blue-soft); border-radius: 20px;
+}
+.cu-next__badge {
+  flex: none; width: 36px; height: 36px; border-radius: 999px;
+  display: flex; align-items: center; justify-content: center;
+  background: #fff;
+  font-weight: 500; font-size: 12px; line-height: normal; color: var(--c-blue); white-space: nowrap;
+}
+.cu-next__txt { flex: 1 0 0; min-width: 1px; display: flex; flex-direction: column; gap: 2px; }
+.cu-next__t { font-weight: 500; font-size: 16px; line-height: normal; color: var(--c-ink); white-space: nowrap; }
+.cu-next__s { font-size: 14px; line-height: 1.5; color: var(--c-body); }
+
+/* Buttons */
+.cu__ctas { display: flex; align-items: flex-start; gap: 12px; }
+.cu-ghost {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 14px 22px;
+  background: #fff;
+  border: 1.5px solid rgba(22, 22, 22, .14);
+  border-radius: 16px;
+  font-weight: 500; font-size: 16px; line-height: normal; color: var(--c-ink); white-space: nowrap;
+  transition: transform .5s var(--ease-bounce), border-color .2s ease;
+}
+.cu-ghost:hover { transform: translateY(-2px) scale(1.04); border-color: rgba(22, 22, 22, .28); }
+.cu-ghost:active { transform: translateY(1px) scale(.96); transition-duration: .15s; }
+.cu-ghost:focus-visible { border-radius: 16px; }
+
+/* Celebration timeline in js/pages/club-unlocked.js sets the start states (hidden only while motion is on). */
+html.js-motion .cu-in,
+html.js-motion .cu-row,
+html.js-motion .cu-pill,
+html.js-motion .cu-next__badge { visibility: hidden; }
+
+/* ===================== Responsive (under 1024) — desktop above is untouched ===================== */
+@media (max-width: 1023px) {
+  .cu__frame { min-height: 0; }
+  .cu__body { gap: 24px; max-width: 720px; margin: 0 auto; padding: 40px var(--gutter, 20px) 56px; }
+  .cu-badge { width: 64px; height: 64px; }
+  .cu-badge__disc svg { width: 28px; height: 28px; }
+  .cu__head { white-space: normal; gap: 10px; }
+  .cu__title { font-size: 34px; letter-spacing: -1.2px; text-wrap: balance; }
+  .cu__sub { font-size: 16px; text-wrap: balance; }
+
+  .cu-week { width: 100%; padding: 22px 20px 6px; border-radius: 22px; }
+  .cu-week__head { flex-wrap: wrap; gap: 4px 16px; white-space: normal; padding-bottom: 14px; }
+  .cu-week__title { font-size: 20px; }
+  /* Each schedule row stacks: class (+ pill) · days · time */
+  .cu-row { flex-direction: column; align-items: flex-start; gap: 6px; padding: 14px 0; font-size: 15px; }
+  .cu-row__name { width: auto; flex-wrap: wrap; row-gap: 6px; }
+  .cu-row__day, .cu-row__time { width: auto; color: var(--c-body); }
+
+  .cu-next { width: 100%; align-items: flex-start; padding: 18px 18px; border-radius: 18px; }
+  .cu-next__t { white-space: normal; font-size: 16px; }
+  .cu-next__s { font-size: 15px; }
+
+  .cu__ctas { flex-direction: column; align-items: stretch; width: 100%; gap: 12px; }
+  .cu__ctas .btn, .cu__ctas .btn > span { width: 100%; }
+  .cu-ghost { width: 100%; min-height: 52px; padding: 0 20px; font-size: 15px; }
+  .cu-ghost:hover { transform: none; }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  /* Tablet: rows go back to three columns, buttons sit side by side */
+  .cu-row { flex-direction: row; align-items: center; gap: 0; }
+  .cu-row__name { flex: 1 1 auto; min-width: 0; }
+  .cu-row__day { flex: none; width: 150px; }
+  .cu-row__time { flex: none; width: 130px; }
+  .cu__ctas { flex-direction: row; justify-content: center; }
+  .cu__ctas .btn, .cu__ctas .btn > span, .cu-ghost { width: auto; }
+}

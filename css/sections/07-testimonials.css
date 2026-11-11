@@ -1,0 +1,188 @@
+/* 07 · Testimonials — Figma wrapper 2134:13320 (1440×1043). Blush band 2134:11768 at y=102 (849 tall),
+   scalloped cloud groups 2134:12985 (top, y=0) and 2134:13255 (bottom, y=748). */
+.s-testi { background: transparent; }
+
+/* ---------- Full-bleed band + clouds ---------- */
+.s-testi__band {
+  position: absolute; left: 0; right: 0; top: 102px; height: 849px;
+  background: var(--c-blush);
+}
+/* Cloud SVG is 1610 wide and sits at x=-102 of the 1440 frame; repeat-x keeps the scallops going on wide screens.
+   calc(50% - 17px) = frame-left − 102px for a 1610px image. */
+.s-testi__clouds {
+  position: absolute; left: 0; right: 0; height: 295px;
+  background: url("../../assets/07-testimonials/clouds.svg") calc(50% - 17px) 0 / 1610px 295px repeat-x;
+  pointer-events: none;
+}
+.s-testi__clouds--top { top: 0; }
+.s-testi__clouds--bottom { top: 748px; }
+
+/* ---------- Heading ---------- */
+.s-testi__title {
+  position: absolute; left: 0; right: 0; top: 242px;
+  text-align: center; white-space: nowrap;
+}
+.s-testi__sub {
+  position: absolute; left: 0; right: 0; top: 318px;
+  font-family: var(--font-body); font-weight: 400; font-size: 18px; line-height: 1.5; letter-spacing: 0;
+  color: rgba(18, 18, 20, 0.75);
+  text-align: center; white-space: nowrap;
+}
+
+/* ---------- Carousel row: units of card (384) + photo slot (296), gap 24 → 728 per unit ----------
+   Static: Arjun's card sits at x=120 and Léa's unit peeks in at the left edge, as in Figma.
+   Motion: JS appends one clone of the set to the right and drifts the row right-to-left (x: 0 → -loop), seamlessly. */
+.s-testi__track {
+  position: absolute; left: -608px; top: 442px;
+  display: flex; gap: 24px; align-items: flex-start;
+}
+.s-testi__track.is-looping { will-change: transform; } /* clone set is appended to the right; the row drifts leftwards */
+
+.s-testi__card,
+.s-testi__photo {
+  transition: translate .45s var(--ease-out);
+}
+.s-testi__card:hover,
+.s-testi__photo:hover { translate: 0 -6px; }
+
+.s-testi__card {
+  flex: none;
+  display: flex; flex-direction: column; justify-content: space-between;
+  width: 384px; height: 369px;
+  padding: 36px 32px;
+  background: #fff;
+  border-radius: 32px;
+  box-shadow: 0 16px 36px -6px rgba(3, 59, 98, 0.1);
+}
+
+/* Photo slot — same height and radius as the cards; tinted placeholder until the real photo exists */
+.s-testi__photo {
+  --tint: var(--c-sky);
+  position: relative; flex: none;
+  display: flex; align-items: center; justify-content: center;
+  width: 296px; height: 369px; margin: 0;
+  border-radius: 32px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--tint) 38%, #fff);
+  color: color-mix(in srgb, var(--tint) 45%, var(--c-navy));
+  box-shadow: 0 16px 36px -6px rgba(3, 59, 98, 0.1);
+}
+.s-testi__photo--pink { --tint: var(--c-pink); }
+.s-testi__photo--green { --tint: var(--c-yellow-green); }
+.s-testi__photo--sky { --tint: var(--c-sky); }
+.s-testi__photo--lavender { --tint: var(--c-lavender); }
+.s-testi__photo--salmon { --tint: var(--c-light-salmon); }
+.s-testi__photo-icon {
+  width: 44px; height: 44px; opacity: .55;
+  fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
+}
+.s-testi__photo-icon circle { fill: currentColor; stroke: none; }
+.s-testi__photo-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+.s-testi__top { display: flex; flex-direction: column; gap: 16px; }
+.s-testi__stars {
+  display: flex;
+  font-family: var(--font-body); font-weight: 400; font-size: 20.571px; line-height: 24px; letter-spacing: 0;
+  color: #FFB800;
+  white-space: nowrap;
+}
+.s-testi__stars span { letter-spacing: -1.25px; } /* fallback star glyph is a touch wider than Figma's */
+.s-testi__stars span { display: inline-block; }
+.s-testi__quote {
+  width: 320px;
+  font-family: var(--font-body); font-weight: 400; font-size: 16px; line-height: 24px; letter-spacing: 0;
+  color: var(--c-ink-2);
+}
+
+.s-testi__by { display: flex; align-items: center; gap: 12px; }
+.s-testi__avatar {
+  flex: none;
+  display: flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 999px;
+  font-family: var(--font-head); font-weight: 500; font-size: 16px; line-height: 1; letter-spacing: 0;
+  color: var(--c-ink);
+}
+.s-testi__avatar--pink { background: var(--c-pink); }
+.s-testi__avatar--green { background: var(--c-yellow-green); }
+.s-testi__avatar--sky { background: var(--c-sky); }
+.s-testi__name {
+  font-family: var(--font-body); font-weight: 500; font-size: 16px; line-height: 19px; letter-spacing: 0;
+  color: var(--c-ink-2);
+  white-space: nowrap;
+}
+
+/* ---------- Decor ---------- */
+/* Soleil 2134:11796 — render bounds (incl. shadow) 1218.4, 291.2, 163.2 × 161.8 */
+.s-testi__sun {
+  position: absolute; left: 1218.375px; top: 291.18px;
+  width: 163.249px; height: 161.82px;
+  pointer-events: none;
+}
+.s-testi__sun-pop, .s-testi__sun-svg { display: block; width: 100%; height: 100%; overflow: visible; }
+
+/* Clay letter "!" 2134:11807 — render bounds 99.97, 361.16 */
+.s-testi__bang {
+  position: absolute; left: 99.97px; top: 361.16px;
+  width: 60px; height: 98px;
+  pointer-events: none;
+}
+
+/* ======================= Under 1024: phones + tablets ======================= */
+@media (max-width: 1023px) {
+  /* Band + cloud edges at half scale (102px/92px insets → 51/46, 1610×295 clouds → 805×147.5) */
+  .s-testi__band { top: 51px; bottom: 46px; height: auto; }
+  .s-testi__clouds { height: 148px; background-size: 805px 147.5px; background-position: calc(50% - 8px) 0; }
+  .s-testi__clouds--bottom { top: auto; bottom: 0; }
+
+  .s-testi .ff-frame {
+    display: flex; flex-direction: column; align-items: center;
+    padding: 112px 0 116px;
+  }
+  .s-testi__title,
+  .s-testi__sub {
+    position: relative; inset: auto;
+    max-width: 600px; padding: 0 var(--gutter);
+    white-space: normal;
+  }
+  .s-testi__title { text-wrap: balance; }
+  .s-testi__sub { margin-top: 12px; font-size: 16px; text-wrap: pretty; }
+  .s-testi__sub br { display: none; }
+
+  /* Carousel row in flow; units sized for a phone (card 300 + photo 240) */
+  .s-testi__track {
+    order: 2; align-self: flex-start;
+    position: relative; left: auto; top: auto;
+    gap: 14px; align-items: stretch;
+    padding-left: var(--gutter);
+  }
+  .s-testi__card {
+    width: 300px; height: auto;
+    gap: 22px;
+    padding: 26px 22px;
+    border-radius: var(--r-card);
+  }
+  .s-testi__photo { width: 240px; height: auto; border-radius: var(--r-card); overflow: visible; }
+  .s-testi__photo-img { border-radius: inherit; } /* round the photo itself, so the slot needn't clip */
+  .s-testi__photo-icon { overflow: visible; }
+  .s-testi__card:hover, .s-testi__photo:hover { translate: none; }
+  .s-testi__top { gap: 12px; }
+  .s-testi__stars { font-size: 18px; line-height: 22px; }
+  .s-testi__stars span { letter-spacing: -1px; }
+  .s-testi__quote { width: auto; font-size: 15px; line-height: 22px; }
+  .s-testi__by { gap: 10px; }
+  .s-testi__avatar { width: 40px; height: 40px; font-size: 15px; }
+  .s-testi__name { font-size: 15px; line-height: 18px; }
+
+  /* Decor shrinks and tucks in: sun in the top-right clouds, "!" peeking over the first card */
+  .s-testi__sun { left: auto; right: 14px; top: 16px; width: 88px; height: 87.2px; }
+  .s-testi__bang {
+    order: 1; align-self: flex-start;
+    position: relative; left: auto; top: auto;
+    width: 34px; height: 55.5px;
+    margin: 18px 0 -26px 10px;
+  }
+}

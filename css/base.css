@@ -1,0 +1,176 @@
+/* Base, shared type, buttons, cursor and motion hooks. Section styles live in css/sections/. */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: var(--c-ink);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+img, svg, video { display: block; max-width: none; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; }
+h1, h2, h3, h4, h5, h6, p, ul, ol, figure, blockquote { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+strong, b { font-weight: 500; } /* no bold anywhere — Medium is the heaviest weight */
+
+/* ---------- Layout ---------- */
+/* Every section: full-bleed background + a centred 1440 frame (Figma coordinates map 1:1 inside it). */
+.ff-sec { position: relative; width: 100%; overflow: clip; }
+.ff-frame { position: relative; width: var(--frame); margin: 0 auto; }
+.ff-container { position: relative; width: var(--container); margin: 0 auto; }
+.ff-abs { position: absolute; }
+
+/* ---------- Type (Final Desktop system) ---------- */
+.t-h1 { font-family: var(--font-head); font-weight: 500; font-size: 80px; line-height: 1; letter-spacing: -0.04em; color: var(--c-ink); }
+.t-h2 { font-family: var(--font-head); font-weight: 500; font-size: 56px; line-height: 1; letter-spacing: -0.04em; color: var(--c-ink); }
+.t-h3 { font-family: var(--font-head); font-weight: 500; font-size: 40px; line-height: 1.1; letter-spacing: -0.03em; color: var(--c-ink); }
+.t-sub { font-family: var(--font-body); font-weight: 400; font-size: 18px; line-height: 1.5; letter-spacing: -0.02em; color: var(--c-sub); }
+.t-card-title { font-family: var(--font-body); font-weight: 500; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em; color: var(--c-ink-2); }
+.t-body { font-family: var(--font-body); font-weight: 400; font-size: 16px; line-height: 1.5; letter-spacing: -0.02em; color: var(--c-body); }
+
+/* ---------- Buttons (from Figma: blue primary + dark) ---------- */
+.btn {
+  --btn-outer: linear-gradient(180deg, #5587DE 0%, #114399 100%);
+  --btn-inner: linear-gradient(180deg, #609AFE 0%, #1767F1 100%);
+  --btn-inset: inset 0 0 8px rgba(194, 207, 230, .5), inset 0 -2px 2px #0F4196, inset 0 1px 1px #fff;
+  --btn-drop: 0 13px 5px rgba(40, 16, 162, .06), 0 8px 5px rgba(40, 16, 162, .19), 0 3px 3px rgba(40, 16, 162, .32), 0 1px 2px rgba(40, 16, 162, .37);
+  display: inline-flex;
+  padding: 2px;
+  border-radius: var(--r-btn);
+  background: var(--btn-outer);
+  box-shadow: var(--btn-drop);
+  cursor: pointer;
+  transition: transform .5s var(--ease-bounce), box-shadow .3s ease;
+  /* no will-change: keeps button labels on the same pixel grid as surrounding text while scrolling */
+}
+.btn > span {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: 56px; padding: 0 24px;
+  border-radius: 16px;
+  background: var(--btn-inner);
+  box-shadow: var(--btn-inset);
+  font-family: var(--font-body); font-weight: 500; font-size: 16px; line-height: 1; letter-spacing: 0;
+  color: #fff; white-space: nowrap;
+}
+.btn:hover { transform: translateY(-2px) scale(1.04); }
+.btn:active { transform: translateY(1px) scale(.96); transition-duration: .15s; }
+/* With JS: GSAP drives the magnetic pull / press, so CSS must not transition transform. */
+.ff-btn-js .btn { transition: box-shadow .3s ease; }
+.ff-btn-js .btn:hover, .ff-btn-js .btn:active { transform: none; }
+.btn__roll { position: relative; display: inline-grid; overflow: clip; padding: .22em .04em; margin: -.22em -.04em; }
+.btn__roll > span { grid-area: 1 / 1; transition: transform .55s var(--ease-out); }
+.btn__roll-b { transform: translateY(150%); }
+.btn:hover .btn__roll-a { transform: translateY(-150%); }
+.btn:hover .btn__roll-b { transform: translateY(0); }
+.btn > span > svg { transition: transform .45s var(--ease-bounce); }
+.btn:hover > span > svg { transform: translateX(3px); }
+.btn--dark {
+  --btn-outer: linear-gradient(180deg, #282828 0%, #060606 100%);
+  --btn-inner: #282828;
+  --btn-inset: inset 0 -2px 2px #000, inset 0 1px 1px rgba(255, 255, 255, .8);
+  --btn-drop: 0 12px 5px rgba(0, 0, 0, .06), 0 7px 4px rgba(0, 0, 0, .19), 0 3px 3px rgba(0, 0, 0, .32), 0 1px 2px rgba(0, 0, 0, .37);
+}
+.btn--light {
+  --btn-outer: var(--c-line);
+  --btn-inner: #fff;
+  --btn-inset: inset 0 -2px 0 rgba(22, 22, 22, .04);
+  --btn-drop: 0 1px 2px rgba(22, 22, 22, .06);
+}
+.btn--light > span { color: var(--c-ink); }
+.btn--sm > span { height: 44px; padding: 0 18px; font-size: 15px; border-radius: 14px; }
+.btn--block, .btn--block > span { width: 100%; }
+
+/* ---------- Motion hooks (see js/motion.js) ----------
+   data-reveal  headings: lines rise in (masked)
+   data-fade    text/blocks: soft fade-up
+   data-pop     "bouncy" (icons, 3D objects, pills) | "soft" (cards)
+   data-depth   cursor parallax strength, e.g. 0.6 (negative = opposite direction)
+   data-float   idle floating amplitude in px, e.g. 10
+   data-scroll  scroll parallax speed, e.g. 0.15
+   data-count   counts up to the number written inside the element                       */
+html.js-motion [data-reveal],
+html.js-motion [data-fade],
+html.js-motion [data-pop] { visibility: hidden; }
+
+/* Ambient motion uses individual CSS properties so it composes with GSAP transforms. */
+/* !important: GSAP 3.13 writes inline `translate/rotate: none` on anything it animates (pop-ins, fades),
+   which would silently kill float + parallax on the same element. */
+[data-depth], [data-float], [data-scroll] {
+  translate: var(--dx, 0px) calc(var(--dy, 0px) + var(--fy, 0px) + var(--sy, 0px)) !important;
+  rotate: var(--fr, 0deg) !important;
+}
+/* Reveal masks: padded so ascenders, descenders and accents (É, ç, g, y) are never cut while lines rise.
+   The split is reverted after the reveal, so finished headings are plain text again. */
+.ff-line-mask { overflow: clip; padding: .16em .1em .26em; margin: -.16em -.1em -.26em; }
+
+/* ---------- Custom cursor (our own: rounded brand arrow; turns gold + tilts on interactive things) ---------- */
+html.has-ff-cursor, html.has-ff-cursor * { cursor: none !important; }
+html.has-ff-cursor input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]),
+html.has-ff-cursor textarea { cursor: text !important; }
+.ff-cursor {
+  position: fixed; left: 0; top: 0; z-index: 10000;
+  width: 30px; height: 32px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .2s ease;
+  /* no will-change: a pre-rasterised layer turns blurry/pixelated when the page is zoomed */
+}
+.ff-cursor.is-visible { opacity: 1; }
+.ff-cursor.is-text { opacity: 0; }
+.ff-cursor__inner {
+  width: 100%; height: 100%;
+  transform-origin: 4px 3px;
+  /* grow by size, not scale(), so the SVG is redrawn crisp at every size and zoom level */
+  transition: transform .45s var(--ease-bounce), width .45s var(--ease-bounce), height .45s var(--ease-bounce);
+}
+.ff-cursor__inner svg { width: 100%; height: 100%; overflow: visible; shape-rendering: geometricPrecision; }
+.ff-cursor .fill { fill: var(--c-sky); transition: fill .25s ease; }
+.ff-cursor .shade, .ff-cursor .edge { fill: var(--c-dark-blue); stroke: var(--c-dark-blue); }
+.ff-cursor .fill { stroke: var(--c-dark-blue); }
+.ff-cursor .spark { fill: var(--c-gold); stroke: var(--c-dark-blue); stroke-width: 1.4; transform-origin: 26px 6px; transform: scale(0); transition: transform .45s var(--ease-bounce); }
+.ff-cursor.is-hover .ff-cursor__inner { transform: rotate(-14deg); width: 118%; height: 118%; }
+.ff-cursor.is-hover .fill { fill: var(--c-gold); }
+.ff-cursor.is-hover .spark { transform: scale(1); }
+.ff-cursor.is-down .ff-cursor__inner { transform: rotate(-6deg); width: 86%; height: 86%; transition-duration: .12s; }
+/* Cursor chip (data-cursor-label) */
+.ff-cursor__chip {
+  position: absolute; left: 30px; top: 24px;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 14px 8px 11px; border-radius: var(--r-pill);
+  background: var(--c-dark-blue); color: #fff;
+  font: 500 14px/1 var(--font-body); letter-spacing: -0.01em; white-space: nowrap;
+  box-shadow: 0 6px 16px rgba(0, 74, 173, .25);
+  transform-origin: 0 0; transform: translateY(6px); opacity: 0;
+  transition: transform .45s var(--ease-bounce), opacity .2s ease;
+}
+.ff-cursor.has-chip .ff-cursor__chip { transform: none; opacity: 1; }
+.ff-cursor.chip-left .ff-cursor__chip { left: auto; right: 4px; transform-origin: 100% 0; }
+.ff-cursor__mouse { width: 12px; height: 17px; flex: none; }
+.ff-cursor__wheel { animation: ff-wheel 1.4s var(--ease-out) infinite; }
+@keyframes ff-wheel { 0% { transform: translateY(0); opacity: 1; } 70% { transform: translateY(6px); opacity: 0; } 100% { transform: translateY(0); opacity: 0; } }
+
+/* Visible keyboard focus everywhere */
+:focus-visible { outline: 3px solid var(--c-capri); outline-offset: 3px; border-radius: 8px; }
+
+/* ---------- Phone + tablet (under 1024px) ----------
+   The 1440 frame becomes a fluid column; each section supplies its own mobile layout at this breakpoint. */
+@media (max-width: 1023px) {
+  body { font-size: 16px; }
+  .ff-frame { width: 100%; height: auto !important; }
+  .ff-container { width: 100%; padding-left: var(--gutter); padding-right: var(--gutter); }
+  .t-h1 { font-size: 44px; line-height: 1.02; }
+  .t-h2 { font-size: 34px; line-height: 1.06; }
+  .t-h3 { font-size: 28px; }
+  .t-sub { font-size: 16px; }
+  .t-card-title { font-size: 20px; }
+  .btn > span { height: 52px; padding: 0 20px; font-size: 15px; }
+  .btn--sm > span { height: 44px; }
+}
+

@@ -1,0 +1,132 @@
+<!-- 01 · Hero (Figma 2134:11350) — fixed nav + on-load staged entrance; motion in js/sections/01-hero.js -->
+<section class="ff-sec s-hero" id="hero">
+
+  <!-- Nav (2134:11391): fixed, centred to the 1440 frame; hides on scroll down, returns on scroll up -->
+  <header class="s-hero__nav" data-hero>
+    <a class="s-hero__logo" href="#hero" aria-label="Apprendre Franco-fun! — home">
+      <img src="assets/01-hero/logo.svg" width="161" height="32" alt="Apprendre Franco-fun!">
+    </a>
+    <!-- Desktop: links + EN/FR + Log in sit in the bar (this wrapper is display:contents).
+         Under 1024: the same elements become the drop-down panel opened by the menu button. -->
+    <div class="s-hero__menu" id="hero-menu">
+      <nav class="s-hero__links" aria-label="Main">
+        <a href="#hero" aria-current="page">Home</a>
+        <a href="#lecture-scientifique">Lecture Scientifique</a>
+        <a href="#partners">Partnerships</a>
+        <a href="#">Franco Hub</a>
+        <a href="#">About Us</a>
+      </nav>
+      <div class="s-hero__nav-end">
+        <a class="s-hero__lang" href="#">EN / FR</a>
+        <span class="s-hero__divider" aria-hidden="true"></span>
+        <a class="s-hero__login" href="#">Log in</a>
+      </div>
+    </div>
+    <a class="s-hero__try" href="#get-started"><span>Try free lesson</span></a>
+    <button class="s-hero__burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="hero-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Background: gradient + wave (image 21161 · colour-burn @ 50%), isolated so the blend only sees the gradient -->
+  <div class="s-hero__bg" aria-hidden="true">
+    <div class="ff-frame" style="height:900px">
+      <div class="s-hero__wave" data-hero data-scroll="0.08">
+        <img src="assets/01-hero/bg-wave.png" width="1601" height="902" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="ff-frame" style="height:900px">
+
+    <!-- Back cloud, left (2134:11352) -->
+    <div class="s-hero__o s-hero__cloud s-hero__cloud--1" data-hdepth="-0.5" data-float="8" aria-hidden="true">
+      <img class="s-hero__pop" data-hero src="assets/01-hero/cloud.svg" alt="">
+    </div>
+
+    <!-- Card, right: boy with glasses (2134:11353) -->
+    <div class="s-hero__o s-hero__card-wrap s-hero__card-wrap--right" data-hdepth="0.6" data-float="10" data-scroll="0.1">
+      <div class="s-hero__card s-hero__pop" data-hero>
+        <div class="s-hero__card-media"><img class="s-hero__photo-glasses" src="assets/01-hero/photo-boy-glasses.jpg" alt=""></div>
+        <div class="s-hero__card-lines" aria-hidden="true"><span></span><span></span></div>
+      </div>
+    </div>
+
+    <!-- Card, left: boy with school book (2134:11361) -->
+    <div class="s-hero__o s-hero__bcard-wrap" data-hdepth="0.75" data-float="12" data-scroll="0.14">
+      <div class="s-hero__bcard s-hero__pop" data-hero>
+        <div class="s-hero__bcard-in"><img src="assets/01-hero/photo-boy-school.png" alt=""></div>
+      </div>
+    </div>
+
+    <!-- Central content (2134:11365) -->
+    <div class="s-hero__content">
+      <h1 class="t-h1 s-hero__title">
+        <span class="s-hero__pill" data-hero aria-hidden="true"></span>
+        <span class="s-hero__line"><span class="s-hero__line-in" data-hero>French tutoring</span></span>
+        <span class="s-hero__line s-hero__line--light"><span class="s-hero__line-in" data-hero>for kids K to 12</span></span>
+      </h1>
+      <p class="s-hero__sub" data-hero>Certified teachers, live 1:1 lessons and a proven reading method — <br>so your child feels confident in French class.</p>
+      <div class="s-hero__ctas">
+        <span class="s-hero__cta" data-hero><a class="btn" href="#get-started"><span>Book a free demo lesson</span></a></span>
+        <span class="s-hero__cta" data-hero><a class="btn btn--dark" href="#pricing"><span>See plans</span></a></span>
+      </div>
+    </div>
+
+    <!-- Trust row (2134:11379) -->
+    <div class="s-hero__trust">
+      <div class="s-hero__trust-item" data-hero>
+        <span class="s-hero__avatars" aria-hidden="true">
+          <img src="assets/01-hero/avatar-1.png" width="32" height="32" alt="">
+          <img src="assets/01-hero/avatar-2.png" width="32" height="32" alt="">
+          <img src="assets/01-hero/avatar-3.png" width="32" height="32" alt="">
+          <img src="assets/01-hero/avatar-4.png" width="32" height="32" alt="">
+        </span>
+        <p>Loved by <strong>18,655 students</strong></p>
+      </div>
+      <div class="s-hero__trust-item s-hero__trust-item--rating" data-hero>
+        <p class="s-hero__stars" aria-label="5 stars">★★★★★</p>
+        <p>Google rating · <strong>4.9</strong></p>
+      </div>
+    </div>
+
+    <!-- Clay letter ç (2134:13231) -->
+    <div class="s-hero__o s-hero__clay s-hero__clay--c" data-hdepth="1.1" data-float="12" aria-hidden="true">
+      <img class="s-hero__pop" data-hero src="assets/01-hero/clay-c-cedilla.svg" alt="">
+    </div>
+
+    <!-- Cloud behind the sun (2134:11492) -->
+    <div class="s-hero__o s-hero__cloud s-hero__cloud--2" data-hdepth="-0.35" data-float="7" aria-hidden="true">
+      <img class="s-hero__pop" data-hero src="assets/01-hero/cloud.svg" alt="">
+    </div>
+
+    <!-- Sun (2134:11493) -->
+    <div class="s-hero__o s-hero__sun" data-hdepth="0.35" data-float="9" data-scroll="-0.12" aria-hidden="true">
+      <img class="s-hero__pop" data-hero src="assets/01-hero/sun.svg" alt="">
+    </div>
+
+    <!-- Cloud in front of the sun (2134:11504) -->
+    <div class="s-hero__o s-hero__cloud s-hero__cloud--3" data-hdepth="0.95" data-float="8" aria-hidden="true">
+      <img class="s-hero__pop" data-hero src="assets/01-hero/cloud.svg" alt="">
+    </div>
+
+    <!-- Card, bottom left: girl (2134:11505) -->
+    <div class="s-hero__o s-hero__card-wrap s-hero__card-wrap--bottom" data-hdepth="0.85" data-float="10" data-scroll="0.18">
+      <div class="s-hero__card s-hero__pop" data-hero>
+        <div class="s-hero__card-media"><div class="s-hero__photo-girl"><img src="assets/01-hero/photo-girl.jpg" alt=""></div></div>
+        <div class="s-hero__card-lines" aria-hidden="true"><span></span><span></span></div>
+      </div>
+    </div>
+
+    <!-- Clay letter é (2134:11513) -->
+    <div class="s-hero__o s-hero__clay s-hero__clay--e" data-hdepth="1.3" data-float="13" data-scroll="0.22" aria-hidden="true">
+      <img class="s-hero__pop" data-hero src="assets/01-hero/clay-e-acute.svg" alt="">
+    </div>
+
+    <!-- Cloud, right (2134:11514) -->
+    <div class="s-hero__o s-hero__cloud s-hero__cloud--4" data-hdepth="1" data-float="9" aria-hidden="true">
+      <img class="s-hero__pop" data-hero src="assets/01-hero/cloud.svg" alt="">
+    </div>
+
+  </div>
+</section>

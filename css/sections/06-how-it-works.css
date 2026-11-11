@@ -1,0 +1,94 @@
+/* 06 · How it works (Figma 2134:11698, 1440 × 2383). CSS = final state; js/sections/06-how-it-works.js sets the start state. */
+.s-hiw { background: #fff; }
+
+/* Header */
+.s-hiw__head { position: absolute; top: 177px; left: 0; right: 0; z-index: 3; text-align: center; }
+.s-hiw__sub { margin-top: 16px; letter-spacing: 0; }
+
+/* Route — Figma vector at (2, 303) + 7px stroke padding; 1 svg unit = 1px.
+   overflow: visible so the run-in / run-off can leave the 1440 frame; only the full-bleed section clips it (= viewport edge). */
+.s-hiw__route { position: absolute; left: -5px; top: 296px; width: 1450.3px; height: 1961.34px; overflow: visible; z-index: 1; pointer-events: none; }
+.s-hiw__tip { visibility: hidden; } /* traveller only exists in motion mode (js shows it) */
+.s-hiw__tip-dot { filter: drop-shadow(0 6px 10px rgba(23, 103, 241, .35)); }
+
+/* Steps */
+.s-hiw__steps { position: static; }
+.s-hiw__node { position: absolute; z-index: 2; width: 76px; height: 76px; }
+.s-hiw__node-body { /* Figma: 76px fill + 6px OUTSIDE white stroke -> 88px disc on the same centre */
+  position: absolute; inset: -6px;
+  display: flex; align-items: center; justify-content: center;
+  border: 6px solid #fff; border-radius: 999px;
+  background: linear-gradient(180deg, #609AFE 0%, #1767F1 100%);
+  box-shadow: 0 12px 28px rgba(23, 103, 241, .3);
+  font-family: var(--font-head); font-weight: 500; font-size: 34px; line-height: normal; letter-spacing: 0;
+  color: #fff;
+}
+.s-hiw__info { position: absolute; z-index: 2; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; text-align: left; }
+.s-hiw__info--end { align-items: flex-end; text-align: right; }
+.s-hiw__label { font-family: var(--font-body); font-weight: 500; font-size: 13px; line-height: normal; letter-spacing: 0.08em; color: var(--c-blue); white-space: nowrap; }
+.s-hiw__step-title { width: 100%; font-family: var(--font-head); font-weight: 500; font-size: 32px; line-height: 1.05; letter-spacing: -0.03em; color: var(--c-ink); }
+.s-hiw__text { width: 100%; font-family: var(--font-body); font-weight: 400; font-size: 16px; line-height: 1.5; letter-spacing: 0; color: #626262; }
+
+/* CTA */
+.s-hiw__cta { position: absolute; top: 2183px; left: 0; right: 0; z-index: 3; display: flex; justify-content: center; }
+.s-hiw__cta-pop { display: inline-flex; }
+
+/* Clay characters (on top, as in Figma) */
+.s-hiw__char { position: absolute; z-index: 4; width: 133px; height: 200px; pointer-events: none; }
+.s-hiw__char-pop, .s-hiw__char img { width: 100%; height: 100%; }
+.s-hiw__char img { object-fit: cover; }
+
+/* Mobile-only pieces (route built by js from the layout, small character copies) */
+.s-hiw__mroute, .s-hiw__mchar { display: none; }
+
+/* Hidden until js sets the start state (no flash of the finished layout). Static / no-JS: all visible. */
+html.js-motion .s-hiw__route-path,
+html.js-motion .s-hiw__route-ext,
+html.js-motion .s-hiw__route-pre,
+html.js-motion .s-hiw__node,
+html.js-motion .s-hiw__info > *,
+html.js-motion .s-hiw__char-pop,
+html.js-motion .s-hiw__cta-pop { visibility: hidden; }
+
+/* ================= Responsive (< 1024): same idea, one column ================= */
+@media (max-width: 1023px) {
+  .s-hiw .ff-frame { padding: var(--section-pt) 0 64px; }
+
+  .s-hiw__head { position: static; padding: 0 var(--gutter); }
+  .s-hiw__title { text-wrap: balance; }
+  .s-hiw__sub { max-width: 560px; margin: var(--title-gap) auto 0; text-wrap: pretty; }
+  .s-hiw__sub br { display: none; }
+
+  /* Desktop route + characters off; the mobile route lives in its own svg over the whole frame */
+  .s-hiw__route, .s-hiw__char { display: none; }
+  .s-hiw__mroute { display: block; position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: visible; z-index: 1; pointer-events: none; }
+  .s-hiw__mtip { visibility: hidden; } /* js shows it in motion mode */
+
+  /* Steps: node in a 52px lane on the left, text to its right */
+  .s-hiw__steps { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 36px; max-width: 600px; margin: 72px auto 0; padding: 0 var(--gutter); }
+  .s-hiw__step { position: relative; padding-left: 68px; }
+  .s-hiw__step--char { min-height: 172px; } /* room in the lane for a character under the node */
+  .s-hiw__node { left: 4px !important; top: 8px !important; width: 44px; height: 44px; }
+  .s-hiw__node-body { inset: -4px; border-width: 4px; font-size: 22px; box-shadow: 0 8px 18px rgba(23, 103, 241, .3); }
+  .s-hiw__info, .s-hiw__info--end { position: static; left: auto !important; top: auto !important; width: auto !important; align-items: flex-start; text-align: left; gap: 6px; }
+  .s-hiw__label { font-size: 12px; }
+  .s-hiw__step-title { font-size: 24px; line-height: 1.1; text-wrap: balance; }
+  .s-hiw__text { font-size: 15px; }
+
+  /* Small clay characters standing on the route, in the lane */
+  .s-hiw__mchar { display: block; position: absolute; z-index: 4; width: 60px; height: 90px; pointer-events: none; }
+  .s-hiw__mchar .s-hiw__char-pop, .s-hiw__mchar img { width: 100%; height: 100%; }
+  .s-hiw__mchar img { object-fit: contain; }
+  .s-hiw__step .s-hiw__mchar { left: -4px; top: 72px; }
+
+  /* CTA at the end, aligned with the step text; Omar stands where the route leaves bottom-left */
+  .s-hiw__cta { position: relative; top: auto; left: auto; right: auto; z-index: 3; justify-content: flex-start;
+    max-width: 600px; margin: 64px auto 0; padding: 0 var(--gutter) 0 calc(var(--gutter) + 68px); }
+  .s-hiw__mchar--omar { left: calc(var(--gutter) - 4px); top: -26px; }
+
+  /* No-JS fallback: a plain lane line (js replaces it with the drawn route) */
+  html:not(.js-motion):not(.motion-off) .s-hiw__steps::before {
+    content: ""; position: absolute; left: calc(var(--gutter) + 22px); top: 0; bottom: 0; width: 8px; border-radius: 4px;
+    background: linear-gradient(#81DFFF, #1767F1);
+  }
+}

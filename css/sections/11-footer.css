@@ -1,0 +1,128 @@
+/* 11 · Footer — sky + cloud bank + floating link card. Figma 2134:12059 (inside wrapper 2134:13318).
+   The footer overlaps the bottom 145px of the FAQ above (Figma y=880 in a wrapper where the FAQ is 1025 tall).
+   Its top 145px stays transparent and a pale cloud bank (same ellipses as Figma group 2134:13236) closes the FAQ
+   with scallops. Layering: z-index 1 keeps it UNDER the FAQ (.s-faq is z-index 2 and hangs its 1116px panel,
+   static scallops and the clay kids' feet over us — the Figma layer order). Our scallops sit exactly under the
+   FAQ's and only ever drift downward/sideways (parallax), so the edge "breathes" and rests on the Figma shape.
+   Raise to z-index 3 only if the FAQ stops drawing its own overhang (the kids' shoes would then be covered). */
+.s-footer {
+  margin-top: -145px;
+  position: relative; z-index: 1;
+  letter-spacing: 0;
+  pointer-events: none; /* only the card is interactive; the sky/overlap never blocks the FAQ */
+}
+.s-footer__frame { height: 829px; }
+
+/* Sky gradient (Figma frame fill #81DFFF → #38B6FF over the full 829px), full-bleed, below the overlap */
+.s-footer__sky {
+  position: absolute; left: 0; right: 0; top: 145px; bottom: 0;
+  background: linear-gradient(180deg, #81DFFF 0%, #38B6FF 100%) 0 -145px / 100% 829px no-repeat;
+}
+
+/* Ribbon: Figma rect at (-286,114) 1601×902, rotation 19°, opacity .5, colour-burn */
+.s-footer__scene {
+  position: absolute; top: 145px; bottom: 0; left: -400px; right: -400px;
+  overflow: hidden;
+}
+.s-footer__ribbon {
+  position: absolute; left: 114px; top: -31px; width: 1601px; height: 902px;
+  transform-origin: 0 0; transform: rotate(-19.038deg);
+  opacity: .5; mix-blend-mode: color-burn;
+}
+.s-footer__ribbon img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Cloud bank (pale #EEF8FF ellipses, as in Figma) — clipped to start where the FAQ ends */
+.s-footer__clouds {
+  position: absolute; top: 145px; left: -400px; width: 2240px; height: 270px;
+  overflow: hidden;
+}
+.s-footer__band { position: absolute; left: 0; right: 0; top: 0; height: 60px; background: #EEF8FF; }
+.s-footer__puffs { position: absolute; inset: 0; }
+.s-footer__puff { position: absolute; border-radius: 50%; background: #EEF8FF; }
+
+/* ---------- Card ---------- */
+.s-footer__card {
+  position: absolute; left: 40px; top: 379px; width: 1360px; height: 410px;
+  padding: 56px 56px 0;
+  background: #fff; border-radius: 40px;
+  box-shadow: 0 -8px 40px rgba(0, 74, 173, .16);
+  pointer-events: auto;
+}
+.s-footer__top { display: flex; align-items: flex-start; height: 197px; }
+.s-footer__brand { flex: none; width: 340px; display: flex; flex-direction: column; align-items: flex-start; }
+.s-footer__logo { display: block; transition: transform .5s var(--ease-bounce); }
+.s-footer__logo:hover { transform: rotate(-3deg) scale(1.05); }
+.s-footer__logo img { width: 161px; height: 32px; }
+.s-footer__about { width: 330px; margin-top: 18px; font-size: 15px; line-height: 23px; color: var(--c-body); }
+.s-footer__cta { margin-top: 18px; }
+
+.s-footer__cols { display: grid; grid-template-columns: 137px 209px 172px 244px; margin-left: 146px; }
+.s-footer__col { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.s-footer__col > a, .s-footer__head { font-size: 15px; line-height: 18px; white-space: nowrap; }
+.s-footer__head { font-weight: 500; color: var(--c-ink); }
+.s-footer__col > a { color: var(--c-body); transition: color .2s ease, transform .4s var(--ease-bounce); }
+.s-footer__col > a:hover { color: var(--c-blue); transform: translateX(3px); }
+.s-footer__hours-title { font-weight: 500; font-size: 13px; line-height: 15px; color: var(--c-muted); }
+.s-footer__hours { display: flex; flex-direction: column; gap: 14px; margin: 0; }
+.s-footer__hours div { display: flex; gap: 10px; font-size: 14px; line-height: 17px; white-space: nowrap; }
+.s-footer__hours dt { width: 90px; color: var(--c-ink); }
+.s-footer__hours dd { margin: 0; color: var(--c-body); }
+
+.s-footer__rule { height: 1px; margin: 40px 0 0; border: 0; background: var(--c-line); transform-origin: 0 50%; }
+
+.s-footer__bottom { display: flex; align-items: center; justify-content: space-between; height: 40px; margin-top: 40px; }
+.s-footer__copy { font-size: 14px; line-height: 17px; color: var(--c-muted); }
+.s-footer__social { display: flex; gap: 10px; }
+.s-footer__social a {
+  display: grid; place-items: center; width: 40px; height: 40px; border-radius: 999px; background: #F1F4F9;
+  transition: transform .5s var(--ease-bounce), background-color .25s ease;
+}
+.s-footer__social a:hover { transform: translateY(-3px) scale(1.08); background: #E3EAF4; }
+.s-footer__social svg { width: 24px; height: 24px; }
+
+/* =====================================================================
+   Phone + tablet (under 1024): the card flows in one column under a
+   scaled sky. The FAQ overlap is 60px here (desktop stays at 145px).
+   ===================================================================== */
+@media (max-width: 1023px) {
+  .s-footer { margin-top: -60px; }
+  .s-footer__frame { padding: 190px var(--gutter) var(--gutter); }
+
+  /* sky, ribbon and cloud bank start where the FAQ ends (60px) and scale down */
+  .s-footer__sky { top: 60px; background-size: 100% 100%; background-position: 0 0; }
+  .s-footer__scene { top: 60px; left: 0; right: 0; }
+  .s-footer__ribbon { left: -150px; top: 0; width: 840px; height: 473px; }
+  .s-footer__clouds { top: 60px; left: 0; width: 100%; height: 135px; }
+  .s-footer__band { height: 30px; }
+  .s-footer__puffs { right: auto; bottom: auto; width: 2240px; height: 270px; transform-origin: 0 0; transform: translateX(-200px) scale(.5); }
+
+  /* card: in flow, columns stacked */
+  .s-footer__card { position: relative; left: auto; top: auto; width: auto; height: auto; padding: 28px 24px 24px; border-radius: var(--r-card); }
+  .s-footer__top { display: block; height: auto; }
+  .s-footer__brand { width: auto; }
+  .s-footer__about { width: auto; max-width: 440px; margin-top: 16px; }
+  .s-footer__cta { margin-top: 20px; }
+
+  .s-footer__cols { grid-template-columns: 1fr 1fr; gap: 20px 16px; margin: 28px 0 0; }
+  .s-footer__col { gap: 0; }
+  .s-footer__head { margin-bottom: 2px; }
+  .s-footer__col > a { display: flex; align-items: center; min-height: 44px; white-space: normal; }
+  .s-footer__col--contact { grid-column: 1 / -1; }
+  .s-footer__col--contact > a { word-break: break-word; }
+  .s-footer__hours-title { margin: 6px 0 12px; }
+  .s-footer__hours { gap: 12px; }
+  .s-footer__hours div { font-size: 15px; line-height: 18px; }
+
+  .s-footer__rule { margin-top: 28px; }
+  .s-footer__bottom { flex-direction: column; align-items: flex-start; gap: 16px; height: auto; margin-top: 24px; }
+  .s-footer__copy { font-size: 15px; line-height: 1.4; }
+  .s-footer__social a { width: 44px; height: 44px; }
+}
+
+/* Tablet: Menu / Links / Legal side by side, Contact below */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .s-footer__frame { padding-top: 210px; }
+  .s-footer__card { padding: 36px 36px 28px; }
+  .s-footer__cols { grid-template-columns: repeat(3, 1fr); }
+  .s-footer__bottom { flex-direction: row; align-items: center; justify-content: space-between; }
+}

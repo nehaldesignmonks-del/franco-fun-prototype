@@ -1,0 +1,67 @@
+/* Apprendre Franco-fun! — design tokens (from the client's CSS + the Final Desktop design system) */
+:root {
+  /* Client brand colours */
+  --c-dark-blue: #004AAD;
+  --c-navy: #033B62;
+  --c-capri: #38B6FF;
+  --c-sky: #81DFFF;
+  --c-water: #A7DFFF;
+  --c-pale-cyan: #DFF3FF;
+  --c-light-green: #90EE90;
+  --c-yellow-green: #C9E265;
+  --c-light-yellow-green: #F8FFDB;
+  --c-pink: #FFC0CB;
+  --c-light-salmon: #FFA07A;
+  --c-blush: #FFDEDE;
+  --c-gold: #FFD700;
+  --c-neon-red: #FF5757;
+  --c-lavender: #E2A9F1;
+
+  /* UI neutrals + accents used in Final Desktop */
+  --c-blue: #1767F1;
+  --c-ink: #161616;
+  --c-ink-2: #121214;
+  --c-body: #5F6672;
+  --c-muted: #8C93A0;
+  --c-line: #E6EBF2;
+  --c-soft: #EEF8FF;
+  --c-lime-bg: #F2FADF;
+  --c-lime: #9CC43A;
+  --c-lime-ink: #4E6B12;
+  --c-sub: rgba(3, 59, 98, 0.8); /* navy @ 80% — subtitles/body on light */
+
+  /* Type */
+  --font-head: "Fredoka", "Rubik", system-ui, sans-serif;
+  --font-body: "Rubik", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-script: "Caveat", cursive; /* stand-in for the client's Buffalo */
+
+  /* Layout */
+  --frame: 1440px;
+  --container: 1200px;
+  --section-pt: 140px;
+  --title-gap: 16px;
+  --content-gap: 72px;
+
+  /* Radii */
+  --r-card: 40px;
+  --r-card-lg: 60px;
+  --r-btn: 18px;
+  --r-pill: 100px;
+
+  /* Motion */
+  --ease-bounce: cubic-bezier(.34, 1.56, .64, 1);
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+}
+
+/* Phone + tablet (under 1024px): one fluid column. Sections switch layouts at this same breakpoint. */
+@media (max-width: 1023px) {
+  :root {
+    --gutter: 20px;
+    --section-pt: 80px;
+    --title-gap: 12px;
+    --content-gap: 40px;
+    --r-card: 28px;
+    --r-card-lg: 36px;
+  }
+}
+

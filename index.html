@@ -1,0 +1,1235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apprendre Franco-fun! — French tutoring for K–12</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Rubik:wght@400;500&family=Caveat:wght@500&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      var r = document.documentElement;
+      var off = /[?&]static/.test(location.search) || window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      r.classList.add(off ? 'motion-off' : 'js-motion');
+      // Safety net: never leave content hidden if scripts fail to start.
+      setTimeout(function () { if (!window.FF || !window.FF.inited) { r.classList.remove('js-motion'); r.classList.add('motion-off'); } }, 4000);
+    })();
+  </script>
+  <link rel="stylesheet" href="js/vendor/lenis.css">
+  <link rel="stylesheet" href="css/tokens.css?v=1794374270">
+  <link rel="stylesheet" href="css/base.css?v=1794374270">
+  <link rel="stylesheet" href="css/sections/01-hero.css?v=1794374270">
+  <link rel="stylesheet" href="css/sections/02-partners.css?v=1794374270">
+  <link rel="stylesheet" href="css/sections/03-is-your-child.css?v=1794374270">
+  <link rel="stylesheet" href="css/sections/04-success-system.css?v=1794374270">
+  <link rel="stylesheet" href="css/sections/05-programs.css?v=1794374270">
+  <link rel="stylesheet" href="css/sections/06-how-it-works.css?v=1794374270">
+  <link rel="stylesheet" href="css/sections/07-testimonials.css?v=1794374270">
+  <link rel="stylesheet" href="css/sections/08-numbers.css?v=1794374270">
+  <link rel="stylesheet" href="css/sections/09-pricing.css?v=1794374270">
+  <link rel="stylesheet" href="css/sections/10-faq.css?v=1794374270">
+  <link rel="stylesheet" href="css/sections/11-footer.css?v=1794374270">
+</head>
+<body class="page-home">
+  <main id="top">
+<!-- 01 · Hero (Figma 2134:11350) — fixed nav + on-load staged entrance; motion in js/sections/01-hero.js -->
+<section class="ff-sec s-hero" id="hero">
+
+  <!-- Nav (2134:11391): fixed, centred to the 1440 frame; hides on scroll down, returns on scroll up -->
+  <header class="s-hero__nav" data-hero>
+    <a class="s-hero__logo" href="#hero" aria-label="Apprendre Franco-fun! — home">
+      <img src="assets/01-hero/logo.svg" width="161" height="32" alt="Apprendre Franco-fun!">
+    </a>
+    <!-- Desktop: links + EN/FR + Log in sit in the bar (this wrapper is display:contents).
+         Under 1024: the same elements become the drop-down panel opened by the menu button. -->
+    <div class="s-hero__menu" id="hero-menu">
+      <nav class="s-hero__links" aria-label="Main">
+        <a href="#hero" aria-current="page">Home</a>
+        <a href="#lecture-scientifique">Lecture Scientifique</a>
+        <a href="#partners">Partnerships</a>
+        <a href="#">Franco Hub</a>
+        <a href="#">About Us</a>
+      </nav>
+      <div class="s-hero__nav-end">
+        <a class="s-hero__lang" href="#">EN / FR</a>
+        <span class="s-hero__divider" aria-hidden="true"></span>
+        <a class="s-hero__login" href="#">Log in</a>
+      </div>
+    </div>
+    <a class="s-hero__try" href="#get-started"><span>Try free lesson</span></a>
+    <button class="s-hero__burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="hero-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Background: gradient + wave (image 21161 · colour-burn @ 50%), isolated so the blend only sees the gradient -->
+  <div class="s-hero__bg" aria-hidden="true">
+    <div class="ff-frame" style="height:900px">
+      <div class="s-hero__wave" data-hero data-scroll="0.08">
+        <img src="assets/01-hero/bg-wave.png" width="1601" height="902" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="ff-frame" style="height:900px">
+
+    <!-- Back cloud, left (2134:11352) -->
+    <div class="s-hero__o s-hero__cloud s-hero__cloud--1" data-hdepth="-0.5" data-float="8" aria-hidden="true">
+      <img class="s-hero__pop" data-hero src="assets/01-hero/cloud.svg" alt="">
+    </div>
+
+    <!-- Card, right: boy with glasses (2134:11353) -->
+    <div class="s-hero__o s-hero__card-wrap s-hero__card-wrap--right" data-hdepth="0.6" data-float="10" data-scroll="0.1">
+      <div class="s-hero__card s-hero__pop" data-hero>
+        <div class="s-hero__card-media"><img class="s-hero__photo-glasses" src="assets/01-hero/photo-boy-glasses.jpg" alt=""></div>
+        <div class="s-hero__card-lines" aria-hidden="true"><span></span><span></span></div>
+      </div>
+    </div>
+
+    <!-- Card, left: boy with school book (2134:11361) -->
+    <div class="s-hero__o s-hero__bcard-wrap" data-hdepth="0.75" data-float="12" data-scroll="0.14">
+      <div class="s-hero__bcard s-hero__pop" data-hero>
+        <div class="s-hero__bcard-in"><img src="assets/01-hero/photo-boy-school.png" alt=""></div>
+      </div>
+    </div>
+
+    <!-- Central content (2134:11365) -->
+    <div class="s-hero__content">
+      <h1 class="t-h1 s-hero__title">
+        <span class="s-hero__pill" data-hero aria-hidden="true"></span>
+        <span class="s-hero__line"><span class="s-hero__line-in" data-hero>French tutoring</span></span>
+        <span class="s-hero__line s-hero__line--light"><span class="s-hero__line-in" data-hero>for kids K to 12</span></span>
+      </h1>
+      <p class="s-hero__sub" data-hero>Certified teachers, live 1:1 lessons and a proven reading method — <br>so your child feels confident in French class.</p>
+      <div class="s-hero__ctas">
+        <span class="s-hero__cta" data-hero><a class="btn" href="#get-started"><span>Book a free demo lesson</span></a></span>
+        <span class="s-hero__cta" data-hero><a class="btn btn--dark" href="#pricing"><span>See plans</span></a></span>
+      </div>
+    </div>
+
+    <!-- Trust row (2134:11379) -->
+    <div class="s-hero__trust">
+      <div class="s-hero__trust-item" data-hero>
+        <span class="s-hero__avatars" aria-hidden="true">
+          <img src="assets/01-hero/avatar-1.png" width="32" height="32" alt="">
+          <img src="assets/01-hero/avatar-2.png" width="32" height="32" alt="">
+          <img src="assets/01-hero/avatar-3.png" width="32" height="32" alt="">
+          <img src="assets/01-hero/avatar-4.png" width="32" height="32" alt="">
+        </span>
+        <p>Loved by <strong>18,655 students</strong></p>
+      </div>
+      <div class="s-hero__trust-item s-hero__trust-item--rating" data-hero>
+        <p class="s-hero__stars" aria-label="5 stars">★★★★★</p>
+        <p>Google rating · <strong>4.9</strong></p>
+      </div>
+    </div>
+
+    <!-- Clay letter ç (2134:13231) -->
+    <div class="s-hero__o s-hero__clay s-hero__clay--c" data-hdepth="1.1" data-float="12" aria-hidden="true">
+      <img class="s-hero__pop" data-hero src="assets/01-hero/clay-c-cedilla.svg" alt="">
+    </div>
+
+    <!-- Cloud behind the sun (2134:11492) -->
+    <div class="s-hero__o s-hero__cloud s-hero__cloud--2" data-hdepth="-0.35" data-float="7" aria-hidden="true">
+      <img class="s-hero__pop" data-hero src="assets/01-hero/cloud.svg" alt="">
+    </div>
+
+    <!-- Sun (2134:11493) -->
+    <div class="s-hero__o s-hero__sun" data-hdepth="0.35" data-float="9" data-scroll="-0.12" aria-hidden="true">
+      <img class="s-hero__pop" data-hero src="assets/01-hero/sun.svg" alt="">
+    </div>
+
+    <!-- Cloud in front of the sun (2134:11504) -->
+    <div class="s-hero__o s-hero__cloud s-hero__cloud--3" data-hdepth="0.95" data-float="8" aria-hidden="true">
+      <img class="s-hero__pop" data-hero src="assets/01-hero/cloud.svg" alt="">
+    </div>
+
+    <!-- Card, bottom left: girl (2134:11505) -->
+    <div class="s-hero__o s-hero__card-wrap s-hero__card-wrap--bottom" data-hdepth="0.85" data-float="10" data-scroll="0.18">
+      <div class="s-hero__card s-hero__pop" data-hero>
+        <div class="s-hero__card-media"><div class="s-hero__photo-girl"><img src="assets/01-hero/photo-girl.jpg" alt=""></div></div>
+        <div class="s-hero__card-lines" aria-hidden="true"><span></span><span></span></div>
+      </div>
+    </div>
+
+    <!-- Clay letter é (2134:11513) -->
+    <div class="s-hero__o s-hero__clay s-hero__clay--e" data-hdepth="1.3" data-float="13" data-scroll="0.22" aria-hidden="true">
+      <img class="s-hero__pop" data-hero src="assets/01-hero/clay-e-acute.svg" alt="">
+    </div>
+
+    <!-- Cloud, right (2134:11514) -->
+    <div class="s-hero__o s-hero__cloud s-hero__cloud--4" data-hdepth="1" data-float="9" aria-hidden="true">
+      <img class="s-hero__pop" data-hero src="assets/01-hero/cloud.svg" alt="">
+    </div>
+
+  </div>
+</section>
+
+<!-- 02 · Partners (Figma 2134:11515) — label fades in, logos pop in with a stagger (static row, no marquee) -->
+<section class="ff-sec s-partners" id="partners">
+  <div class="ff-frame" style="height:185px">
+    <p class="s-partners__label" data-fade>In partnership with schools and community organizations across Canada</p>
+    <ul class="s-partners__row" aria-label="Partners">
+      <li class="s-partners__logo" style="width:104px"><img src="assets/02-partners/acfa.png" width="104" height="38" alt="ACFA" data-pop="soft"></li>
+      <li class="s-partners__logo" style="width:109px"><img src="assets/02-partners/oakville-christian.png" width="109" height="38" alt="Oakville Christian School" data-pop="soft"></li>
+      <li class="s-partners__logo" style="width:56px"><img src="assets/02-partners/aqed.png" width="56" height="38" alt="AQED" data-pop="soft"></li>
+      <li class="s-partners__logo" style="width:99px"><img src="assets/02-partners/oakville-montessori.png" width="99" height="38" alt="Oakville Montessori" data-pop="soft"></li>
+      <li class="s-partners__logo" style="width:130px"><img src="assets/02-partners/parents-partenaires.png" width="130" height="38" alt="Parents partenaires en éducation" data-pop="soft"></li>
+      <li class="s-partners__logo" style="width:112px"><img src="assets/02-partners/rsifeo.png" width="112" height="38" alt="RSIFEO" data-pop="soft"></li>
+      <li class="s-partners__logo" style="width:89px"><img src="assets/02-partners/cdrc-peel.png" width="89" height="38" alt="Child Development Resource Connection Peel" data-pop="soft"></li>
+      <li class="s-partners__logo" style="width:109px"><img src="assets/02-partners/hamilton.png" width="109" height="38" alt="Hamilton" data-pop="soft"></li>
+      <li class="s-partners__logo" style="width:78px"><img src="assets/02-partners/march-academy.png" width="78" height="38" alt="March Academy" data-pop="soft"></li>
+      <li class="s-partners__logo" style="width:116px"><img src="assets/02-partners/saskatchewan.png" width="116" height="38" alt="Government of Saskatchewan" data-pop="soft"></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 03 · Is your child… (Figma 2134:11528) — the page's ONE pinned section.
+     Six questions swap on scroll (snap per question); progress pill advances; image squashes; bg shifts per question.
+     Motion in js/sections/03-is-your-child.js. Static mode shows question 1. -->
+<div class="s-iyc-track"><!-- JS gives this track the pin length; the section sticks inside it -->
+<section class="ff-sec s-iyc" id="is-your-child" data-cursor-label="Start scrolling"
+         data-bgs="#FFFFFF,#EEF8FF,#F8FFDB,#FFF0F0,#FBF2FD,#FFF4EE">
+  <div class="s-iyc__bg" aria-hidden="true"></div>
+  <div class="ff-frame" style="height:1030px">
+    <h2 class="t-h2 s-iyc__title" data-reveal>Is your child…</h2>
+
+    <div class="s-iyc__media" data-pop="soft" data-float="8">
+      <img class="s-iyc__img" src="assets/03-is-your-child/reading-circle.jpg" width="564" height="384" alt="Soleil’s French Reading Circle">
+    </div>
+
+    <div class="s-iyc__qs" data-fade aria-live="polite">
+      <p class="s-iyc__q is-active">Struggling with <br>reading in French?</p>
+      <p class="s-iyc__q" aria-hidden="true">Avoiding French <br>homework?</p>
+      <p class="s-iyc__q" aria-hidden="true">Losing confidence?</p>
+      <p class="s-iyc__q" aria-hidden="true">Finding French <br>difficult?</p>
+      <p class="s-iyc__q" aria-hidden="true">Falling behind in <br>French Immersion?</p>
+      <p class="s-iyc__q" aria-hidden="true">Needing more challenge <br>and enrichment?</p>
+    </div>
+
+    <ol class="s-iyc__progress" data-fade aria-hidden="true">
+      <li class="is-active"></li><li></li><li></li><li></li><li></li><li></li>
+    </ol>
+
+    <span class="s-iyc__next-pop" data-pop>
+      <button class="s-iyc__next" type="button" aria-label="Scroll down" data-cursor="hover">
+        <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
+          <circle cx="24" cy="24" r="24" fill="#121214"/>
+          <path d="M24 15V32M31 25L24 32L17 25" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </span>
+  </div>
+</section>
+</div>
+
+<!-- 04 · Success System (Figma 2134:11552)
+     The cloud bank along this section's bottom edge lives in 05 (it is Programs' top edge, so it can rise with it). -->
+<!-- Wrapper scopes the sticky hold: JS sizes it so 04 stays put until 05 has slid over it (no ScrollTrigger pin: zoom-safe) -->
+<div class="s-success-wrap">
+<section class="ff-sec s-success" id="success-system">
+  <div class="ff-frame" style="height:1065px">
+
+    <div class="s-success__inner">
+      <header class="s-success__head">
+        <h2 class="t-h2 s-success__title" data-reveal>The Apprendre Franco-fun!<br>Success System™</h2>
+        <p class="s-success__sub" data-fade>Everything your child needs to succeed in French.</p>
+      </header>
+
+      <!-- Fanned step cards: click / Enter / Space pops one to the front; again, Esc or click outside settles it -->
+      <ol class="s-success__steps">
+        <li class="s-success__step s-success__step--1">
+          <button type="button" class="s-success__card" aria-pressed="false" data-cursor="hover">
+            <span class="s-success__tag">STEP 01</span>
+            <span class="s-success__text">
+              <span class="s-success__card-title">Assessment</span>
+              <span class="s-success__card-body">We identify exactly where your child is today.</span>
+            </span>
+          </button>
+        </li>
+        <li class="s-success__step s-success__step--2">
+          <button type="button" class="s-success__card" aria-pressed="false" data-cursor="hover">
+            <span class="s-success__tag">STEP 02</span>
+            <span class="s-success__text">
+              <span class="s-success__card-title">Personalized Success Plan</span>
+              <span class="s-success__card-body">We build a roadmap based on their strengths and needs.</span>
+            </span>
+          </button>
+        </li>
+        <li class="s-success__step s-success__step--3">
+          <button type="button" class="s-success__card" aria-pressed="false" data-cursor="hover">
+            <span class="s-success__tag">STEP 03</span>
+            <span class="s-success__text">
+              <span class="s-success__card-title">Targeted Support</span>
+              <span class="s-success__card-body">Reading, writing, oral communication, intervention, and confidence-building.</span>
+            </span>
+          </button>
+        </li>
+        <li class="s-success__step s-success__step--4">
+          <button type="button" class="s-success__card" aria-pressed="false" data-cursor="hover">
+            <span class="s-success__tag">STEP 04</span>
+            <span class="s-success__text">
+              <span class="s-success__card-title">Track Progress</span>
+              <span class="s-success__card-body">Parents always know what’s working and what comes next.</span>
+            </span>
+          </button>
+        </li>
+        <li class="s-success__step s-success__step--5">
+          <button type="button" class="s-success__card" aria-pressed="false" data-cursor="hover">
+            <span class="s-success__tag">STEP 05</span>
+            <span class="s-success__text">
+              <span class="s-success__card-title">Grow Beyond the Classroom</span>
+              <span class="s-success__card-body">Clubs, challenges, enrichment, and opportunities to use French in meaningful ways.</span>
+            </span>
+          </button>
+        </li>
+      </ol>
+    </div>
+
+  </div>
+  <!-- Darkens a touch while Programs slides over this section (opacity 0 at rest) -->
+  <div class="s-success__dim" aria-hidden="true"></div>
+</section>
+</div>
+
+<!-- 05 · Programs K–12 (Figma 2134:11607) -->
+<section class="ff-sec s-programs" id="programs">
+  <div class="ff-frame" style="height:2524px">
+
+    <!-- Cloud edge (Figma 2134:12328, drawn in 04 in the design): Programs' top edge. Three layers that rise at
+         different scrubbed speeds as this section slides up over Success System. Clipped at our top edge. -->
+    <div class="s-programs__bank" aria-hidden="true">
+      <svg class="s-programs__bank-layer s-programs__bank-layer--1" viewBox="-1695 953 4830 295" preserveAspectRatio="none" focusable="false">
+        <g id="s-programs-bank-1" fill="#3BB7FF">
+          <ellipse cx="450" cy="1093" rx="165" ry="140"/>
+          <ellipse cx="995" cy="1103" rx="180" ry="145"/>
+        </g>
+        <use href="#s-programs-bank-1" transform="translate(-1610 0)"/>
+        <use href="#s-programs-bank-1" transform="translate(1610 0)"/>
+      </svg>
+      <svg class="s-programs__bank-layer s-programs__bank-layer--2" viewBox="-1695 953 4830 295" preserveAspectRatio="none" focusable="false">
+        <g id="s-programs-bank-2" fill="#3BB7FF">
+          <ellipse cx="65" cy="1103" rx="150" ry="125"/>
+          <ellipse cx="665" cy="1093" rx="110" ry="95"/>
+          <ellipse cx="1385" cy="1088" rx="140" ry="120"/>
+        </g>
+        <use href="#s-programs-bank-2" transform="translate(-1610 0)"/>
+        <use href="#s-programs-bank-2" transform="translate(1610 0)"/>
+      </svg>
+      <svg class="s-programs__bank-layer s-programs__bank-layer--3" viewBox="-1695 953 4830 295" preserveAspectRatio="none" focusable="false">
+        <g id="s-programs-bank-3" fill="#3BB7FF">
+          <ellipse cx="250" cy="1093" rx="95" ry="85"/>
+          <ellipse cx="790" cy="1100.5" rx="75" ry="67.5"/>
+          <ellipse cx="1210" cy="1093" rx="105" ry="90"/>
+        </g>
+        <use href="#s-programs-bank-3" transform="translate(-1610 0)"/>
+        <use href="#s-programs-bank-3" transform="translate(1610 0)"/>
+      </svg>
+    </div>
+
+    <!-- Header (2134:12938) -->
+    <header class="s-programs__head">
+      <!-- decorations sit inside the block they belong to, so they can follow it on small screens -->
+      <div class="s-programs__cloud s-programs__cloud--1" data-float="12" data-depth="0.5" aria-hidden="true"><div class="s-programs__pop" data-pop><img src="assets/05-programs/clay-cloud.svg" alt=""></div></div>
+      <div class="s-programs__sparkle s-programs__sparkle--1" data-float="6" data-depth="1.2" aria-hidden="true">
+        <div class="s-programs__pop" data-pop><svg viewBox="0 0 22 22" width="22" height="22" focusable="false"><path d="M11 0C11.9167 7.33333 14.6667 10.0833 22 11C14.6667 11.9167 11.9167 14.6667 11 22C10.0833 14.6667 7.33333 11.9167 0 11C7.33333 10.0833 10.0833 7.33333 11 0Z" fill="#fff"/></svg></div>
+      </div>
+      <div class="s-programs__sparkle s-programs__sparkle--2" data-float="6" data-depth="-0.9" aria-hidden="true">
+        <div class="s-programs__pop" data-pop><svg viewBox="0 0 16 16" width="16" height="16" focusable="false"><path d="M8 0C8.66667 5.33333 10.6667 7.33333 16 8C10.6667 8.66667 8.66667 10.6667 8 16C7.33333 10.6667 5.33333 8.66667 0 8C5.33333 7.33333 7.33333 5.33333 8 0Z" fill="#FFD700"/></svg></div>
+      </div>
+      <h2 class="t-h2 s-programs__title" data-reveal>We support students from <span class="s-programs__br"></span>Kindergarten to Grade 12</h2>
+      <p class="s-programs__sub" data-fade>Comprehensive French support in every key area to help <br>your child learn, grow, and succeed.</p>
+    </header>
+
+    <!-- Programs bento (2134:13178) -->
+    <div class="s-programs__bento">
+      <div class="s-programs__cloud s-programs__cloud--3" data-float="9" data-depth="1.0" aria-hidden="true"><div class="s-programs__pop" data-pop><img src="assets/05-programs/clay-cloud.svg" alt=""></div></div>
+      <div class="s-programs__cloud s-programs__cloud--5" data-float="8" data-depth="-0.45" aria-hidden="true"><div class="s-programs__pop" data-pop><img src="assets/05-programs/clay-cloud.svg" alt=""></div></div>
+      <div class="s-programs__row">
+        <div class="s-programs__cell" data-pop="soft"><article class="s-programs__card">
+          <div class="s-programs__icon-box">
+            <div class="s-programs__icon" data-float="8"><div class="s-programs__icon-pop" data-pop data-pop-delay="0.25"><img src="assets/05-programs/icon-rocket.png" width="101" height="110" alt=""></div></div>
+          </div>
+          <div class="s-programs__card-text">
+            <h3 class="s-programs__card-title">Enrichment Programs</h3>
+            <p class="s-programs__card-body">Extend learning, explore interests, and stay motivated.</p>
+          </div>
+        </article></div>
+        <div class="s-programs__cell" data-pop="soft"><article class="s-programs__card">
+          <div class="s-programs__icon-box">
+            <div class="s-programs__icon" style="left:-0.33px" data-float="8"><div class="s-programs__icon-pop" data-pop data-pop-delay="0.25"><img src="assets/05-programs/icon-math.png" width="115" height="110" alt=""></div></div>
+          </div>
+          <div class="s-programs__card-text s-programs__card-text--328">
+            <h3 class="s-programs__card-title">French Math Support</h3>
+            <p class="s-programs__card-body">Concepts explained in French, step by step.</p>
+          </div>
+        </article></div>
+        <div class="s-programs__cell" data-pop="soft"><article class="s-programs__card">
+          <div class="s-programs__icon-box">
+            <div class="s-programs__icon" style="left:0.33px" data-float="8"><div class="s-programs__icon-pop" data-pop data-pop-delay="0.25"><img src="assets/05-programs/icon-book.png" width="140" height="90" alt=""></div></div>
+          </div>
+          <div class="s-programs__card-text s-programs__card-text--328">
+            <h3 class="s-programs__card-title">Reading Support</h3>
+            <p class="s-programs__card-body">Build stronger literacy skills.</p>
+          </div>
+        </article></div>
+      </div>
+
+      <div class="s-programs__row">
+        <div class="s-programs__cell s-programs__cell--writing" data-pop="soft"><article class="s-programs__card s-programs__card--writing">
+          <div class="s-programs__icon-box">
+            <div class="s-programs__icon" data-float="8"><div class="s-programs__icon-pop" data-pop data-pop-delay="0.25"><img src="assets/05-programs/icon-notebook.png" width="124" height="110" alt=""></div></div>
+          </div>
+          <div class="s-programs__card-text s-programs__card-text--328">
+            <h3 class="s-programs__card-title">Writing Support</h3>
+            <p class="s-programs__card-body">Improve grammar, structure and expression.</p>
+          </div>
+        </article></div>
+        <div class="s-programs__cell" data-pop="soft"><article class="s-programs__card s-programs__card--oral">
+          <div class="s-programs__oral-bg" aria-hidden="true"></div>
+          <div class="s-programs__joelle" data-float="8" aria-hidden="true"><div class="s-programs__joelle-in"><img class="s-programs__joelle-img" src="assets/05-programs/mme-joelle.png" width="343" height="460" alt=""></div></div>
+          <div class="s-programs__oral-text">
+            <h3 class="s-programs__oral-title">Oral Communication</h3>
+            <p class="s-programs__oral-body">Build confidence speaking and listening in French.</p>
+          </div>
+          <div class="s-programs__btns">
+            <a class="btn" href="#get-started"><span>Free demo lesson</span></a>
+            <a class="btn btn--dark" href="checkout.html?plan=progression"><span>Register now</span></a>
+          </div>
+        </article></div>
+      </div>
+    </div>
+
+    <!-- Lecture Scientifique™ showcase (2134:13331) -->
+    <div class="s-programs__ls" id="lecture-scientifique">
+      <div class="s-programs__ls-head">
+        <div class="s-programs__cloud s-programs__cloud--6" data-float="9" data-depth="0.8" aria-hidden="true"><div class="s-programs__pop" data-pop><img src="assets/05-programs/clay-cloud.svg" alt=""></div></div>
+        <span class="s-programs__badge" data-fade>Included with every plan</span>
+        <h2 class="t-h2 s-programs__ls-title" data-reveal>Lecture Scientifique™</h2>
+        <p class="s-programs__ls-sub" data-fade>A structured literacy program based on the science of reading to help <br>your child become a confident and skilled reader.</p>
+      </div>
+      <div class="s-programs__ls-body">
+        <div class="s-programs__cloud s-programs__cloud--2" data-float="10" data-depth="-0.7" aria-hidden="true"><div class="s-programs__pop" data-pop><img src="assets/05-programs/clay-cloud.svg" alt=""></div></div>
+        <div class="s-programs__cloud s-programs__cloud--4" data-float="11" data-depth="0.35" aria-hidden="true"><div class="s-programs__pop" data-pop><img src="assets/05-programs/clay-cloud.svg" alt=""></div></div>
+        <div class="s-programs__tablet-float">
+        <div class="s-programs__tablet" data-pop="soft">
+          <div class="s-programs__screen">
+            <img class="s-programs__photo" src="assets/05-programs/ls-photo.jpg" width="780" height="480" alt="A tutor helping a young girl with her reading and writing">
+            <span class="s-programs__play" data-pop data-pop-delay="0.35" aria-hidden="true">
+              <svg viewBox="0 0 64 64" width="64" height="64" focusable="false"><path d="M32 4C16.5375 4 4 16.5375 4 32C4 47.4625 16.5375 60 32 60C47.4625 60 60 47.4625 60 32C60 16.5375 47.4625 4 32 4ZM41.0062 32.4313L27.3563 42.3625C27.2814 42.4163 27.1932 42.4484 27.1013 42.4553C27.0094 42.4622 26.9174 42.4436 26.8354 42.4016C26.7533 42.3597 26.6845 42.2959 26.6363 42.2173C26.5882 42.1387 26.5626 42.0484 26.5625 41.9562V22.1063C26.5622 22.0139 26.5875 21.9233 26.6355 21.8444C26.6836 21.7656 26.7525 21.7016 26.8347 21.6595C26.9169 21.6175 27.0091 21.599 27.1012 21.6061C27.1932 21.6133 27.2815 21.6458 27.3563 21.7L41.0062 31.625C41.0707 31.6706 41.1233 31.731 41.1596 31.8012C41.196 31.8713 41.2149 31.9491 41.2149 32.0281C41.2149 32.1071 41.196 32.1849 41.1596 32.2551C41.1233 32.3252 41.0707 32.3856 41.0062 32.4313Z" fill="#fff"/></svg>
+            </span>
+          </div>
+        </div>
+        </div>
+        <ul class="s-programs__pills">
+          <li class="s-programs__pill"><svg viewBox="0 0 22 22" width="22" height="22" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="11" fill="#1767F1"/><path d="M6.60156 11.3669L9.44323 14.2086L15.4016 8.06689" stroke="#fff" stroke-width="2.01667" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Diagnostic assessments</li>
+          <li class="s-programs__pill"><svg viewBox="0 0 22 22" width="22" height="22" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="11" fill="#1767F1"/><path d="M6.60156 11.3669L9.44323 14.2086L15.4016 8.06689" stroke="#fff" stroke-width="2.01667" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Personalized learning pathways</li>
+          <li class="s-programs__pill"><svg viewBox="0 0 22 22" width="22" height="22" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="11" fill="#1767F1"/><path d="M6.60156 11.3669L9.44323 14.2086L15.4016 8.06689" stroke="#fff" stroke-width="2.01667" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Ongoing progress tracking</li>
+          <li class="s-programs__pill"><svg viewBox="0 0 22 22" width="22" height="22" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="11" fill="#1767F1"/><path d="M6.60156 11.3669L9.44323 14.2086L15.4016 8.06689" stroke="#fff" stroke-width="2.01667" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Detailed reports for parents</li>
+          <li class="s-programs__pill"><svg viewBox="0 0 22 22" width="22" height="22" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="11" fill="#1767F1"/><path d="M6.60156 11.3669L9.44323 14.2086L15.4016 8.06689" stroke="#fff" stroke-width="2.01667" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Exclusive activities &amp; resources</li>
+        </ul>
+        <!-- Soleil (2134:13346): the star layer rotates on its own; lighting/gradient stay fixed (star is a clip over a fixed fill) -->
+        <div class="s-programs__soleil" data-float="10" data-depth="-0.6" aria-hidden="true">
+          <div class="s-programs__pop" data-pop><svg viewBox="0 0 199 197" width="199" height="197" fill="none" focusable="false">
+            <defs>
+              <clipPath id="s-programs-star-clip">
+                <path class="s-programs__rays" d="M85.6766 13.1878C93.3006 6.27068 104.93 6.27068 112.554 13.1878L116.323 16.6072C120.201 20.1253 125.303 21.9826 130.535 21.7801L135.62 21.5832C145.907 21.185 154.816 28.6603 156.21 38.8597L156.899 43.9017C157.608 49.0893 160.323 53.792 164.461 56.9999L168.483 60.1177C176.619 66.4247 178.638 77.8775 173.15 86.5868L170.437 90.8922C167.646 95.3219 166.703 100.67 167.811 105.787L168.888 110.76C171.066 120.822 165.251 130.893 155.449 134.037L150.603 135.591C145.618 137.19 141.458 140.681 139.017 145.313L136.645 149.815C131.847 158.923 120.919 162.9 111.389 159.008L106.678 157.084C101.83 155.104 96.4003 155.104 91.5531 157.084L86.8421 159.008C77.312 162.9 66.3839 158.923 61.5855 149.815L59.2134 145.313C56.7729 140.681 52.6131 137.19 47.6274 135.591L42.7817 134.037C32.9793 130.893 27.1646 120.822 29.343 110.76L30.4198 105.787C31.5278 100.67 30.5849 95.3219 27.7935 90.8922L25.0805 86.5868C19.5924 77.8775 21.6118 66.4247 29.7478 60.1177L33.7696 56.9999C37.9077 53.792 40.6228 49.0893 41.3319 43.9017L42.021 38.8597C43.4151 28.6603 52.3238 21.185 62.6104 21.5832L67.6954 21.7801C72.9273 21.9826 78.0301 20.1253 81.9078 16.6072L85.6766 13.1878Z"/>
+              </clipPath>
+              <filter id="s-programs-star-fx" x="-6" y="-8" width="211" height="214" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset dy="14"/>
+                <feGaussianBlur stdDeviation="11"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0.05 0 0 0 0 0.2 0 0 0 0 0.4 0 0 0 0.12 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset dx="5" dy="7"/>
+                <feGaussianBlur stdDeviation="6.5"/>
+                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.7 0"/>
+                <feBlend mode="normal" in2="shape" result="effect2_innerShadow"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset dx="-6" dy="-10"/>
+                <feGaussianBlur stdDeviation="9"/>
+                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0.705882 0 0 0 0 0.278431 0 0 0 0 0.0392157 0 0 0 0.45 0"/>
+                <feBlend mode="normal" in2="effect2_innerShadow" result="effect3_innerShadow"/>
+              </filter>
+              <filter id="s-programs-face-fx" x="35.6152" y="18.4951" width="126" height="132" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset dx="5" dy="7"/>
+                <feGaussianBlur stdDeviation="6.5"/>
+                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.75 0"/>
+                <feBlend mode="normal" in2="shape" result="effect1_innerShadow"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset dx="-6" dy="-10"/>
+                <feGaussianBlur stdDeviation="9"/>
+                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0.784314 0 0 0 0 0.439216 0 0 0 0 0.054902 0 0 0 0.45 0"/>
+                <feBlend mode="normal" in2="effect1_innerShadow" result="effect2_innerShadow"/>
+              </filter>
+              <filter id="s-programs-blush-fx" x="-50%" y="-100%" width="200%" height="300%" color-interpolation-filters="sRGB">
+                <feGaussianBlur stdDeviation="2"/>
+              </filter>
+              <linearGradient id="s-programs-star-grad" x1="99.1154" y1="0.995117" x2="99.1154" y2="170.995" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FFB75E"/>
+                <stop offset="0.6" stop-color="#FF8A1F"/>
+                <stop offset="1" stop-color="#E8670A"/>
+              </linearGradient>
+              <linearGradient id="s-programs-face-grad" x1="99.1152" y1="28.4951" x2="99.1152" y2="143.495" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FFDE8E"/>
+                <stop offset="0.6" stop-color="#FFBA42"/>
+                <stop offset="1" stop-color="#F59A1E"/>
+              </linearGradient>
+            </defs>
+            <!-- star (rays) -->
+            <g filter="url(#s-programs-star-fx)">
+              <rect x="0" y="-2" width="199" height="199" fill="url(#s-programs-star-grad)" clip-path="url(#s-programs-star-clip)"/>
+            </g>
+            <!-- face -->
+            <g class="s-programs__face">
+              <g filter="url(#s-programs-face-fx)"><circle cx="99.1152" cy="85.9951" r="57.5" fill="url(#s-programs-face-grad)"/></g>
+              <ellipse cx="82.6155" cy="82.4951" rx="7.5" ry="8.5" fill="#3A2416"/>
+              <circle cx="84.8654" cy="79.7451" r="2.25" fill="#fff"/>
+              <ellipse cx="115.615" cy="82.4951" rx="7.5" ry="8.5" fill="#3A2416"/>
+              <circle cx="117.865" cy="79.7451" r="2.25" fill="#fff"/>
+              <ellipse cx="97.6154" cy="91.7451" rx="4" ry="2.75" fill="#E2502A"/>
+              <path d="M91.1154 96.9951C96.782 101.328 102.449 101.328 108.115 96.9951" stroke="#3A2416" stroke-width="2.5" stroke-linecap="round"/>
+              <g opacity="0.55" filter="url(#s-programs-blush-fx)"><ellipse cx="66.6154" cy="98.4951" rx="10.5" ry="5.5" fill="#FF8A6A"/></g>
+              <g opacity="0.55" filter="url(#s-programs-blush-fx)"><ellipse cx="135.615" cy="98.4951" rx="10.5" ry="5.5" fill="#FF8A6A"/></g>
+            </g>
+          </svg></div>
+        </div>
+        <!-- Clay letter é (2134:13366) — drops in with a squashy bounce, then floats -->
+        <div class="s-programs__e" data-float="12" data-depth="0.9" aria-hidden="true"><img src="assets/05-programs/clay-e.svg" width="93" height="118" alt=""></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Wave edge into white (2134:12951) — full-bleed so wide screens stay covered -->
+  <svg class="s-programs__wave" viewBox="0 0 1440 160" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <path d="M0 69.9999C240 9.9999 480 9.9999 720 59.9999C960 110 1200 130 1440 49.9999V160H0V69.9999Z" fill="#C9E265"/>
+    <path d="M0 110C260 60 525 65 765 105C1005 145 1220 160 1440 100V160H0V110Z" fill="#fff"/>
+  </svg>
+</section>
+
+<section class="ff-sec s-hiw" id="how-it-works">
+  <div class="ff-frame" style="height:2383px">
+
+    <header class="s-hiw__head">
+      <h2 class="t-h2 s-hiw__title" data-reveal>Getting started is easy</h2>
+      <p class="t-sub s-hiw__sub" data-fade>A simple, supportive process to connect you with certified French-first-language <br>educators and get your child learning with confidence.</p>
+    </header>
+
+    <!-- Route (Figma 2134:11701): one ordered stroked path; draws on scroll (js), traveller rides the tip -->
+    <svg class="s-hiw__route" width="1450.3" height="1961.34" viewBox="0 0 1450.3 1961.34" fill="none" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="s-hiw-route-grad" x1="1597.19" y1="-201.643" x2="268.272" y2="778.523" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#81DFFF"/>
+          <stop offset="0.45" stop-color="#38B6FF"/>
+          <stop offset="1" stop-color="#1767F1"/>
+        </linearGradient>
+        <linearGradient id="s-hiw-tip-grad" x1="0" y1="-12" x2="0" y2="12" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#609AFE"/>
+          <stop offset="1" stop-color="#1767F1"/>
+        </linearGradient>
+      </defs>
+      <!-- Run-in: continues the first segment (its start tangent) up-right to the viewport's right edge; js sizes it to the window -->
+      <path class="s-hiw__route-pre" d="M3430 -223.3L1443.3 7" stroke="url(#s-hiw-route-grad)" stroke-width="14" stroke-linecap="round"/>
+      <path class="s-hiw__route-path" d="M1443.3 7C1117.5 44.76 921.79 273.23 1025.55 335.19C1072.41 363.17 1117.04 300.82 1063.3 248.85C967.35 156.09 842.5 188.34 664.89 263.55C628.83 278.82 557.05 310.91 493.58 364.9C434.72 414.96 435.1 490.61 477.7 503.97C520.3 517.33 566.41 518.34 610.19 525.36C654.27 532.44 688.03 552.33 715.94 589.09C748.48 631.93 753.1 692.58 774.17 741.24C799.85 800.57 868.54 818.61 929.36 822.63C1017.26 828.44 1076.29 800.51 1158.18 807.62C1213.91 812.46 1313.57 837.63 1321.87 952.84C1331.74 1089.82 1207.3 1128.14 1099.85 1158.08C1006.07 1184.21 897.01 1259.04 774.17 1201.95C679.39 1157.9 596.92 1164.68 582.43 1246.97C567.93 1329.25 637.28 1380.93 751.67 1390.6C866.06 1400.28 1031.64 1383.46 1063.3 1511.22C1104.17 1676.23 857.44 1659.29 715.94 1659.29C592.83 1659.29 375.84 1630.51 342.53 1532.95C301.71 1413.41 569.33 1428.24 414.98 1729.47C368.81 1819.58 274.16 1954.34 7 1954.34" stroke="url(#s-hiw-route-grad)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Run-off: continues the last (horizontal) segment past the frame to the viewport's left edge; js sizes it to the window -->
+      <path class="s-hiw__route-ext" d="M7 1954.34H-2000" stroke="url(#s-hiw-route-grad)" stroke-width="14" stroke-linecap="round"/>
+      <g class="s-hiw__tip"><circle class="s-hiw__tip-dot" r="12" fill="url(#s-hiw-tip-grad)" stroke="#fff" stroke-width="4"/></g>
+    </svg>
+
+    <!-- Mobile route (< 1024): a gently waving line down the left lane through the nodes; js builds it from the layout -->
+    <svg class="s-hiw__mroute" fill="none" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="s-hiw-mgrad" x1="0" y1="0" x2="0" y2="1000" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#81DFFF"/>
+          <stop offset="0.45" stop-color="#38B6FF"/>
+          <stop offset="1" stop-color="#1767F1"/>
+        </linearGradient>
+        <linearGradient id="s-hiw-mtip-grad" x1="0" y1="-9" x2="0" y2="9" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#609AFE"/>
+          <stop offset="1" stop-color="#1767F1"/>
+        </linearGradient>
+      </defs>
+      <path class="s-hiw__mroute-path" stroke="url(#s-hiw-mgrad)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+      <g class="s-hiw__mtip"><circle class="s-hiw__tip-dot" r="9" fill="url(#s-hiw-mtip-grad)" stroke="#fff" stroke-width="3"/></g>
+    </svg>
+
+    <ol class="s-hiw__steps">
+      <li class="s-hiw__step s-hiw__step--char">
+        <div class="s-hiw__node" style="left:405px;top:706px" aria-hidden="true"><div class="s-hiw__node-body">1</div></div>
+        <div class="s-hiw__info s-hiw__info--end" style="left:85px;top:663.5px;width:300px">
+          <p class="s-hiw__label">STEP 1</p>
+          <h3 class="s-hiw__step-title">Choose your option</h3>
+          <p class="s-hiw__text">Book a free 15-min demo or register now and save $10. Both include an academic assessment and detailed feedback.</p>
+        </div>
+        <div class="s-hiw__mchar s-hiw__mchar--ines" data-float="8" aria-hidden="true"><div class="s-hiw__char-pop"><img src="assets/06-how-it-works/ines.png" alt="" width="133" height="200" loading="lazy"></div></div>
+      </li>
+      <li class="s-hiw__step">
+        <div class="s-hiw__node" style="left:1279px;top:1211px" aria-hidden="true"><div class="s-hiw__node-body">2</div></div>
+        <div class="s-hiw__info s-hiw__info--end" style="left:839px;top:1209px;width:420px">
+          <p class="s-hiw__label">STEP 2</p>
+          <h3 class="s-hiw__step-title">We schedule your lesson</h3>
+          <p class="s-hiw__text">We’ll contact you to arrange a time that works best. Lessons run until 9PM on weekdays and 5PM on weekends.</p>
+        </div>
+      </li>
+      <li class="s-hiw__step s-hiw__step--char">
+        <div class="s-hiw__node" style="left:538px;top:1525px" aria-hidden="true"><div class="s-hiw__node-body">3</div></div>
+        <div class="s-hiw__info s-hiw__info--end" style="left:118px;top:1506.5px;width:400px">
+          <p class="s-hiw__label">STEP 3</p>
+          <h3 class="s-hiw__step-title">Start learning</h3>
+          <p class="s-hiw__text">Lessons focus on reading, writing, and speaking in French, adapted to each learner’s level and goals.</p>
+        </div>
+        <div class="s-hiw__mchar s-hiw__mchar--joelle" data-float="8" aria-hidden="true"><div class="s-hiw__char-pop"><img src="assets/06-how-it-works/mme-joelle.png" alt="" width="133" height="200" loading="lazy"></div></div>
+      </li>
+      <li class="s-hiw__step">
+        <div class="s-hiw__node" style="left:1024px;top:1789px" aria-hidden="true"><div class="s-hiw__node-body">4</div></div>
+        <div class="s-hiw__info" style="left:1120px;top:1741.5px;width:300px">
+          <p class="s-hiw__label">STEP 4</p>
+          <h3 class="s-hiw__step-title">Receive personalized feedback</h3>
+          <p class="s-hiw__text">After each session, you’ll receive a short progress report highlighting strengths and next steps.</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="s-hiw__cta">
+      <div class="s-hiw__mchar s-hiw__mchar--omar" data-float="8" aria-hidden="true"><div class="s-hiw__char-pop"><img src="assets/06-how-it-works/omar.png" alt="" width="133" height="200" loading="lazy"></div></div>
+      <div class="s-hiw__cta-pop"><a class="btn" href="#get-started"><span>Book a free demo lesson</span></a></div>
+    </div>
+
+    <!-- Clay characters, desktop (outer: cursor parallax + idle float · inner: pop when the route reaches them). Mobile uses the small .s-hiw__mchar copies above. -->
+    <div class="s-hiw__char" style="left:703px;top:403px" data-depth="0.45" data-float="10"><div class="s-hiw__char-pop"><img src="assets/06-how-it-works/ines.png" alt="" width="133" height="200"></div></div>
+    <div class="s-hiw__char" style="left:1166px;top:996px" data-depth="-0.35" data-float="8"><div class="s-hiw__char-pop"><img src="assets/06-how-it-works/reader-boy.png" alt="" width="133" height="200"></div></div>
+    <div class="s-hiw__char" style="left:624px;top:1362px" data-depth="0.55" data-float="12"><div class="s-hiw__char-pop"><img src="assets/06-how-it-works/cheer-boy.png" alt="" width="133" height="200"></div></div>
+    <div class="s-hiw__char" style="left:840px;top:1827px" data-depth="-0.4" data-float="9"><div class="s-hiw__char-pop"><img src="assets/06-how-it-works/mme-joelle.png" alt="" width="133" height="200"></div></div>
+    <div class="s-hiw__char" style="left:98px;top:2088px" data-depth="0.35" data-float="10"><div class="s-hiw__char-pop"><img src="assets/06-how-it-works/omar.png" alt="" width="133" height="200"></div></div>
+
+  </div>
+</section>
+
+<!-- 07 · Testimonials — Figma wrapper 2134:13320 (1440×1043) · blush band 2134:11768 sits at y=102 -->
+<section class="ff-sec s-testi" id="testimonials">
+  <!-- Full-bleed band + scalloped cloud edges (cloud SVG repeats so wide screens stay scalloped) -->
+  <div class="s-testi__band" aria-hidden="true"></div>
+  <div class="s-testi__clouds s-testi__clouds--top" aria-hidden="true"></div>
+  <div class="s-testi__clouds s-testi__clouds--bottom" aria-hidden="true"></div>
+
+  <div class="ff-frame" style="height:1043px">
+    <h2 class="t-h2 s-testi__title" data-reveal>Voices from Our Community</h2>
+    <p class="s-testi__sub" data-fade>We’re thrilled by the heartfelt stories parents share—highlighting their children’s confidence, <br>language growth, and joy in learning through our supportive, engaging program.</p>
+
+    <!-- Carousel: each unit = testimonial card + its photo slot. Motion mode clones the set once and drifts it rightwards
+         in a seamless loop (js/sections/07-testimonials.js); static / reduced motion keeps this layout (Arjun's card at x=120 as in Figma).
+         Photos: drop assets/07-testimonials/photo-1.jpg … photo-5.jpg (296×369, @2x = 592×738) — a missing file falls back to the tinted placeholder. -->
+    <div class="s-testi__track">
+      <article class="s-testi__card" data-pop="soft">
+        <div class="s-testi__top">
+          <p class="s-testi__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></p>
+          <p class="s-testi__quote">“Our daughter, Léa, has truly blossomed since starting with Apprendre Franco-fun! The interactive lessons and kind, knowledgeable educators have made French her favourite subject. We’ve seen a big boost in her confidence and language skills.”</p>
+        </div>
+        <div class="s-testi__by">
+          <span class="s-testi__avatar s-testi__avatar--pink" data-pop="bounce" data-pop-delay="0.3">LB</span>
+          <p class="s-testi__name">Mother of Léa B.</p>
+        </div>
+      </article>
+      <figure class="s-testi__photo s-testi__photo--pink" data-pop="soft">
+        <svg class="s-testi__photo-icon" viewBox="0 0 24 24" width="44" height="44" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="3.5"/><circle cx="9" cy="9.6" r="1.8"/><path d="M3.6 17.2l5.2-5.2 3.6 3.6 2.6-2.6 5.4 5.4"/></svg>
+        <img class="s-testi__photo-img" src="assets/07-testimonials/photo-1.jpg" alt="" width="296" height="369" onerror="this.remove()">
+      </figure>
+
+      <article class="s-testi__card" data-pop="soft">
+        <div class="s-testi__top">
+          <p class="s-testi__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></p>
+          <p class="s-testi__quote">“Apprendre Franco-fun! has been a game-changer for our family. The one-on-one virtual support is incredibly engaging, and the progress tracking keeps us involved every step of the way. Our son looks forward to each session!”</p>
+        </div>
+        <div class="s-testi__by">
+          <span class="s-testi__avatar s-testi__avatar--green" data-pop="bounce" data-pop-delay="0.3">AS</span>
+          <p class="s-testi__name">Father of Arjun S.</p>
+        </div>
+      </article>
+      <figure class="s-testi__photo s-testi__photo--green" data-pop="soft">
+        <svg class="s-testi__photo-icon" viewBox="0 0 24 24" width="44" height="44" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="3.5"/><circle cx="9" cy="9.6" r="1.8"/><path d="M3.6 17.2l5.2-5.2 3.6 3.6 2.6-2.6 5.4 5.4"/></svg>
+        <img class="s-testi__photo-img" src="assets/07-testimonials/photo-2.jpg" alt="" width="296" height="369" onerror="this.remove()">
+      </figure>
+
+      <article class="s-testi__card" data-pop="soft">
+        <div class="s-testi__top">
+          <p class="s-testi__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></p>
+          <p class="s-testi__quote">“As a parent, I appreciate how Apprendre Franco-fun! combines fun with a solid foundation in French. The personalized approach has helped our child catch up and even get ahead in class. We highly recommend it to other families.”</p>
+        </div>
+        <div class="s-testi__by">
+          <span class="s-testi__avatar s-testi__avatar--sky" data-pop="bounce" data-pop-delay="0.3">CT</span>
+          <p class="s-testi__name">Mother of Camille T.</p>
+        </div>
+      </article>
+      <figure class="s-testi__photo s-testi__photo--sky" data-pop="soft">
+        <svg class="s-testi__photo-icon" viewBox="0 0 24 24" width="44" height="44" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="3.5"/><circle cx="9" cy="9.6" r="1.8"/><path d="M3.6 17.2l5.2-5.2 3.6 3.6 2.6-2.6 5.4 5.4"/></svg>
+        <img class="s-testi__photo-img" src="assets/07-testimonials/photo-3.jpg" alt="" width="296" height="369" onerror="this.remove()">
+      </figure>
+
+      <article class="s-testi__card" data-pop="soft">
+        <div class="s-testi__top">
+          <p class="s-testi__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></p>
+          <p class="s-testi__quote">“As a parent, I appreciate how Apprendre Franco-fun! combines fun with a solid foundation in French. The personalized approach has helped our child catch up and even get ahead in class. We highly recommend it to other families.”</p>
+        </div>
+        <div class="s-testi__by">
+          <span class="s-testi__avatar s-testi__avatar--sky" data-pop="bounce" data-pop-delay="0.3">CT</span>
+          <p class="s-testi__name">Mother of Camille T.</p>
+        </div>
+      </article>
+      <figure class="s-testi__photo s-testi__photo--lavender" data-pop="soft">
+        <svg class="s-testi__photo-icon" viewBox="0 0 24 24" width="44" height="44" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="3.5"/><circle cx="9" cy="9.6" r="1.8"/><path d="M3.6 17.2l5.2-5.2 3.6 3.6 2.6-2.6 5.4 5.4"/></svg>
+        <img class="s-testi__photo-img" src="assets/07-testimonials/photo-4.jpg" alt="" width="296" height="369" onerror="this.remove()">
+      </figure>
+
+      <article class="s-testi__card" data-pop="soft">
+        <div class="s-testi__top">
+          <p class="s-testi__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></p>
+          <p class="s-testi__quote">“As a parent, I appreciate how Apprendre Franco-fun! combines fun with a solid foundation in French. The personalized approach has helped our child catch up and even get ahead in class. We highly recommend it to other families.”</p>
+        </div>
+        <div class="s-testi__by">
+          <span class="s-testi__avatar s-testi__avatar--sky" data-pop="bounce" data-pop-delay="0.3">CT</span>
+          <p class="s-testi__name">Mother of Camille T.</p>
+        </div>
+      </article>
+      <figure class="s-testi__photo s-testi__photo--salmon" data-pop="soft">
+        <svg class="s-testi__photo-icon" viewBox="0 0 24 24" width="44" height="44" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="3.5"/><circle cx="9" cy="9.6" r="1.8"/><path d="M3.6 17.2l5.2-5.2 3.6 3.6 2.6-2.6 5.4 5.4"/></svg>
+        <img class="s-testi__photo-img" src="assets/07-testimonials/photo-5.jpg" alt="" width="296" height="369" onerror="this.remove()">
+      </figure>
+    </div>
+
+    <!-- Soleil (inline SVG so the rays can turn and the eyes can blink) -->
+    <div class="s-testi__sun" data-depth="0.8" data-float="10">
+      <div class="s-testi__sun-pop" data-pop="bounce" data-pop-delay="0.15">
+<svg class="s-testi__sun-svg" width="163.249" height="161.82" aria-hidden="true" focusable="false" viewBox="0 0 163.249 161.82" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g>
+<g filter="url(#s07sun-f0)">
+<g class="s-testi__rays"><path d="M70.5572 10.8606C76.8359 5.16412 86.413 5.16413 92.6916 10.8606L95.7954 13.6765C98.9888 16.5739 103.191 18.1033 107.5 17.9366L111.687 17.7745C120.159 17.4465 127.495 23.6026 128.643 32.0022L129.211 36.1544C129.795 40.4265 132.031 44.2993 135.439 46.9411L138.751 49.5087C145.451 54.7028 147.114 64.1344 142.594 71.3069L140.36 74.8524C138.061 78.5004 137.285 82.9044 138.197 87.1187L139.084 91.2146C140.878 99.5002 136.089 107.794 128.017 110.384L124.026 111.663C119.92 112.98 116.495 115.855 114.485 119.67L112.531 123.377C108.58 130.878 99.5801 134.153 91.7319 130.948L87.8522 129.363C83.8604 127.733 79.3885 127.733 75.3967 129.363L71.517 130.948C63.6688 134.153 54.6692 130.878 50.7175 123.377L48.764 119.67C46.7542 115.855 43.3285 112.98 39.2226 111.663L35.2321 110.384C27.1595 107.794 22.3709 99.5002 24.1648 91.2146L25.0517 87.1186C25.9641 82.9044 25.1876 78.5004 22.8888 74.8524L20.6546 71.3068C16.1349 64.1344 17.798 54.7028 24.4982 49.5087L27.8103 46.9411C31.2181 44.2993 33.4541 40.4265 34.038 36.1544L34.6056 32.0022C35.7537 23.6026 43.0902 17.4465 51.5615 17.7745L55.7492 17.9366C60.0578 18.1033 64.2601 16.5738 67.4535 13.6765L70.5572 10.8606Z" fill="url(#s07sun-g0)"/></g>
+</g>
+<g filter="url(#s07sun-f1)">
+<circle cx="81.6258" cy="70.819" r="47.3529" fill="url(#s07sun-g1)"/>
+</g>
+<g class="s-testi__eye"><ellipse cx="68.0353" cy="67.9377" rx="6.17647" ry="7" fill="#3A2416"/><circle cx="69.8875" cy="65.6725" r="1.85294" fill="white"/></g>
+<g class="s-testi__eye"><ellipse cx="95.2111" cy="67.9377" rx="6.17647" ry="7" fill="#3A2416"/><circle cx="97.0672" cy="65.6725" r="1.85294" fill="white"/></g>
+<ellipse cx="80.3912" cy="75.555" rx="3.29412" ry="2.26471" fill="#E2502A"/>
+<path d="M75.0346 79.8781C79.7013 83.4468 84.3679 83.4468 89.0346 79.8781" stroke-width="2.05882" stroke-linecap="round" stroke="#3A2416"/>
+<g opacity="0.55" filter="url(#s07sun-f2)">
+<ellipse cx="54.8574" cy="81.1136" rx="8.64706" ry="4.52941" fill="#FF8A6A"/>
+</g>
+<g opacity="0.55" filter="url(#s07sun-f3)">
+<ellipse cx="111.682" cy="81.1136" rx="8.64706" ry="4.52941" fill="#FF8A6A"/>
+</g>
+</g>
+<defs>
+<filter id="s07sun-f0" x="-4.76837e-07" y="-1.64706" width="163.249" height="163.467" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="11.5294"/>
+<feGaussianBlur stdDeviation="9.05882"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.05 0 0 0 0 0.2 0 0 0 0 0.4 0 0 0 0.12 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_5"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_5" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="4.11765" dy="5.76471"/>
+<feGaussianBlur stdDeviation="5.35294"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.7 0"/>
+<feBlend mode="normal" in2="shape" result="effect2_innerShadow_0_5"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="-4.94118" dy="-8.23529"/>
+<feGaussianBlur stdDeviation="7.41176"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.705882 0 0 0 0 0.278431 0 0 0 0 0.0392157 0 0 0 0.45 0"/>
+<feBlend mode="normal" in2="effect2_innerShadow_0_5" result="effect3_innerShadow_0_5"/>
+</filter>
+<filter id="s07sun-f1" x="29.3317" y="15.2307" width="103.765" height="108.706" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="4.11765" dy="5.76471"/>
+<feGaussianBlur stdDeviation="5.35294"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.75 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_0_5"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="-4.94118" dy="-8.23529"/>
+<feGaussianBlur stdDeviation="7.41176"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.784314 0 0 0 0 0.439216 0 0 0 0 0.054902 0 0 0 0.45 0"/>
+<feBlend mode="normal" in2="effect1_innerShadow_0_5" result="effect2_innerShadow_0_5"/>
+</filter>
+<filter id="s07sun-f2" x="42.9163" y="73.2901" width="23.8824" height="15.6471" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="1.64706" result="effect1_foregroundBlur_0_5"/>
+</filter>
+<filter id="s07sun-f3" x="99.7405" y="73.2901" width="23.8823" height="15.6471" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="1.64706" result="effect1_foregroundBlur_0_5"/>
+</filter>
+<linearGradient id="s07sun-g0" x1="81.6244" y1="0.81955" x2="81.6244" y2="140.82" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFB75E"/>
+<stop offset="0.6" stop-color="#FF8A1F"/>
+<stop offset="1" stop-color="#E8670A"/>
+</linearGradient>
+<linearGradient id="s07sun-g1" x1="81.6258" y1="23.466" x2="81.6258" y2="118.172" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFDE8E"/>
+<stop offset="0.6" stop-color="#FFBA42"/>
+<stop offset="1" stop-color="#F59A1E"/>
+</linearGradient>
+</defs>
+</svg>
+      </div>
+    </div>
+
+    <!-- Clay letter "!" (design tilt is baked into the SVG) -->
+    <img class="s-testi__bang" src="assets/07-testimonials/clay-bang.svg" alt="" width="60" height="98" data-pop="bounce" data-float="8" data-depth="-0.6">
+  </div>
+</section>
+
+<!-- 08 · Numbers — Figma 2134:11733 (sits at x=8, 1425×392 in Figma; built full-width, bubbles placed in 1440-page coordinates).
+     The coloured shapes bounce in; the numbers and labels only fade up (text never bounces). -->
+<section class="ff-sec s-num" id="numbers">
+  <div class="ff-frame" style="height:392px">
+    <ul class="s-num__list">
+      <li class="s-num__item s-num__item--1" data-float="10" data-depth="0.45">
+        <div class="s-num__bubble">
+          <div class="s-num__pop" data-pop="bounce"><img class="s-num__shape" src="assets/08-numbers/bubble-1.svg" alt="" width="245" height="242"></div>
+          <div class="s-num__text" data-fade data-fade-delay="0.15">
+            <p class="s-num__value" data-count>18,655</p>
+            <p class="s-num__label">Happy Students</p>
+          </div>
+        </div>
+      </li>
+      <li class="s-num__item s-num__item--2" data-float="12" data-depth="-0.35">
+        <div class="s-num__bubble">
+          <div class="s-num__pop" data-pop="bounce" data-pop-delay="0.08"><img class="s-num__shape" src="assets/08-numbers/bubble-2.svg" alt="" width="245" height="242"></div>
+          <div class="s-num__text" data-fade data-fade-delay="0.23">
+            <p class="s-num__value" data-count>185</p>
+            <p class="s-num__label">Dedicated Teachers</p>
+          </div>
+        </div>
+      </li>
+      <li class="s-num__item s-num__item--3" data-float="9" data-depth="0.6">
+        <div class="s-num__bubble">
+          <div class="s-num__pop" data-pop="bounce" data-pop-delay="0.16"><img class="s-num__shape" src="assets/08-numbers/bubble-3.svg" alt="" width="245" height="242"></div>
+          <div class="s-num__text" data-fade data-fade-delay="0.31">
+            <p class="s-num__value" data-count>50+</p>
+            <p class="s-num__label">Partnerships</p>
+          </div>
+        </div>
+      </li>
+      <li class="s-num__item s-num__item--4" data-float="11" data-depth="-0.5">
+        <div class="s-num__bubble">
+          <div class="s-num__pop" data-pop="bounce" data-pop-delay="0.24"><img class="s-num__shape" src="assets/08-numbers/bubble-4.svg" alt="" width="245" height="242"></div>
+          <div class="s-num__text" data-fade data-fade-delay="0.39">
+            <p class="s-num__value" data-count>98%</p>
+            <p class="s-num__label">Parent Satisfaction</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="ff-sec s-pricing" id="pricing">
+  <div class="ff-frame s-pricing__frame">
+
+    <!-- Playful 3D accents reused from the hero + programs (side margins / around the header only) -->
+    <div class="s-pricing__deco" aria-hidden="true">
+      <img class="s-pricing__sun" src="assets/01-hero/sun.svg" alt="" data-pop data-float="10" data-depth="0.7">
+      <img class="s-pricing__c" src="assets/01-hero/clay-c-cedilla.svg" alt="" data-pop data-pop-delay="0.15" data-float="12" data-depth="-0.6">
+      <img class="s-pricing__rocket" src="assets/05-programs/icon-rocket.png" alt="" data-pop data-pop-delay="0.1" data-float="9" data-depth="0.45">
+      <img class="s-pricing__cloud" src="assets/05-programs/clay-cloud.svg" alt="" data-pop data-float="8" data-depth="-0.35">
+    </div>
+
+    <header class="s-pricing__head">
+      <h2 class="t-h2 s-pricing__title" data-reveal>Choose the plan that<br>fits your family</h2>
+      <div class="s-pricing__toggle" role="tablist" aria-label="Plan type" data-fade data-fade-delay="0.15">
+        <span class="s-pricing__thumb" aria-hidden="true"></span>
+        <button class="s-pricing__tab" type="button" role="tab" id="pricing-tab-individual" aria-selected="true" aria-controls="pricing-panel-individual" data-cursor="hover">Individual classes</button>
+        <button class="s-pricing__tab" type="button" role="tab" id="pricing-tab-club" aria-selected="false" aria-controls="pricing-panel-club" tabindex="-1" data-cursor="hover">Franco-fun! Club</button>
+      </div>
+    </header>
+
+    <div class="s-pricing__panels">
+
+      <!-- ===== Individual classes (default) — Figma 2134:11821 ===== -->
+      <div class="s-pricing__panel s-pricing__panel--individual is-active" id="pricing-panel-individual" role="tabpanel" aria-labelledby="pricing-tab-individual">
+        <div class="s-pricing__plans">
+
+          <article class="s-pricing__plan" data-pop="soft">
+            <p class="s-pricing__label">ESSENTIAL</p>
+            <h3 class="s-pricing__plan-title">5 individual classes</h3>
+            <p class="s-pricing__price"><span class="s-pricing__amount">$21</span><span class="s-pricing__per">/ class</span></p>
+            <p class="s-pricing__total">$105 total</p>
+            <p class="s-pricing__desc">Great for consistent support and building strong foundations.</p>
+            <a class="btn s-pricing__ghost s-pricing__buy" href="checkout.html?plan=essential"><span>Purchase 5 classes</span></a>
+            <hr class="s-pricing__rule">
+            <div class="s-pricing__incl">
+              <p class="s-pricing__incl-title">What’s included</p>
+              <ul class="s-pricing__list">
+                <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Personalized support</span></li>
+                <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Support in reading, writing, speaking &amp; math</span></li>
+                <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Homework help</span></li>
+                <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Access to learning resources</span></li>
+                <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Progress tracking</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="s-pricing__plan s-pricing__plan--tint" data-pop="soft">
+            <p class="s-pricing__label">PROGRESSION</p>
+            <h3 class="s-pricing__plan-title">10 individual classes</h3>
+            <p class="s-pricing__price"><span class="s-pricing__amount">$19.50</span><span class="s-pricing__per">/ class</span></p>
+            <p class="s-pricing__total">$195 total</p>
+            <p class="s-pricing__desc">Best for steady progress and growing confidence.</p>
+            <a class="btn btn--block s-pricing__buy" href="checkout.html?plan=progression"><span>Purchase 10 classes</span></a>
+            <button class="s-pricing__nudge" type="button" data-cursor="hover" aria-controls="pricing-panel-club">
+              <span>Taking 3+ classes a week? The Club is free for you</span>
+              <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7H11M8 3.5L11.5 7L8 10.5"/></svg>
+            </button>
+            <hr class="s-pricing__rule">
+            <div class="s-pricing__incl">
+              <p class="s-pricing__incl-title">Everything in Essential, plus:</p>
+              <ul class="s-pricing__list">
+                <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Reinforced learning and practice</span></li>
+                <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Deeper skill development</span></li>
+                <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Regular progress reports</span></li>
+                <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Priority scheduling</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="s-pricing__plan" data-pop="soft">
+            <p class="s-pricing__label">INTENSIVE</p>
+            <h3 class="s-pricing__plan-title">20 individual classes</h3>
+            <p class="s-pricing__price"><span class="s-pricing__amount">$18.50</span><span class="s-pricing__per">/ class</span></p>
+            <p class="s-pricing__total">$370 total</p>
+            <p class="s-pricing__desc">Ideal for accelerated progress and targeted support.</p>
+            <a class="btn s-pricing__ghost s-pricing__buy" href="checkout.html?plan=intensive"><span>Purchase 20 classes</span></a>
+            <button class="s-pricing__nudge" type="button" data-cursor="hover" aria-controls="pricing-panel-club">
+              <span>Taking 3+ classes a week? The Club is free for you</span>
+              <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7H11M8 3.5L11.5 7L8 10.5"/></svg>
+            </button>
+            <hr class="s-pricing__rule">
+            <div class="s-pricing__incl">
+              <p class="s-pricing__incl-title">Everything in Progression, plus:</p>
+              <ul class="s-pricing__list">
+                <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Intensive learning &amp; intervention plan</span></li>
+                <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Advanced skill development</span></li>
+                <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Frequent communication with parents</span></li>
+                <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Access to exclusive resources</span></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <p class="s-pricing__note" data-fade><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Lecture Scientifique™ included with every plan</span></p>
+
+        <div class="s-pricing__help" id="get-started" data-pop="soft">
+          <div class="s-pricing__help-text">
+            <p class="s-pricing__help-title">Getting started is easy</p>
+            <p class="s-pricing__help-sub">Book a free 15-min demo or register now and save $10.</p>
+          </div>
+          <div class="s-pricing__help-cta">
+            <a class="btn" href="#"><span>Free demo lesson</span></a>
+            <a class="btn s-pricing__ghost" href="checkout.html?plan=progression"><span>Register now</span></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Franco-fun! Club — Figma 2172:5348 ===== -->
+      <div class="s-pricing__panel s-pricing__panel--club" id="pricing-panel-club" role="tabpanel" aria-labelledby="pricing-tab-club" hidden>
+        <div class="s-pricing__club">
+          <div class="s-pricing__about">
+            <p class="s-pricing__label">ADD-ON</p>
+            <h3 class="s-pricing__club-title">Franco-fun! Club Membership</h3>
+            <p class="s-pricing__club-lead">More French. More confidence. All in one membership.</p>
+            <p class="s-pricing__club-desc">Give your child ongoing opportunities to speak, learn and build confidence in French—every week, all year long.</p>
+            <hr class="s-pricing__rule">
+            <p class="s-pricing__incl-title">What’s included</p>
+            <ul class="s-pricing__list s-pricing__list--grid">
+              <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Live group classes for students <span class="s-pricing__nw">K–5</span></span></li>
+              <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Unlimited Homework Lab <span class="s-pricing__nw">(Sun–Thu)</span></span></li>
+              <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Qualified French teachers</span></li>
+              <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Private learning community</span></li>
+              <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Flexible scheduling</span></li>
+              <li><svg class="s-pricing__check" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.4L7.2 12.5L14 5.6"/></svg><span>Cancel anytime</span></li>
+            </ul>
+          </div>
+
+          <div class="s-pricing__tiers">
+            <p class="s-pricing__tiers-title">Choose the membership that fits your family</p>
+            <div class="s-pricing__tier">
+              <div class="s-pricing__tier-info">
+                <p class="s-pricing__tier-name">Current families · Taking 3+ weekly classes</p>
+                <p class="s-pricing__tier-desc">Our thanks for being part of the Franco-fun! family.</p>
+              </div>
+              <p class="s-pricing__tier-price"><span class="s-pricing__tier-amount s-pricing__tier-amount--free">FREE!</span></p>
+              <a class="btn s-pricing__ghost s-pricing__ghost--tier" href="membership.html?tier=current-families-taking-3-weekly-classes"><span>Get started</span></a>
+            </div>
+            <div class="s-pricing__tier">
+              <div class="s-pricing__tier-info">
+                <p class="s-pricing__tier-name">Current families · Taking 1–2 weekly classes</p>
+                <p class="s-pricing__tier-desc">Enjoy all the benefits at a special price.</p>
+              </div>
+              <p class="s-pricing__tier-price"><span class="s-pricing__tier-amount">$24.99</span><span class="s-pricing__tier-per">/month</span></p>
+              <a class="btn s-pricing__ghost s-pricing__ghost--tier" href="membership.html?tier=current-families-taking-1-2-weekly-classes"><span>Get started</span></a>
+            </div>
+            <div class="s-pricing__tier">
+              <div class="s-pricing__tier-info">
+                <p class="s-pricing__tier-name">New families · Monthly</p>
+                <p class="s-pricing__tier-desc">Flexible and cancel anytime.</p>
+              </div>
+              <p class="s-pricing__tier-price"><span class="s-pricing__tier-amount">$69.99</span><span class="s-pricing__tier-per">/month</span></p>
+              <a class="btn s-pricing__tier-btn" href="membership.html?tier=new-families-monthly"><span>Register now</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="s-pricing__schedule">
+          <div class="s-pricing__sched-head">
+            <h3 class="s-pricing__sched-title">Weekly schedule</h3>
+            <p class="s-pricing__sched-sub">All your classes and events in one place!</p>
+          </div>
+          <table class="s-pricing__table">
+            <colgroup><col style="width:560px"><col style="width:300px"><col></colgroup>
+            <thead>
+              <tr><th scope="col">CLASS</th><th scope="col">DAY(S)</th><th scope="col">TIME (ET)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><div class="s-pricing__cls"><span class="s-pricing__class">Preschool &amp; Kindergarten</span><span class="s-pricing__pill">Ages 3–5</span></div></td><td data-label="DAY(S)">Tues, Wed</td><td data-label="TIME (ET)">5:00 PM</td></tr>
+              <tr><td><div class="s-pricing__cls"><span class="s-pricing__class">Grade 1</span><span class="s-pricing__pill">Ages 6–7</span></div></td><td data-label="DAY(S)">Wed, Fri</td><td data-label="TIME (ET)">5:30 PM</td></tr>
+              <tr><td><div class="s-pricing__cls"><span class="s-pricing__class">Grade 2</span><span class="s-pricing__pill">Ages 7–8</span></div></td><td data-label="DAY(S)">Mon, Thurs</td><td data-label="TIME (ET)">5:00 PM</td></tr>
+              <tr><td><div class="s-pricing__cls"><span class="s-pricing__class">Grade 3</span><span class="s-pricing__pill">Ages 8–9</span></div></td><td data-label="DAY(S)">Sat</td><td data-label="TIME (ET)">10:00 AM</td></tr>
+              <tr><td><div class="s-pricing__cls"><span class="s-pricing__class">Grade 4–5</span><span class="s-pricing__pill">Ages 9–11</span></div></td><td data-label="DAY(S)">Mon, Tues</td><td data-label="TIME (ET)">5:30 PM</td></tr>
+              <tr><td><div class="s-pricing__cls"><span class="s-pricing__class">Homework Lab</span><span class="s-pricing__pill s-pricing__pill--lime">JK–12</span></div></td><td data-label="DAY(S)">Sun – Thu</td><td data-label="TIME (ET)">6:00 PM — K–6<br>6:30 PM — 7–12</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 10 · FAQ — Figma 2134:13317 (1440×1025, first child of wrapper 2134:13318).
+     The footer overlaps this section's bottom 145px (Figma y=880). Below y=1025 the pale scallops (Group 2134:13236)
+     are drawn by the footer; only the characters' feet (strip runs to y=1064) hang below this section, so it must
+     paint above the footer (z-index in 10-faq.css). -->
+<section class="ff-sec s-faq" id="faq">
+  <div class="s-faq__bg" aria-hidden="true"></div>
+
+  <div class="ff-frame" style="height:1025px">
+    <div class="s-faq__intro">
+      <h2 class="t-h2 s-faq__title" data-reveal>Your questions<br>answered!</h2>
+      <p class="s-faq__sub" data-fade>Whether you’re a prospective parent or a current member of our community, this section aims to address inquiries and offer insights.</p>
+    </div>
+
+    <div class="s-faq__list">
+      <div class="s-faq__item is-open" data-fade>
+        <h3 class="s-faq__q">
+          <button class="s-faq__btn" type="button" id="faq-q1" aria-expanded="true" aria-controls="faq-a1" data-cursor="hover">
+            <span class="s-faq__q-text">What ages or grades do you support at Apprendre Franco-fun!?</span>
+            <svg class="s-faq__icon" viewBox="0 0 36 36" width="36" height="36" aria-hidden="true" focusable="false"><circle cx="18" cy="18" r="18"/><path class="s-faq__icon-h" d="M12 18H24"/><path class="s-faq__icon-v" d="M18 12V24"/></svg>
+          </button>
+        </h3>
+        <div class="s-faq__panel" id="faq-a1" role="region" aria-labelledby="faq-q1">
+          <div class="s-faq__answer"><p>We offer French enrichment programs for students in Kindergarten to Grade 12, with a focus on early literacy, reading comprehension, speaking, and writing. Our programs are designed to meet the needs of both French Immersion and Francophone students across Canada.</p></div>
+        </div>
+      </div>
+
+      <div class="s-faq__item" data-fade>
+        <h3 class="s-faq__q">
+          <button class="s-faq__btn" type="button" id="faq-q2" aria-expanded="false" aria-controls="faq-a2" data-cursor="hover">
+            <span class="s-faq__q-text">How do you personalize support for each student?</span>
+            <svg class="s-faq__icon" viewBox="0 0 36 36" width="36" height="36" aria-hidden="true" focusable="false"><circle cx="18" cy="18" r="18"/><path class="s-faq__icon-h" d="M12 18H24"/><path class="s-faq__icon-v" d="M18 12V24"/></svg>
+          </button>
+        </h3>
+        <div class="s-faq__panel" id="faq-a2" role="region" aria-labelledby="faq-q2">
+          <div class="s-faq__answer"><p>We begin each student’s journey with an informal diagnostic and ongoing progress tracking. Our team adapts lessons based on student strengths, interests, and areas for growth using a science of reading approach, ensuring personalized and effective learning.</p></div>
+        </div>
+      </div>
+
+      <div class="s-faq__item" data-fade>
+        <h3 class="s-faq__q">
+          <button class="s-faq__btn" type="button" id="faq-q3" aria-expanded="false" aria-controls="faq-a3" data-cursor="hover">
+            <span class="s-faq__q-text">What makes Apprendre Franco-fun! different from other enrichment services?</span>
+            <svg class="s-faq__icon" viewBox="0 0 36 36" width="36" height="36" aria-hidden="true" focusable="false"><circle cx="18" cy="18" r="18"/><path class="s-faq__icon-h" d="M12 18H24"/><path class="s-faq__icon-v" d="M18 12V24"/></svg>
+          </button>
+        </h3>
+        <div class="s-faq__panel" id="faq-a3" role="region" aria-labelledby="faq-q3">
+          <div class="s-faq__answer"><p>Our educators are qualified educators who specialize in French as a first or second language instruction. We use engaging, culturally relevant resources and align our programs with provincial curriculum expectations. We also provide detailed feedback to parents and teachers.</p></div>
+        </div>
+      </div>
+
+      <div class="s-faq__item" data-fade>
+        <h3 class="s-faq__q">
+          <button class="s-faq__btn" type="button" id="faq-q4" aria-expanded="false" aria-controls="faq-a4" data-cursor="hover">
+            <span class="s-faq__q-text">Do you offer virtual or in-person support?</span>
+            <svg class="s-faq__icon" viewBox="0 0 36 36" width="36" height="36" aria-hidden="true" focusable="false"><circle cx="18" cy="18" r="18"/><path class="s-faq__icon-h" d="M12 18H24"/><path class="s-faq__icon-v" d="M18 12V24"/></svg>
+          </button>
+        </h3>
+        <div class="s-faq__panel" id="faq-a4" role="region" aria-labelledby="faq-q4">
+          <div class="s-faq__answer"><p>Our enrichment support is virtual, allowing us to reach families across Canada. We also offer in-school partnerships and special group classes upon request in collaboration with school boards or community organizations.</p></div>
+        </div>
+      </div>
+
+      <div class="s-faq__item" data-fade>
+        <h3 class="s-faq__q">
+          <button class="s-faq__btn" type="button" id="faq-q5" aria-expanded="false" aria-controls="faq-a5" data-cursor="hover">
+            <span class="s-faq__q-text">How can parents track their child’s progress?</span>
+            <svg class="s-faq__icon" viewBox="0 0 36 36" width="36" height="36" aria-hidden="true" focusable="false"><circle cx="18" cy="18" r="18"/><path class="s-faq__icon-h" d="M12 18H24"/><path class="s-faq__icon-v" d="M18 12V24"/></svg>
+          </button>
+        </h3>
+        <div class="s-faq__panel" id="faq-a5" role="region" aria-labelledby="faq-q5">
+          <div class="s-faq__answer"><p>Parents receive regular updates, progress notes, and personalized recommendations. We also provide optional reading assessments and support documents that outline next steps for continued growth at home and in class.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Clay characters strip 2134:13375 (x=-335, y=770). Figma repeats the 6 characters twice; a third repeat is added
+         off-screen so the strip can drift as a seamless loop. Wrapper = idle float; img = pop-in + hover hop. -->
+    <div class="s-faq__chars" aria-hidden="true">
+      <div class="s-faq__chars-track">
+        <span class="s-faq__char" data-float="10"><img class="s-faq__char-img" src="assets/10-faq/char-1.png" alt="" width="196" height="294" data-pop="bounce"></span>
+        <span class="s-faq__char" data-float="12"><img class="s-faq__char-img" src="assets/10-faq/char-2.png" alt="" width="196" height="294" data-pop="bounce"></span>
+        <span class="s-faq__char" data-float="9"><img class="s-faq__char-img" src="assets/10-faq/char-3.png" alt="" width="196" height="294" data-pop="bounce"></span>
+        <span class="s-faq__char" data-float="11"><img class="s-faq__char-img" src="assets/10-faq/char-4.png" alt="" width="196" height="294" data-pop="bounce"></span>
+        <span class="s-faq__char" data-float="8"><img class="s-faq__char-img" src="assets/10-faq/char-5.png" alt="" width="196" height="294" data-pop="bounce"></span>
+        <span class="s-faq__char" data-float="12"><img class="s-faq__char-img" src="assets/10-faq/char-6.png" alt="" width="196" height="294" data-pop="bounce"></span>
+        <span class="s-faq__char" data-float="10"><img class="s-faq__char-img" src="assets/10-faq/char-1.png" alt="" width="196" height="294" data-pop="bounce"></span>
+        <span class="s-faq__char" data-float="12"><img class="s-faq__char-img" src="assets/10-faq/char-2.png" alt="" width="196" height="294" data-pop="bounce"></span>
+        <span class="s-faq__char" data-float="9"><img class="s-faq__char-img" src="assets/10-faq/char-3.png" alt="" width="196" height="294" data-pop="bounce"></span>
+        <span class="s-faq__char" data-float="11"><img class="s-faq__char-img" src="assets/10-faq/char-4.png" alt="" width="196" height="294" data-pop="bounce"></span>
+        <span class="s-faq__char" data-float="8"><img class="s-faq__char-img" src="assets/10-faq/char-5.png" alt="" width="196" height="294" data-pop="bounce"></span>
+        <span class="s-faq__char" data-float="12"><img class="s-faq__char-img" src="assets/10-faq/char-6.png" alt="" width="196" height="294" data-pop="bounce"></span>
+        <span class="s-faq__char" data-float="10"><img class="s-faq__char-img" src="assets/10-faq/char-1.png" alt="" width="196" height="294"></span>
+        <span class="s-faq__char" data-float="12"><img class="s-faq__char-img" src="assets/10-faq/char-2.png" alt="" width="196" height="294"></span>
+        <span class="s-faq__char" data-float="9"><img class="s-faq__char-img" src="assets/10-faq/char-3.png" alt="" width="196" height="294"></span>
+        <span class="s-faq__char" data-float="11"><img class="s-faq__char-img" src="assets/10-faq/char-4.png" alt="" width="196" height="294"></span>
+        <span class="s-faq__char" data-float="8"><img class="s-faq__char-img" src="assets/10-faq/char-5.png" alt="" width="196" height="294"></span>
+        <span class="s-faq__char" data-float="12"><img class="s-faq__char-img" src="assets/10-faq/char-6.png" alt="" width="196" height="294"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ff-sec s-footer" id="footer">
+  <!-- Top 145px is transparent: it overlaps the bottom of the FAQ above (margin-top:-145px). -->
+  <div class="s-footer__sky" aria-hidden="true"></div>
+  <div class="ff-frame s-footer__frame">
+
+    <!-- Sky ribbon (Figma "image 21161": rotated 19°, 50%, colour-burn) -->
+    <div class="s-footer__scene" aria-hidden="true">
+      <div class="s-footer__ribbon" data-depth="-0.35"><img src="assets/11-footer/ribbon.png" alt="" width="1601" height="902"></div>
+    </div>
+
+    <!-- Cloud bank: pale scallops that close the FAQ section (Figma group 2134:13236) -->
+    <div class="s-footer__clouds" aria-hidden="true">
+      <span class="s-footer__band"></span>
+      <div class="s-footer__puffs">
+      <span class="s-footer__puff" style="left:80px; top:-71px; width:300px; height:245px" data-depth="0.3"></span>
+      <span class="s-footer__puff" style="left:354px; top:-76px; width:300px; height:250px" data-depth="0.45"></span>
+      <span class="s-footer__puff" style="left:594px; top:-46px; width:190px; height:170px" data-depth="-0.3"></span>
+      <span class="s-footer__puff" style="left:724px; top:-101px; width:330px; height:280px" data-depth="0.6"></span>
+      <span class="s-footer__puff" style="left:994px; top:-56px; width:220px; height:190px" data-depth="-0.4"></span>
+      <span class="s-footer__puff" style="left:1154px; top:-21px; width:150px; height:135px" data-depth="0.25"></span>
+      <span class="s-footer__puff" style="left:1254px; top:-96px; width:360px; height:290px" data-depth="0.5"></span>
+      <span class="s-footer__puff" style="left:1544px; top:-51px; width:210px; height:180px" data-depth="-0.35"></span>
+      <span class="s-footer__puff" style="left:1684px; top:-86px; width:280px; height:240px" data-depth="0.4"></span>
+      <span class="s-footer__puff" style="left:1930px; top:-65px; width:270px; height:230px" data-depth="-0.25"></span>
+      </div>
+    </div>
+
+    <!-- Floating link card (Figma 2180:5398) -->
+    <div class="s-footer__card">
+      <div class="s-footer__top">
+        <div class="s-footer__brand s-footer__reveal">
+          <a class="s-footer__logo" href="#top" aria-label="Apprendre Franco-fun! — home"><img src="assets/11-footer/logo.svg" alt="Apprendre Franco-fun!" width="161" height="32"></a>
+          <p class="s-footer__about">We are based in Southwestern Ontario. Proudly serving London, Oakville, Toronto, Markham, Kingston, Ottawa, and Canada-wide.</p>
+          <a class="btn s-footer__cta" href="#get-started"><span>Free demo lesson</span></a>
+        </div>
+
+        <nav class="s-footer__cols" aria-label="Footer">
+          <div class="s-footer__col s-footer__reveal">
+            <p class="s-footer__head">Menu</p>
+            <a href="#top">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Franco Hub</a>
+            <a href="#">Blog</a>
+            <a href="#footer">Contact</a>
+          </div>
+          <div class="s-footer__col s-footer__reveal">
+            <p class="s-footer__head">Links</p>
+            <a href="#get-started">Free Demo Lesson</a>
+            <a href="#">Student Login</a>
+            <a href="#pricing">Program Registration</a>
+            <a href="#">$100 Teacher Referral</a>
+          </div>
+          <div class="s-footer__col s-footer__reveal">
+            <p class="s-footer__head">Legal</p>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+          <div class="s-footer__col s-footer__col--contact s-footer__reveal">
+            <p class="s-footer__head">Contact</p>
+            <a href="mailto:admin@apprendrefrancofun.com">admin@apprendrefrancofun.com</a>
+            <p class="s-footer__hours-title">Class hours</p>
+            <dl class="s-footer__hours">
+              <div><dt>Mon – Thurs</dt><dd>9:00am – 9:00pm EST</dd></div>
+              <div><dt>Fri</dt><dd>9:00am – 6:00pm EST</dd></div>
+              <div><dt>Sat – Sun</dt><dd>9:00am – 2:00pm EST</dd></div>
+            </dl>
+          </div>
+        </nav>
+      </div>
+
+      <hr class="s-footer__rule">
+
+      <div class="s-footer__bottom s-footer__reveal">
+        <p class="s-footer__copy">© 2026 Apprendre Franco-fun! All rights reserved.</p>
+        <div class="s-footer__social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6H9.5C7.567 6 6 7.567 6 9.5V14.5C6 16.433 7.567 18 9.5 18H14.5C16.433 18 18 16.433 18 14.5V9.5C18 7.567 16.433 6 14.5 6Z" fill="none" stroke="#161616" stroke-width="1.6"/><path d="M12 14.8C13.546 14.8 14.8 13.547 14.8 12C14.8 10.454 13.546 9.2 12 9.2C10.453 9.2 9.2 10.454 9.2 12C9.2 13.547 10.453 14.8 12 14.8Z" fill="none" stroke="#161616" stroke-width="1.6"/><path d="M15.6 9.3C16.096 9.3 16.5 8.897 16.5 8.4C16.5 7.903 16.096 7.5 15.6 7.5C15.102 7.5 14.7 7.903 14.7 8.4C14.7 8.897 15.102 9.3 15.6 9.3Z" fill="#161616"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 19V13H15L15.4 10.6H13V9.2C13 8.5 13.3 8 14.3 8H15.5V5.9C15.2 5.9 14.5 5.8 13.7 5.8C11.9 5.8 10.7 6.9 10.7 8.9V10.6H8.8V13H10.7V19H13Z" fill="#161616"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 7.5H8C6.343 7.5 5 8.843 5 10.5V13.5C5 15.157 6.343 16.5 8 16.5H16C17.657 16.5 19 15.157 19 13.5V10.5C19 8.843 17.657 7.5 16 7.5Z" fill="none" stroke="#161616" stroke-width="1.6"/><path d="M11 10.2V13.8L14 12L11 10.2Z" fill="#161616"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+  </main>
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/vendor/ScrollTrigger.min.js"></script>
+  <script src="js/vendor/SplitText.min.js"></script>
+  <script src="js/vendor/DrawSVGPlugin.min.js"></script>
+  <script src="js/vendor/MotionPathPlugin.min.js"></script>
+  <script src="js/vendor/CustomEase.min.js"></script>
+  <script src="js/vendor/CustomBounce.min.js"></script>
+  <script src="js/vendor/lenis.min.js"></script>
+  <script src="js/motion.js?v=1794374270"></script>
+  <script src="js/sections/01-hero.js?v=1794374270"></script>
+  <script src="js/sections/03-is-your-child.js?v=1794374270"></script>
+  <script src="js/sections/04-success-system.js?v=1794374270"></script>
+  <script src="js/sections/05-programs.js?v=1794374270"></script>
+  <script src="js/sections/06-how-it-works.js?v=1794374270"></script>
+  <script src="js/sections/07-testimonials.js?v=1794374270"></script>
+  <script src="js/sections/09-pricing.js?v=1794374270"></script>
+  <script src="js/sections/10-faq.js?v=1794374270"></script>
+  <script src="js/sections/11-footer.js?v=1794374270"></script>
+</body>
+</html>

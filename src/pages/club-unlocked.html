@@ -1,0 +1,66 @@
+<div class="pg pg--club-unlocked">
+  <!-- Top bar (Figma 2176:5498) -->
+  <header class="pg-bar">
+    <div class="pg-bar__in">
+      <a class="pg-bar__logo" href="index.html" aria-label="Apprendre Franco-fun! home"><img src="assets/pages/logo.svg" alt="Apprendre Franco-fun!" width="161" height="32"></a>
+      <a class="pg-bar__meta" href="#">Parent portal</a>
+    </div>
+  </header>
+
+  <section class="ff-sec pg-main cu" id="club-unlocked">
+    <div class="ff-frame cu__frame">
+      <div class="cu__body">
+        <!-- Success badge (Figma 2176:5586) -->
+        <div class="cu-badge" aria-hidden="true">
+          <span class="cu-badge__ring"></span>
+          <span class="cu-badge__disc">
+            <svg viewBox="0 0 32 32" fill="none"><path class="cu-badge__tick" d="M7.111 16.711 12.8 22.222 24.889 9.955" stroke="#1E9E5A" stroke-width="3.911" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+
+        <div class="cu__head">
+          <h1 class="cu__title" data-reveal data-reveal-delay="0.25">Welcome to the Franco-fun! Club</h1>
+          <p class="cu__sub" data-fade data-fade-delay="0.35">Léa’s spot is saved. Here’s her week.</p>
+        </div>
+
+        <!-- Léa’s week (Figma 2176:5592). Everything below the heading plays in one on-load timeline (js) so it never waits for a scroll. -->
+        <div class="cu-week cu-in">
+          <div class="cu-week__head">
+            <h2 class="cu-week__title">Weekly schedule</h2>
+            <a class="pg-link" href="#">Add to calendar →</a>
+          </div>
+          <div class="cu-row">
+            <div class="cu-row__name">
+              <span class="cu-row__t">Grade 2 group class</span>
+              <span class="cu-pill">Ages 7–8</span>
+            </div>
+            <p class="cu-row__day">Mon, Thurs</p>
+            <p class="cu-row__time">5:00 PM</p>
+          </div>
+          <div class="cu-row">
+            <div class="cu-row__name">
+              <span class="cu-row__t">Homework Lab</span>
+              <span class="cu-pill cu-pill--lime">JK–12</span>
+            </div>
+            <p class="cu-row__day">Sun – Thu</p>
+            <p class="cu-row__time">6:00 PM (K–6)</p>
+          </div>
+        </div>
+
+        <!-- What’s next (class-pack buyers) (Figma 2176:5610) — hidden when ?from=membership -->
+        <div class="cu-next cu-in" data-cu="next">
+          <span class="cu-next__badge">1:1</span>
+          <div class="cu-next__txt">
+            <p class="cu-next__t" data-cu="classes">Your 10 individual classes are ready</p>
+            <p class="cu-next__s">We’ll contact you to arrange a time that works best. Lessons run until 9PM on weekdays and 5PM on weekends.</p>
+          </div>
+        </div>
+
+        <div class="cu__ctas cu-in">
+          <a class="btn" href="#"><span>Go to parent portal</span></a>
+          <a class="cu-ghost" href="#">Add to calendar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

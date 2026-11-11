@@ -1,0 +1,328 @@
+/* 01 · Hero — Figma 2134:11350 (1440 × 900). Coordinates are Figma frame coordinates. */
+.s-hero {
+  --hero-gradient: linear-gradient(180deg, #1767F1 -52.2%, #38B6FF -7.8%, #81DFFF 77%);
+  /* Figma gradient: #1767F1 35.7% · #38B6FF 54.5% · #81DFFF 90.3% (mapped onto the 900px frame) */
+  height: 900px;
+  border-radius: 0 0 48px 48px;
+  background: var(--hero-gradient);
+  /* No isolation/z-index here: the fixed nav must stay in the root stacking context, above later sections. */
+}
+.s-hero__bg {
+  position: absolute; inset: 0;
+  background: var(--hero-gradient);
+  isolation: isolate; /* the wave colour-burns against this gradient only */
+  pointer-events: none;
+}
+
+/* ---------- Nav (fixed, centred to the 1440 frame) ---------- */
+.s-hero__nav {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 900;
+  width: 1392px;
+  height: 72px;
+  margin-left: -696px;
+  background: #fff;
+  border-radius: 0 0 40px 40px;
+  transition: translate .55s var(--ease-out), box-shadow .4s ease;
+}
+.s-hero__nav.is-hidden { translate: 0 calc(-100% - 12px); }
+.s-hero__nav.is-scrolled { box-shadow: 0 10px 30px rgba(3, 59, 98, .08); }
+
+.s-hero__logo { position: absolute; left: 28px; top: 20px; display: block; height: 32px; border-radius: 6px; }
+.s-hero__logo img { width: 160.56px; height: 32px; }
+
+.s-hero__links {
+  position: absolute; left: 249px; top: 25px;
+  display: flex; gap: 20px; align-items: center;
+  font-family: var(--font-body); font-size: 14px; line-height: 21px; letter-spacing: -0.5px;
+  white-space: nowrap;
+}
+.s-hero__links a { color: rgba(0, 0, 0, .6); transition: color .25s ease; }
+/* Figma text-box widths so the spacing matches exactly */
+.s-hero__links a:nth-child(1) { width: 37px; }
+.s-hero__links a:nth-child(2) { width: 122px; }
+.s-hero__links a:nth-child(3) { width: 79px; }
+.s-hero__links a:nth-child(4) { width: 71px; }
+.s-hero__links a:nth-child(5) { width: 57px; }
+.s-hero__links a[aria-current], .s-hero__links a:hover { color: #000; }
+
+.s-hero__menu { display: contents; } /* desktop: its children are laid out directly in the bar */
+.s-hero__burger { display: none; }
+.s-hero__nav-end, .s-hero__try {
+  font-family: var(--font-body); font-size: 13.92px; line-height: 20.88px; letter-spacing: -0.1392px;
+  white-space: nowrap;
+}
+/* Figma right group (266 wide, right 28): EN / FR · divider · Log in · [Try free lesson 127] */
+.s-hero__nav-end {
+  position: absolute; right: 155px; top: 16px;
+  display: flex; align-items: center; width: 139px; height: 40px;
+}
+.s-hero__lang { width: 73px; text-align: center; color: rgba(28, 28, 28, .5); transition: color .25s ease; }
+.s-hero__lang:hover { color: #1c1c1c; }
+.s-hero__divider { width: 1px; height: 20px; background: #bfc4cd; }
+.s-hero__login { width: 64.6px; padding: 6.4px 0; text-align: center; border-radius: 8px; color: #1c1c1c; }
+.s-hero__try {
+  position: absolute; right: 28px; top: 16px;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 127px; height: 40px;
+  border: 1px solid transparent; border-radius: 12px;
+  background: #000; color: #fff;
+}
+
+/* ---------- Scene layers ---------- */
+.s-hero__o { position: absolute; }
+.s-hero__o > img, .s-hero__pop { display: block; width: 100%; height: 100%; }
+
+/* Wave: 1601×902 image rotated 19.04° (Figma), centred at (646.8, 484.45), colour-burn 50% */
+.s-hero__wave {
+  position: absolute; left: -153.7px; top: 33.45px;
+  width: 1601px; height: 902px;
+  transform: rotate(-19.04deg);
+  opacity: .5;
+  mix-blend-mode: color-burn;
+  pointer-events: none;
+}
+.s-hero__wave img { width: 100%; height: 100%; }
+
+/* Clouds: one Clay / Cloud SVG; the box includes the effect bleed (-7.69% / -6.67% / ×1.1385 / ×1.4533) */
+.s-hero__cloud--1 { left: -55.2px; top: 343.4px; width: 165.76px; height: 122.08px; opacity: .7; }
+.s-hero__cloud--2 { left: 269px;   top: 681px;   width: 384.8px;  height: 283.4px;  opacity: .6; }
+.s-hero__cloud--3 { left: 771px;   top: 732.5px; width: 370px;    height: 272.5px; }
+.s-hero__cloud--4 { left: 1331.8px; top: 334.4px; width: 165.76px; height: 122.08px; }
+
+/* Sun (frame 447 at 497,568 + effect bleed) */
+.s-hero__sun { left: 459.9px; top: 565.36px; width: 521.23px; height: 516.67px; }
+
+/* Clay letters (PNG @2x, box = Figma render bounds) */
+.s-hero__clay--c { left: 1209.3px; top: 337px; width: 112px; height: 177px; }
+.s-hero__clay--e { left: 132.3px; top: 686px; width: 100px; height: 135px; }
+
+/* White photo cards (2134:11353, 2134:11505) */
+.s-hero__card-wrap { width: 197.98px; }
+.s-hero__card-wrap--right  { left: 1267px; top: 407.23px; }
+.s-hero__card-wrap--bottom { left: 179px;  top: 742px; }
+.s-hero__card {
+  display: flex; flex-direction: column; gap: 9.38px;
+  width: 100%; height: auto;
+  padding: 3.75px 3.75px 9.38px;
+  background: #fff;
+  border-radius: 20.5px;
+  box-shadow:
+    -3.075px 4.1px 11.275px rgba(36, 119, 111, .05),
+    -11.275px 17.425px 20.5px rgba(36, 119, 111, .04),
+    -25.625px 38.95px 27.675px rgba(36, 119, 111, .03),
+    -46.126px 69.7px 33.825px rgba(36, 119, 111, .01);
+}
+.s-hero__card-media { position: relative; height: 169.13px; border-radius: 16.4px; overflow: hidden; }
+.s-hero__photo-glasses { position: absolute; left: .24px; top: 3.01px; width: 190px; height: 190px; border-radius: 20px; }
+.s-hero__photo-girl { position: absolute; left: .25px; top: 1.25px; width: 190px; height: 190px; border-radius: 20px; overflow: hidden; }
+.s-hero__photo-girl img { position: absolute; left: 0; top: -10.72%; width: 100%; height: 177.72%; }
+.s-hero__card-lines { display: flex; flex-direction: column; gap: 3.75px; padding: 0 3.75px; }
+.s-hero__card-lines span { display: block; height: 12.3px; border-radius: 61.5px; background: rgba(94, 86, 86, .08); }
+.s-hero__card-lines span:last-child { width: 100.97px; }
+
+/* Blue card, left (2134:11361): white plate r22 + blue card r20 with inner white glow */
+.s-hero__bcard-wrap { left: -40.6px; top: 146px; width: 220px; height: 220px; }
+.s-hero__bcard { position: relative; background: #fff; border-radius: 22px; }
+.s-hero__bcard-in {
+  position: absolute; inset: 0;
+  border-radius: 20px; overflow: hidden;
+  background: #498bff;
+  border: .5px solid rgba(255, 255, 255, .27);
+}
+.s-hero__bcard-in img { position: absolute; left: -15.9px; top: 5.5px; width: 260px; height: 260px; }
+.s-hero__bcard-in::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  box-shadow: inset 0 .1px 15px 1px #fff;
+}
+
+/* ---------- Content ---------- */
+.s-hero__content {
+  position: absolute; left: 416px; top: 209px; width: 608px;
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center;
+}
+.s-hero__title { position: relative; width: 538px; height: 160px; }
+.s-hero__line { position: relative; display: block; height: 80px; }
+/* Reveal mask: only while the entrance runs (JS adds .is-open after), and generous so no
+   ascender, descender or accent is ever cut. Static mode has no mask at all. */
+html.js-motion .s-hero__line:not(.is-open) { clip-path: inset(-28px -60px -28px -60px); }
+/* Line 2 has no descenders: its mask ends at the pill's bottom edge so the white words rise out of the pill */
+html.js-motion .s-hero__line--light:not(.is-open) { clip-path: inset(-28px -60px 0 -60px); }
+.s-hero__line-in { position: relative; display: block; white-space: nowrap; }
+.s-hero__line--light { color: #fff; }
+/* Optical centring (measured from the rendered ink): both lines' ink centred on x = 720, and
+   "for kids K to 12" centred in the pill with equal left/right and top/bottom padding. */
+.s-hero__line:first-child .s-hero__line-in,
+.s-hero__pill + .s-hero__line .s-hero__line-in { left: -1.5px; }
+.s-hero__line--light .s-hero__line-in { left: -.5px; top: -.5px; }
+.s-hero__pill {
+  position: absolute; left: 14.5px; top: 83px; width: 509px; height: 76px; /* centred under the title */
+  border-radius: 21px;
+  background: #ff763d;
+  border: .5px solid rgba(255, 255, 255, .27);
+  box-shadow: inset 0 .1px 15px 1px #fff;
+}
+.s-hero__sub {
+  margin-top: 12px;
+  font-family: var(--font-body); font-weight: 400; font-size: 20px; line-height: 28px; letter-spacing: 0;
+  color: #626262;
+  white-space: nowrap;
+}
+.s-hero__ctas { display: flex; gap: 10px; margin-top: 24px; }
+.s-hero__cta { display: inline-flex; }
+
+/* ---------- Trust row ---------- */
+.s-hero__trust {
+  position: absolute; left: 572.5px; top: 154px; width: 296px;
+  display: flex; gap: 26px; align-items: center;
+  font-family: var(--font-body); font-size: 13px; line-height: normal; letter-spacing: 0;
+  color: #033B62; white-space: nowrap; /* brand navy: ~5.6:1 on the hero sky (grey #626262 was ~2.9:1) */
+}
+.s-hero__trust-item { display: flex; flex-direction: column; align-items: center; gap: 7px; }
+.s-hero__trust-item strong { font-weight: 500; color: #161616; }
+.s-hero__avatars { display: flex; height: 32px; }
+.s-hero__avatars img { width: 32px; height: 32px; margin-right: -10px; }
+.s-hero__avatars img:last-child { margin-right: 0; }
+.s-hero__stars {
+  font-size: 20.571px; line-height: normal; color: #FEDB52; letter-spacing: 0;
+  /* Soft dark-blue edge so the yellow stars read on the light sky without a heavy outline */
+  text-shadow: 0 0 .5px #0B4F9C, 0 0 1px rgba(11, 79, 156, .7), 0 1px 3px rgba(0, 58, 140, .28);
+}
+
+/* Pre-JS hidden state for the on-load entrance (JS reveals; the template's safety net shows them if JS fails) */
+html.js-motion .s-hero [data-hero] { visibility: hidden; }
+
+/* =====================================================================
+   Under 1024: phone-first reflow (desktop above is untouched)
+   ===================================================================== */
+@media (max-width: 1023px) {
+  .s-hero { height: auto; border-radius: 0 0 32px 32px; }
+
+  /* ---------- Nav: compact bar (logo · Try free lesson · menu) + drop-down panel ---------- */
+  .s-hero__nav {
+    left: 10px; right: 10px; width: auto; height: auto; margin-left: 0;
+    padding: env(safe-area-inset-top, 0px) 8px 0 16px;
+    display: flex; flex-wrap: wrap; align-items: center;
+    border-radius: 0 0 24px 24px;
+  }
+  .s-hero__logo { position: static; order: 1; height: 28px; margin: 16px auto 16px 0; }
+  .s-hero__logo img { width: 140.5px; height: 28px; }
+  .s-hero__try {
+    position: static; order: 2; width: auto; height: 44px; padding: 0 16px; margin-right: 4px;
+    font-size: 14px; letter-spacing: 0;
+  }
+  .s-hero__burger {
+    order: 3; display: grid; place-content: center; gap: 5px;
+    width: 44px; height: 44px; border-radius: 12px; cursor: pointer;
+  }
+  .s-hero__burger span {
+    display: block; width: 20px; height: 2px; border-radius: 2px; background: #161616;
+    transition: transform .35s var(--ease-out), opacity .2s ease;
+  }
+  .s-hero__nav.is-menu-open .s-hero__burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .s-hero__nav.is-menu-open .s-hero__burger span:nth-child(2) { opacity: 0; }
+  .s-hero__nav.is-menu-open .s-hero__burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .s-hero__menu {
+    order: 4; flex: 0 0 100%;
+    display: block; overflow: hidden;
+    max-height: 0; opacity: 0; visibility: hidden;
+    transition: max-height .45s var(--ease-out), opacity .3s ease, visibility 0s linear .45s;
+  }
+  .s-hero__nav.is-menu-open .s-hero__menu {
+    max-height: 480px; opacity: 1; visibility: visible;
+    transition: max-height .5s var(--ease-out), opacity .3s ease, visibility 0s;
+  }
+  .s-hero__links {
+    position: static; display: flex; flex-direction: column; align-items: stretch; gap: 0;
+    padding: 4px 8px 0 0; border-top: 1px solid var(--c-line);
+    font-size: 17px; line-height: 1.3; letter-spacing: -0.01em; white-space: normal;
+  }
+  .s-hero__links a, .s-hero__links a:nth-child(n) {
+    width: auto; display: flex; align-items: center; min-height: 48px;
+    color: #161616; border-bottom: 1px solid var(--c-line);
+    transform: translateY(-6px); transition: transform .45s var(--ease-out), color .25s ease;
+  }
+  .s-hero__links a[aria-current] { color: var(--c-blue); }
+  .s-hero__nav.is-menu-open .s-hero__links a { transform: none; }
+  .s-hero__nav-end {
+    position: static; width: auto; height: auto; justify-content: flex-start; gap: 4px;
+    padding: 8px 8px 16px 0; font-size: 15px; letter-spacing: 0;
+  }
+  .s-hero__lang, .s-hero__login { width: auto; min-height: 44px; display: inline-flex; align-items: center; padding: 0 12px; }
+  .s-hero__lang { padding-left: 0; color: rgba(28, 28, 28, .6); }
+
+  /* ---------- Content in flow: trust row · title · subtitle · CTAs, then the scene ---------- */
+  .s-hero > .ff-frame {
+    display: flex; flex-direction: column; align-items: center;
+    padding: calc(76px + env(safe-area-inset-top, 0px) + 26px) var(--gutter) 336px;
+  }
+  .s-hero__trust {
+    position: relative; left: auto; top: auto; width: auto; order: 1;
+    justify-content: center; gap: 22px;
+  }
+  .s-hero__content { position: relative; left: auto; top: auto; order: 2; width: 100%; margin-top: 22px; }
+  .s-hero__title { width: 100%; height: 2em; font-size: 44px; line-height: 1; }
+  .s-hero__line { height: 1em; }
+  /* the pill keeps its desktop proportions (509×76 at 80px) and stays centred under the title */
+  .s-hero__pill {
+    left: calc(50% - 3.18125em); top: 1.0375em; width: 6.3625em; height: .95em; border-radius: .2625em;
+  }
+  .s-hero__sub {
+    max-width: 350px; margin-top: 14px;
+    font-size: 16px; line-height: 1.5; white-space: normal; text-wrap: balance;
+  }
+  .s-hero__sub br { display: none; }
+  .s-hero__ctas { flex-wrap: wrap; justify-content: center; margin-top: 22px; }
+
+  /* ---------- Scene: anchored to the bottom of the hero, scaled down, tucked asymmetrically ---------- */
+  .s-hero__bg > .ff-frame { position: absolute; inset: 0; }
+  .s-hero__wave { left: calc(50% - 600px); top: auto; bottom: 40px; width: 1100px; height: 620px; }
+
+  .s-hero__sun    { left: calc(50% - 145px); bottom: -96px; width: 290px; height: 287.5px; }
+  .s-hero__cloud--2 { left: calc(50% - 212px); top: auto; bottom: -46px; width: 204px; height: 150px; }
+  .s-hero__cloud--3 { left: calc(50% + 14px);  top: auto; bottom: -52px; width: 196px; height: 144px; }
+  .s-hero__cloud--1 { display: none; }
+  .s-hero__bcard-wrap { display: none; }
+
+  /* photo cards: same card, scaled with zoom (GSAP owns the transform for the pop) */
+  .s-hero__card-wrap { width: 104px; }
+  .s-hero__card-wrap .s-hero__card { width: 197.98px; zoom: .525; }
+  .s-hero__card-wrap--right  { left: auto; right: 6px; top: auto; bottom: 156px; }
+  .s-hero__card-wrap--bottom { left: 14px; top: auto; bottom: -34px; }
+  .s-hero__cloud--4 { left: auto; right: -22px; top: auto; bottom: 236px; width: 100px; height: 73.6px; }
+  .s-hero__clay--c  { left: auto; right: 92px; top: auto; bottom: 212px; width: 60px; height: 94.8px; }
+  .s-hero__clay--e  { left: 0; top: auto; bottom: 46px; width: 56px; height: 75.6px; }
+
+  @media (max-width: 379px) {
+    .s-hero__title { font-size: 40px; }
+    .s-hero__logo img { width: 128.4px; height: 25.6px; }
+    .s-hero__logo { height: 25.6px; }
+    .s-hero__try { padding: 0 13px; }
+    .s-hero__ctas { flex-direction: column; align-items: stretch; width: 100%; }
+    .s-hero__cta, .s-hero__cta .btn, .s-hero__cta .btn > span { width: 100%; }
+  }
+
+  @media (min-width: 640px) {
+    .s-hero > .ff-frame { padding-top: calc(76px + env(safe-area-inset-top, 0px) + 56px); padding-bottom: 430px; }
+    .s-hero__title { font-size: 64px; }
+    .s-hero__sub { max-width: 520px; font-size: 18px; }
+    .s-hero__sub br { display: inline; }
+    .s-hero__wave { left: calc(50% - 760px); width: 1400px; height: 789px; bottom: 30px; }
+    .s-hero__sun    { left: calc(50% - 190px); bottom: -120px; width: 380px; height: 376.7px; }
+    .s-hero__cloud--2 { left: calc(50% - 280px); bottom: -60px; width: 270px; height: 199px; }
+    .s-hero__cloud--3 { left: calc(50% + 30px);  bottom: -66px; width: 262px; height: 193px; }
+    .s-hero__card-wrap { width: 148.5px; }
+    .s-hero__card-wrap .s-hero__card { zoom: .75; }
+    .s-hero__card-wrap--right  { right: 36px; bottom: 210px; }
+    .s-hero__card-wrap--bottom { left: 56px; bottom: -40px; }
+    .s-hero__cloud--4 { right: 4px; bottom: 330px; width: 140px; height: 103px; }
+    .s-hero__clay--c  { right: 160px; bottom: 300px; width: 84px; height: 132.8px; }
+    .s-hero__clay--e  { left: 30px; bottom: 90px; width: 75px; height: 101px; }
+    .s-hero__bcard-wrap { display: block; left: 20px; top: auto; bottom: 236px; width: 126px; height: 126px; }
+    .s-hero__bcard-wrap .s-hero__bcard { width: 220px; height: 220px; zoom: .5727; }
+  }
+}

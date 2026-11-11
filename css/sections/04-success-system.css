@@ -1,0 +1,188 @@
+/* 04 · Success System (Figma 2134:11552 — 1440 × 1065) */
+.s-success {
+  background: #EEF8FF;
+  border-radius: 48px 48px 0 0; /* bottom corners sit under Programs' cloud edge */
+  letter-spacing: 0;
+}
+
+/* Papumba-style hand-off: while JS motion is on, the section holds (sticky) inside its wrapper while 05 slides over it.
+   js/sections/04-success-system.js sizes the wrapper (+ an equal negative margin, so nothing below moves) and sets top. */
+.s-success-wrap { position: relative; }
+html.js-motion .s-success { position: sticky; top: 0; }
+
+/* Covered-section depth while Programs slides over it (scrubbed in js/sections/04-success-system.js) */
+.s-success__dim {
+  position: absolute;
+  inset: 0;
+  background: #033B62;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Content frame (2134:12737): x 120, y 140, 1200 wide */
+.s-success__inner {
+  position: absolute;
+  left: 120px;
+  top: 140px;
+  width: 1200px;
+}
+.s-success__head {
+  width: 636px;
+  margin: 0 auto;
+  text-align: center;
+}
+.s-success__sub {
+  margin-top: 16px;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: rgba(18, 18, 20, .75);
+}
+
+/* Step cards row (2134:12736): 64px under the header, 1200 × 374 */
+.s-success__steps {
+  position: relative;
+  height: 374px;
+  margin-top: 64px;
+}
+/* Positions = Figma rotated bounding-box centres; the design tilt is the card's transform */
+.s-success__step {
+  position: absolute;
+  width: 268px;
+  height: 320px;
+  transition: translate .5s var(--ease-bounce), rotate .5s var(--ease-bounce);
+}
+/* Hover: small lift + a slight straighten. Lives on the <li> because GSAP owns the card's transform
+   (and writes inline translate/rotate: none on it). The active card is driven by JS instead. */
+.s-success__step:has(> .s-success__card:hover:not([aria-pressed="true"])) {
+  translate: 0 -6px;
+  rotate: calc(var(--tilt) * -0.4);
+}
+.s-success__step--1 { left: 16px;  top: 40.8px; --tilt: 6deg; }
+.s-success__step--2 { left: 242px; top: 6.8px;  --tilt: 3deg; }
+.s-success__step--3 { left: 468px; top: 44.8px; --tilt: -2deg; }
+.s-success__step--4 { left: 694px; top: 12.8px; --tilt: 2deg; }
+.s-success__step--5 { left: 920px; top: 42.8px; --tilt: -5deg; }
+
+.s-success__card {
+  width: 100%;
+  height: 100%;
+  padding: 24px 68px 26px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: left;
+  background: #fff;
+  border: 1px solid rgba(3, 59, 98, .06);
+  border-radius: 28px;
+  box-shadow: 0 18px 40px rgba(3, 59, 98, .06);
+  transform: rotate(var(--tilt));
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: box-shadow .5s ease;
+}
+.s-success__step--5 .s-success__card { padding-right: 24px; }
+.s-success__card:hover:not([aria-pressed="true"]) { box-shadow: 0 24px 44px rgba(3, 59, 98, .09); }
+.s-success__card[aria-pressed="true"] { box-shadow: 0 30px 60px rgba(3, 59, 98, .14); }
+.s-success__card:focus-visible { border-radius: 28px; outline-offset: 4px; }
+
+/* Reduced-motion / static fallback for the pop (JS animates it when motion is on) */
+html.motion-off .s-success__step.is-active { z-index: 10; }
+html.motion-off .s-success__card[aria-pressed="true"] { transform: translateY(-34px) scale(1.1); }
+
+.s-success__tag {
+  display: inline-flex;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 11px;
+  line-height: normal;
+  letter-spacing: .88px;
+  white-space: nowrap;
+  color: #161616;
+}
+.s-success__step--1 .s-success__tag { background: #FFD700; }
+.s-success__step--2 .s-success__tag { background: #E8670A; color: #fff; }
+.s-success__step--3 .s-success__tag { background: #1767F1; color: #fff; }
+.s-success__step--4 .s-success__tag { background: #C9E265; }
+.s-success__step--5 .s-success__tag { background: #E2A9F1; }
+
+.s-success__text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+.s-success__card-title {
+  display: block;
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.1;
+  letter-spacing: -.44px;
+  color: #161616;
+}
+.s-success__card-body {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.45;
+  letter-spacing: 0;
+  color: rgba(18, 18, 20, .75);
+}
+
+/* Intro: cards + tags are animated by js/sections/04-success-system.js (hidden only while JS motion is on) */
+html.js-motion .s-success__card,
+html.js-motion .s-success__tag { visibility: hidden; }
+
+/* ======================= Phones + tablets (under 1024) ======================= */
+@media (max-width: 1023px) {
+  .s-success { border-radius: 32px 32px 0 0; }
+  /* bottom room: Programs' cloud edge overhangs the last 56px */
+  .s-success__inner { position: relative; left: auto; top: auto; width: auto; padding: 80px 0 120px; }
+  .s-success__head { width: auto; max-width: 640px; padding: 0 var(--gutter); }
+  .s-success__title { text-wrap: balance; }
+  .s-success__sub { margin-top: 12px; font-size: 16px; text-wrap: balance; }
+
+  /* Step cards: a simple flat swipe row inside its own scroller (no tilt, no pop; the next card peeks) */
+  .s-success__steps {
+    height: auto;
+    margin-top: 8px;
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    padding: 12px var(--gutter) 40px; /* left-aligned on the mobile grid; bottom room for the card shadow */
+    scroll-padding-inline: var(--gutter);
+    scrollbar-width: none;
+  }
+  .s-success__steps::-webkit-scrollbar { display: none; }
+  .s-success__steps > .s-success__step {
+    position: relative;
+    left: auto;
+    top: auto;
+    flex: 0 0 250px;
+    height: 300px;
+    scroll-snap-align: start;
+    --tilt: 0deg; /* flat on phones/tablets */
+  }
+  .s-success__card { padding: 22px 40px 24px 22px; }
+  .s-success__step--5 .s-success__card { padding-right: 22px; }
+  .s-success__card-body { font-size: 15px; }
+  html.motion-off .s-success__card[aria-pressed="true"] { transform: translateY(-14px) scale(1.06); }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .s-success__steps { padding-inline: var(--gutter); scroll-padding-inline: var(--gutter); }
+  .s-success__steps > .s-success__step { flex-basis: 260px; scroll-snap-align: start; }
+}
+/* Touch: no sticky hover lift after a tap */
+@media (max-width: 1023px) and (hover: none) {
+  .s-success__step:has(> .s-success__card:hover:not([aria-pressed="true"])) { translate: none; rotate: none; }
+}

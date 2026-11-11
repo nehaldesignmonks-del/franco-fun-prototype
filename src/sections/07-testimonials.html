@@ -1,0 +1,180 @@
+<!-- 07 · Testimonials — Figma wrapper 2134:13320 (1440×1043) · blush band 2134:11768 sits at y=102 -->
+<section class="ff-sec s-testi" id="testimonials">
+  <!-- Full-bleed band + scalloped cloud edges (cloud SVG repeats so wide screens stay scalloped) -->
+  <div class="s-testi__band" aria-hidden="true"></div>
+  <div class="s-testi__clouds s-testi__clouds--top" aria-hidden="true"></div>
+  <div class="s-testi__clouds s-testi__clouds--bottom" aria-hidden="true"></div>
+
+  <div class="ff-frame" style="height:1043px">
+    <h2 class="t-h2 s-testi__title" data-reveal>Voices from Our Community</h2>
+    <p class="s-testi__sub" data-fade>We’re thrilled by the heartfelt stories parents share—highlighting their children’s confidence, <br>language growth, and joy in learning through our supportive, engaging program.</p>
+
+    <!-- Carousel: each unit = testimonial card + its photo slot. Motion mode clones the set once and drifts it rightwards
+         in a seamless loop (js/sections/07-testimonials.js); static / reduced motion keeps this layout (Arjun's card at x=120 as in Figma).
+         Photos: drop assets/07-testimonials/photo-1.jpg … photo-5.jpg (296×369, @2x = 592×738) — a missing file falls back to the tinted placeholder. -->
+    <div class="s-testi__track">
+      <article class="s-testi__card" data-pop="soft">
+        <div class="s-testi__top">
+          <p class="s-testi__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></p>
+          <p class="s-testi__quote">“Our daughter, Léa, has truly blossomed since starting with Apprendre Franco-fun! The interactive lessons and kind, knowledgeable educators have made French her favourite subject. We’ve seen a big boost in her confidence and language skills.”</p>
+        </div>
+        <div class="s-testi__by">
+          <span class="s-testi__avatar s-testi__avatar--pink" data-pop="bounce" data-pop-delay="0.3">LB</span>
+          <p class="s-testi__name">Mother of Léa B.</p>
+        </div>
+      </article>
+      <figure class="s-testi__photo s-testi__photo--pink" data-pop="soft">
+        <svg class="s-testi__photo-icon" viewBox="0 0 24 24" width="44" height="44" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="3.5"/><circle cx="9" cy="9.6" r="1.8"/><path d="M3.6 17.2l5.2-5.2 3.6 3.6 2.6-2.6 5.4 5.4"/></svg>
+        <img class="s-testi__photo-img" src="assets/07-testimonials/photo-1.jpg" alt="" width="296" height="369" onerror="this.remove()">
+      </figure>
+
+      <article class="s-testi__card" data-pop="soft">
+        <div class="s-testi__top">
+          <p class="s-testi__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></p>
+          <p class="s-testi__quote">“Apprendre Franco-fun! has been a game-changer for our family. The one-on-one virtual support is incredibly engaging, and the progress tracking keeps us involved every step of the way. Our son looks forward to each session!”</p>
+        </div>
+        <div class="s-testi__by">
+          <span class="s-testi__avatar s-testi__avatar--green" data-pop="bounce" data-pop-delay="0.3">AS</span>
+          <p class="s-testi__name">Father of Arjun S.</p>
+        </div>
+      </article>
+      <figure class="s-testi__photo s-testi__photo--green" data-pop="soft">
+        <svg class="s-testi__photo-icon" viewBox="0 0 24 24" width="44" height="44" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="3.5"/><circle cx="9" cy="9.6" r="1.8"/><path d="M3.6 17.2l5.2-5.2 3.6 3.6 2.6-2.6 5.4 5.4"/></svg>
+        <img class="s-testi__photo-img" src="assets/07-testimonials/photo-2.jpg" alt="" width="296" height="369" onerror="this.remove()">
+      </figure>
+
+      <article class="s-testi__card" data-pop="soft">
+        <div class="s-testi__top">
+          <p class="s-testi__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></p>
+          <p class="s-testi__quote">“As a parent, I appreciate how Apprendre Franco-fun! combines fun with a solid foundation in French. The personalized approach has helped our child catch up and even get ahead in class. We highly recommend it to other families.”</p>
+        </div>
+        <div class="s-testi__by">
+          <span class="s-testi__avatar s-testi__avatar--sky" data-pop="bounce" data-pop-delay="0.3">CT</span>
+          <p class="s-testi__name">Mother of Camille T.</p>
+        </div>
+      </article>
+      <figure class="s-testi__photo s-testi__photo--sky" data-pop="soft">
+        <svg class="s-testi__photo-icon" viewBox="0 0 24 24" width="44" height="44" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="3.5"/><circle cx="9" cy="9.6" r="1.8"/><path d="M3.6 17.2l5.2-5.2 3.6 3.6 2.6-2.6 5.4 5.4"/></svg>
+        <img class="s-testi__photo-img" src="assets/07-testimonials/photo-3.jpg" alt="" width="296" height="369" onerror="this.remove()">
+      </figure>
+
+      <article class="s-testi__card" data-pop="soft">
+        <div class="s-testi__top">
+          <p class="s-testi__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></p>
+          <p class="s-testi__quote">“As a parent, I appreciate how Apprendre Franco-fun! combines fun with a solid foundation in French. The personalized approach has helped our child catch up and even get ahead in class. We highly recommend it to other families.”</p>
+        </div>
+        <div class="s-testi__by">
+          <span class="s-testi__avatar s-testi__avatar--sky" data-pop="bounce" data-pop-delay="0.3">CT</span>
+          <p class="s-testi__name">Mother of Camille T.</p>
+        </div>
+      </article>
+      <figure class="s-testi__photo s-testi__photo--lavender" data-pop="soft">
+        <svg class="s-testi__photo-icon" viewBox="0 0 24 24" width="44" height="44" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="3.5"/><circle cx="9" cy="9.6" r="1.8"/><path d="M3.6 17.2l5.2-5.2 3.6 3.6 2.6-2.6 5.4 5.4"/></svg>
+        <img class="s-testi__photo-img" src="assets/07-testimonials/photo-4.jpg" alt="" width="296" height="369" onerror="this.remove()">
+      </figure>
+
+      <article class="s-testi__card" data-pop="soft">
+        <div class="s-testi__top">
+          <p class="s-testi__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></p>
+          <p class="s-testi__quote">“As a parent, I appreciate how Apprendre Franco-fun! combines fun with a solid foundation in French. The personalized approach has helped our child catch up and even get ahead in class. We highly recommend it to other families.”</p>
+        </div>
+        <div class="s-testi__by">
+          <span class="s-testi__avatar s-testi__avatar--sky" data-pop="bounce" data-pop-delay="0.3">CT</span>
+          <p class="s-testi__name">Mother of Camille T.</p>
+        </div>
+      </article>
+      <figure class="s-testi__photo s-testi__photo--salmon" data-pop="soft">
+        <svg class="s-testi__photo-icon" viewBox="0 0 24 24" width="44" height="44" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="3.5"/><circle cx="9" cy="9.6" r="1.8"/><path d="M3.6 17.2l5.2-5.2 3.6 3.6 2.6-2.6 5.4 5.4"/></svg>
+        <img class="s-testi__photo-img" src="assets/07-testimonials/photo-5.jpg" alt="" width="296" height="369" onerror="this.remove()">
+      </figure>
+    </div>
+
+    <!-- Soleil (inline SVG so the rays can turn and the eyes can blink) -->
+    <div class="s-testi__sun" data-depth="0.8" data-float="10">
+      <div class="s-testi__sun-pop" data-pop="bounce" data-pop-delay="0.15">
+<svg class="s-testi__sun-svg" width="163.249" height="161.82" aria-hidden="true" focusable="false" viewBox="0 0 163.249 161.82" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g>
+<g filter="url(#s07sun-f0)">
+<g class="s-testi__rays"><path d="M70.5572 10.8606C76.8359 5.16412 86.413 5.16413 92.6916 10.8606L95.7954 13.6765C98.9888 16.5739 103.191 18.1033 107.5 17.9366L111.687 17.7745C120.159 17.4465 127.495 23.6026 128.643 32.0022L129.211 36.1544C129.795 40.4265 132.031 44.2993 135.439 46.9411L138.751 49.5087C145.451 54.7028 147.114 64.1344 142.594 71.3069L140.36 74.8524C138.061 78.5004 137.285 82.9044 138.197 87.1187L139.084 91.2146C140.878 99.5002 136.089 107.794 128.017 110.384L124.026 111.663C119.92 112.98 116.495 115.855 114.485 119.67L112.531 123.377C108.58 130.878 99.5801 134.153 91.7319 130.948L87.8522 129.363C83.8604 127.733 79.3885 127.733 75.3967 129.363L71.517 130.948C63.6688 134.153 54.6692 130.878 50.7175 123.377L48.764 119.67C46.7542 115.855 43.3285 112.98 39.2226 111.663L35.2321 110.384C27.1595 107.794 22.3709 99.5002 24.1648 91.2146L25.0517 87.1186C25.9641 82.9044 25.1876 78.5004 22.8888 74.8524L20.6546 71.3068C16.1349 64.1344 17.798 54.7028 24.4982 49.5087L27.8103 46.9411C31.2181 44.2993 33.4541 40.4265 34.038 36.1544L34.6056 32.0022C35.7537 23.6026 43.0902 17.4465 51.5615 17.7745L55.7492 17.9366C60.0578 18.1033 64.2601 16.5738 67.4535 13.6765L70.5572 10.8606Z" fill="url(#s07sun-g0)"/></g>
+</g>
+<g filter="url(#s07sun-f1)">
+<circle cx="81.6258" cy="70.819" r="47.3529" fill="url(#s07sun-g1)"/>
+</g>
+<g class="s-testi__eye"><ellipse cx="68.0353" cy="67.9377" rx="6.17647" ry="7" fill="#3A2416"/><circle cx="69.8875" cy="65.6725" r="1.85294" fill="white"/></g>
+<g class="s-testi__eye"><ellipse cx="95.2111" cy="67.9377" rx="6.17647" ry="7" fill="#3A2416"/><circle cx="97.0672" cy="65.6725" r="1.85294" fill="white"/></g>
+<ellipse cx="80.3912" cy="75.555" rx="3.29412" ry="2.26471" fill="#E2502A"/>
+<path d="M75.0346 79.8781C79.7013 83.4468 84.3679 83.4468 89.0346 79.8781" stroke-width="2.05882" stroke-linecap="round" stroke="#3A2416"/>
+<g opacity="0.55" filter="url(#s07sun-f2)">
+<ellipse cx="54.8574" cy="81.1136" rx="8.64706" ry="4.52941" fill="#FF8A6A"/>
+</g>
+<g opacity="0.55" filter="url(#s07sun-f3)">
+<ellipse cx="111.682" cy="81.1136" rx="8.64706" ry="4.52941" fill="#FF8A6A"/>
+</g>
+</g>
+<defs>
+<filter id="s07sun-f0" x="-4.76837e-07" y="-1.64706" width="163.249" height="163.467" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="11.5294"/>
+<feGaussianBlur stdDeviation="9.05882"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.05 0 0 0 0 0.2 0 0 0 0 0.4 0 0 0 0.12 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_5"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_5" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="4.11765" dy="5.76471"/>
+<feGaussianBlur stdDeviation="5.35294"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.7 0"/>
+<feBlend mode="normal" in2="shape" result="effect2_innerShadow_0_5"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="-4.94118" dy="-8.23529"/>
+<feGaussianBlur stdDeviation="7.41176"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.705882 0 0 0 0 0.278431 0 0 0 0 0.0392157 0 0 0 0.45 0"/>
+<feBlend mode="normal" in2="effect2_innerShadow_0_5" result="effect3_innerShadow_0_5"/>
+</filter>
+<filter id="s07sun-f1" x="29.3317" y="15.2307" width="103.765" height="108.706" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="4.11765" dy="5.76471"/>
+<feGaussianBlur stdDeviation="5.35294"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.75 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_0_5"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="-4.94118" dy="-8.23529"/>
+<feGaussianBlur stdDeviation="7.41176"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.784314 0 0 0 0 0.439216 0 0 0 0 0.054902 0 0 0 0.45 0"/>
+<feBlend mode="normal" in2="effect1_innerShadow_0_5" result="effect2_innerShadow_0_5"/>
+</filter>
+<filter id="s07sun-f2" x="42.9163" y="73.2901" width="23.8824" height="15.6471" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="1.64706" result="effect1_foregroundBlur_0_5"/>
+</filter>
+<filter id="s07sun-f3" x="99.7405" y="73.2901" width="23.8823" height="15.6471" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="1.64706" result="effect1_foregroundBlur_0_5"/>
+</filter>
+<linearGradient id="s07sun-g0" x1="81.6244" y1="0.81955" x2="81.6244" y2="140.82" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFB75E"/>
+<stop offset="0.6" stop-color="#FF8A1F"/>
+<stop offset="1" stop-color="#E8670A"/>
+</linearGradient>
+<linearGradient id="s07sun-g1" x1="81.6258" y1="23.466" x2="81.6258" y2="118.172" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFDE8E"/>
+<stop offset="0.6" stop-color="#FFBA42"/>
+<stop offset="1" stop-color="#F59A1E"/>
+</linearGradient>
+</defs>
+</svg>
+      </div>
+    </div>
+
+    <!-- Clay letter "!" (design tilt is baked into the SVG) -->
+    <img class="s-testi__bang" src="assets/07-testimonials/clay-bang.svg" alt="" width="60" height="98" data-pop="bounce" data-float="8" data-depth="-0.6">
+  </div>
+</section>

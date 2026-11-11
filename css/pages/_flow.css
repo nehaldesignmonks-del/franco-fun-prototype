@@ -1,0 +1,124 @@
+/* Shared pieces of the pricing-flow pages (checkout, membership, club-unlocked).
+   @imported by css/pages/checkout.css, membership.css and club-unlocked.css. Prefix: .pg- */
+:root {
+  --pg-bg: #F6F8FB;
+  --pg-field: #D6DCE5;
+  --pg-green: #1E9E5A;
+  --pg-blue-soft: #EEF4FF;
+  --pg-grey-soft: #F1F4F9;
+}
+
+body.page-checkout, body.page-membership, body.page-club-unlocked { background: var(--pg-bg); }
+
+/* Figma text on these frames uses line-height "normal" and no tracking unless stated. */
+.pg { font-family: var(--font-body); font-size: 16px; line-height: normal; letter-spacing: 0; color: var(--c-ink); }
+.pg [hidden] { display: none !important; }
+
+/* ---------- Top bar ---------- */
+.pg-bar { position: relative; z-index: 5; background: #fff; border-bottom: 1px solid var(--c-line); }
+.pg-bar__in {
+  width: var(--frame); margin: 0 auto; padding: 20px 120px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.pg-bar__logo { display: block; width: 160.561px; height: 32px; border-radius: 6px; transition: transform .5s var(--ease-bounce); }
+.pg-bar__logo:hover { transform: scale(1.04) rotate(-1.5deg); }
+.pg-bar__logo img { width: 100%; height: 100%; }
+.pg-bar__meta { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--c-body); }
+.pg-bar__meta svg { width: 16px; height: 16px; }
+a.pg-bar__meta { transition: color .2s ease; }
+a.pg-bar__meta:hover { color: var(--c-blue); }
+
+/* ---------- Page body ---------- */
+.pg-main { background: var(--pg-bg); }
+
+/* ---------- Cards ---------- */
+.pg-card {
+  position: relative;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 16px;
+  padding: 28px;
+  background: #fff;
+  border: 1px solid var(--c-line);
+  border-radius: 24px;
+}
+.pg-card > * { max-width: 100%; }
+.pg-card__title {
+  font-family: var(--font-head); font-weight: 500; font-size: 20px; line-height: normal; letter-spacing: -0.2px;
+  color: var(--c-ink); white-space: nowrap;
+}
+
+/* ---------- Fields ---------- */
+.pg-row { display: flex; gap: 16px; width: 100%; align-items: flex-start; }
+.pg-field { flex: 1 0 0; min-width: 1px; display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.pg-field--full { flex: none; width: 100%; }
+.pg-label { font-weight: 500; font-size: 14px; line-height: normal; color: var(--c-ink); white-space: nowrap; }
+.pg-input {
+  display: block; width: 100%; height: 51px;
+  padding: 0 16px;
+  font-family: var(--font-body); font-weight: 400; font-size: 16px; line-height: normal; letter-spacing: 0;
+  color: var(--c-ink);
+  background: #fff;
+  border: 1px solid var(--pg-field);
+  border-radius: 12px;
+  outline: none;
+  caret-color: var(--c-blue);
+  transition: border-color .18s ease, box-shadow .18s ease;
+  -webkit-appearance: none; appearance: none;
+}
+.pg-input::placeholder { color: var(--c-muted); opacity: 1; }
+.pg-input:hover { border-color: #BCC5D3; }
+.pg-input:focus, .pg-input:focus-visible {
+  outline: none; border-radius: 12px;
+  border-color: var(--c-blue);
+  box-shadow: 0 0 0 4px rgba(23, 103, 241, .14);
+}
+select.pg-input {
+  padding-right: 40px;
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M3 5L7 9L11 5' stroke='%235F6672' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 16px center / 14px 14px;
+}
+
+/* ---------- Pills, links, check lists ---------- */
+.pg-pill {
+  display: inline-flex; align-items: flex-start;
+  padding: 3px 8px; border-radius: 999px;
+  font-weight: 500; font-size: 11px; line-height: normal; letter-spacing: 0.88px; white-space: nowrap;
+}
+.pg-link {
+  display: inline-block;
+  font-weight: 500; font-size: 14px; line-height: normal; color: var(--c-blue); white-space: nowrap;
+  transition: color .2s ease;
+}
+.pg-link:hover { color: #0F4FC4; text-decoration: underline; text-underline-offset: 3px; }
+.pg-ticks { display: flex; flex-wrap: wrap; }
+.pg-tick { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; line-height: normal; color: var(--c-lime-ink); white-space: nowrap; }
+.pg-tick svg { width: 16px; height: 16px; flex: none; }
+
+.pg-nb { white-space: nowrap; } /* keeps "Franco-fun!" from breaking at its hyphen */
+
+/* Buttons on these frames centre their label with line-height normal (Figma). */
+.pg .btn > span { line-height: normal; }
+
+/* Hidden native inputs that drive custom controls (keep them focusable). */
+.pg-sr { position: absolute; width: 1px; height: 1px; margin: 0; padding: 0; opacity: 0; pointer-events: none; overflow: hidden; clip: rect(0 0 0 0); }
+
+/* ===================== Responsive (under 1024) — desktop above is untouched ===================== */
+@media (max-width: 1023px) {
+  .pg-bar__in { width: 100%; padding: 14px var(--gutter, 20px); gap: 16px; }
+  .pg-bar__meta { white-space: nowrap; }
+  a.pg-bar__meta { min-height: 44px; margin: -6px 0; } /* bigger tap target, same bar height */
+
+  .pg-card { padding: 22px 20px; border-radius: 20px; }
+  .pg-card__title { white-space: normal; }
+
+  .pg-row { flex-direction: column; gap: 16px; }
+  .pg-field { flex: none; width: 100%; }
+  .pg-row--pair { flex-direction: row; gap: 12px; } /* short fields (expiry / CVC) stay side by side */
+  .pg-row--pair > .pg-field { flex: 1 0 0; width: auto; }
+  .pg-input { height: 52px; font-size: 16px; } /* 16px stops iOS zooming into fields */
+
+  .pg-link { display: inline-flex; align-items: center; min-height: 44px; margin: -13px 0; white-space: normal; }
+  .pg-tick { font-size: 15px; }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .pg-row { flex-direction: row; }
+  .pg-row > .pg-field { flex: 1 0 0; width: auto; }
+}
