@@ -4,13 +4,16 @@ An animated, responsive prototype of the redesigned Apprendre Franco-fun! homepa
 
 ## View it
 
+**Live:** https://nehaldesignmonks-del.github.io/franco-fun-prototype/
+
+- The pricing buttons lead to the checkout, membership and Club pages.
+- Add `?static=1` to any URL to see the final layout with motion off.
+
+To run it on your own computer instead, start a local server in this folder and open http://localhost:5180:
+
 ```bash
 python3 -m http.server 5180
 ```
-
-Then open http://localhost:5180.
-- The pricing buttons lead to `checkout.html`, `membership.html` and `club-unlocked.html`.
-- Add `?static=1` to any URL to see the final layout with motion off.
 
 **Layouts**
 - **1440px and wider:** the design at full size.
